@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bgvbadbj5rwsh"]
+
+[ext_resource type="PackedScene" uid="uid://2bbl4f14uois" path="res://Lock/SM_Home_foxes_3.fbx" id="1_scfhc"]
+[ext_resource type="Texture2D" uid="uid://by422gab56ecc" path="res://Textures/Location/Foxes3.png" id="2_0ecvp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6kocq"]
+albedo_texture = ExtResource("2_0ecvp")
+
+[node name="SM_Home_foxes_3" unique_id=1014115372 instance=ExtResource("1_scfhc")]
+
+[node name="SM_Home_foxes_3" parent="." index="0" unique_id=540832614]
+surface_material_override/0 = SubResource("StandardMaterial3D_6kocq")

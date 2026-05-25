@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cmnfc7o4vr4c2"]
+
+[ext_resource type="PackedScene" uid="uid://ctqbfuy1ac3wu" path="res://Lock/SM_Tree_Tree_2.fbx" id="1_64e1p"]
+[ext_resource type="Texture2D" uid="uid://dmwc16lqjdyvs" path="res://Textures/Location/Tree2.png" id="2_6ieou"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fb65a"]
+albedo_texture = ExtResource("2_6ieou")
+
+[node name="SM_Tree_Tree_2" unique_id=553250805 instance=ExtResource("1_64e1p")]
+
+[node name="SM_Tree_Tree_2" parent="." index="0" unique_id=762046971]
+surface_material_override/0 = SubResource("StandardMaterial3D_fb65a")
