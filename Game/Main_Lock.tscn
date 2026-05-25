@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://ctqbfuy1ac3wu" path="res://Lock/SM_Tree_Tree_2.fbx" id="27_vrjwm"]
 [ext_resource type="PackedScene" uid="uid://d26g136fv85fa" path="res://Lock/SM_Tree_Tree_3.fbx" id="28_3pyx1"]
 
-[node name="Lock" type="Node3D" unique_id=1531277812]
+[node name="Environment" type="Node3D" unique_id=1531277812]
 
 [node name="SM_Home_bober_1" parent="." unique_id=2139655565 instance=ExtResource("1_u8d38")]
 

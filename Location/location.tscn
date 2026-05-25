@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b8tnuk3jmf5gt"]
+
+[ext_resource type="PackedScene" uid="uid://birm65xx2g784" path="res://Game/Main_Lock.tscn" id="1_vju3g"]
+
+[node name="Location" type="Node3D" unique_id=668207517]
+
+[node name="Environment" parent="." unique_id=1531277812 instance=ExtResource("1_vju3g")]
