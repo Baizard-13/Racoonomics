@@ -1,7 +1,28 @@
 [gd_scene format=3 uid="uid://b8tnuk3jmf5gt"]
 
 [ext_resource type="PackedScene" uid="uid://birm65xx2g784" path="res://Game/Main_Lock.tscn" id="1_vju3g"]
+[ext_resource type="Script" uid="uid://b88krc8w61x6i" path="res://Location/cameralogic.gd" id="2_u6sc3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vju3g"]
+radius = 3.288
 
 [node name="Location" type="Node3D" unique_id=668207517]
 
 [node name="Environment" parent="." unique_id=1531277812 instance=ExtResource("1_vju3g")]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1858140852]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.295956, 60.80642, -0.37407875)
+script = ExtResource("2_u6sc3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=271896591]
+transform = Transform3D(1, 0, 0, 0, 0.73932576, -0.6733481, 0, 0.6733481, 0.73932576, 0, 0, 0)
+shape = SubResource("SphereShape3D_vju3g")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=853344049]
+transform = Transform3D(1, 0, 0, 0, 0.8594065, 0.511293, 0, -0.511293, 0.8594065, 0, -11.15921, 0)
+current = true
+fov = 45.0
+size = 100.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1060950206]
+transform = Transform3D(1, 0, 0, 0, -0.99843097, 0.05599591, 0, -0.05599591, -0.99843097, 0, 0, 0)
