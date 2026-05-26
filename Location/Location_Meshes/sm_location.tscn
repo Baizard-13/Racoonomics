@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://dea3ywscsoje8"]
+[gd_scene format=3 uid="uid://b2extpusacvmt"]
 
-[ext_resource type="PackedScene" uid="uid://cmmm0u4r06ggt" path="res://Lock/SM_Location.fbx" id="1_3ktas"]
+[ext_resource type="PackedScene" uid="uid://bb41swwbolwpe" path="res://Location/Location_Meshes/SM_Location.fbx" id="1_3ktas"]
 [ext_resource type="Texture2D" uid="uid://cj0mel7bsiq66" path="res://Textures/Location/Location.png" id="2_nlsr0"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgsp0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ktas"]
 albedo_texture = ExtResource("2_nlsr0")
 
-[node name="SM_Location" unique_id=1749979641 instance=ExtResource("1_3ktas")]
+[node name="SM_Location" unique_id=1477174123 instance=ExtResource("1_3ktas")]
 
-[node name="SM_Location" parent="." index="0" unique_id=196269330]
-surface_material_override/0 = SubResource("StandardMaterial3D_sgsp0")
+[node name="SM_Location" parent="." index="0" unique_id=1093386973]
+surface_material_override/0 = SubResource("StandardMaterial3D_3ktas")

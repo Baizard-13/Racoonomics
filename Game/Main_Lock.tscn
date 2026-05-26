@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://yobxeqaepilk" path="res://Location/Location_Meshes/sm_home_eji_2.tscn" id="5_omyc5"]
 [ext_resource type="PackedScene" uid="uid://clrmsuxxdlstt" path="res://Location/Location_Meshes/sm_home_eji_3.tscn" id="6_pf4fl"]
 [ext_resource type="PackedScene" uid="uid://c30k4flamtuix" path="res://Location/Location_Meshes/sm_home_eji_4.tscn" id="7_w3r0s"]
-[ext_resource type="PackedScene" uid="uid://51io08dhwl5q" path="res://Location/Location_Meshes/sm_home_foxes_1.tscn" id="8_32s0w"]
-[ext_resource type="PackedScene" uid="uid://bl4r2tke30mmr" path="res://Location/Location_Meshes/sm_home_foxes_2.tscn" id="9_58rij"]
-[ext_resource type="PackedScene" uid="uid://bgvbadbj5rwsh" path="res://Location/Location_Meshes/sm_home_foxes_3.tscn" id="10_ohmbv"]
+[ext_resource type="PackedScene" uid="uid://ceclxotmy145j" path="res://Location/Location_Meshes/sm_home_foxes_1.tscn" id="8_32s0w"]
+[ext_resource type="PackedScene" uid="uid://cvec5ydwm276i" path="res://Location/Location_Meshes/sm_home_foxes_2.tscn" id="9_58rij"]
+[ext_resource type="PackedScene" uid="uid://c3w1hxnfl3tsq" path="res://Location/Location_Meshes/sm_home_foxes_3.tscn" id="10_ohmbv"]
 [ext_resource type="PackedScene" uid="uid://ceqf1642olh02" path="res://Location/Location_Meshes/sm_home_froges_1.tscn" id="11_uobb6"]
 [ext_resource type="PackedScene" uid="uid://8ath2vu7tkrc" path="res://Location/Location_Meshes/sm_home_froges_2.tscn" id="12_rkqoh"]
 [ext_resource type="PackedScene" uid="uid://cmqmll4nmrary" path="res://Location/Location_Meshes/sm_home_rabbit_1.tscn" id="13_olaql"]
@@ -19,13 +19,10 @@
 [ext_resource type="PackedScene" uid="uid://cqgovex333b2e" path="res://Location/Location_Meshes/sm_home_squirl_2.tscn" id="17_squd4"]
 [ext_resource type="PackedScene" uid="uid://bmj6ewld4jk1h" path="res://Location/Location_Meshes/sm_home_squirl_3.tscn" id="18_2738m"]
 [ext_resource type="PackedScene" uid="uid://bpxt2sgg0rnuy" path="res://Location/Location_Meshes/sm_home_squirl_4.tscn" id="19_b3wxp"]
-[ext_resource type="PackedScene" uid="uid://lwuxv2652d7j" path="res://Location/Location_Meshes/sm_home_wolfs_1.tscn" id="20_1bv2c"]
-[ext_resource type="PackedScene" uid="uid://tfax0wjmb2ao" path="res://Location/Location_Meshes/sm_home_wolfs_2.tscn" id="21_bt38y"]
 [ext_resource type="PackedScene" uid="uid://deb6pcsl0payw" path="res://Location/Location_Meshes/sm_hub.tscn" id="22_b734s"]
-[ext_resource type="PackedScene" uid="uid://dea3ywscsoje8" path="res://Location/Location_Meshes/sm_location.tscn" id="23_08mbt"]
-[ext_resource type="PackedScene" uid="uid://ehojusufcwx2" path="res://Location/Location_Meshes/sm_tree_elki_1.tscn" id="24_d6rob"]
-[ext_resource type="PackedScene" uid="uid://bkilqmwdkxi5q" path="res://Location/Location_Meshes/sm_tree_elki_2.tscn" id="25_v581e"]
-[ext_resource type="PackedScene" uid="uid://ce32gxmaqjij" path="res://Location/Location_Meshes/sm_tree_tree_1.tscn" id="26_blasr"]
+[ext_resource type="PackedScene" uid="uid://b2extpusacvmt" path="res://Location/Location_Meshes/sm_location.tscn" id="23_08mbt"]
+[ext_resource type="PackedScene" uid="uid://ctbxme05cf41x" path="res://Location/Location_Meshes/sm_tree_elki_1.tscn" id="24_d6rob"]
+[ext_resource type="PackedScene" uid="uid://b6j6wcgl8m4d5" path="res://Location/Location_Meshes/sm_tree_elki_2.tscn" id="25_v581e"]
 [ext_resource type="PackedScene" uid="uid://cmnfc7o4vr4c2" path="res://Location/Location_Meshes/sm_tree_tree_2.tscn" id="27_vrjwm"]
 [ext_resource type="PackedScene" uid="uid://b37h4736xqn7" path="res://Location/Location_Meshes/sm_tree_tree_3.tscn" id="28_3pyx1"]
 
@@ -38,18 +35,14 @@
 [node name="SM_Home_bober_3" parent="." unique_id=1791956331 instance=ExtResource("3_8grkf")]
 
 [node name="SM_Home_eji_1" parent="." unique_id=1898805106 instance=ExtResource("4_8x6re")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.060074, 0, 7.962677)
 
 [node name="SM_Home_eji_2" parent="." unique_id=1112614428 instance=ExtResource("5_omyc5")]
 
 [node name="SM_Home_eji_3" parent="." unique_id=1290987173 instance=ExtResource("6_pf4fl")]
+transform = Transform3D(0.27736497, 0, -0.96076465, 0, 1, 0, 0.96076465, 0, 0.27736497, 105.54062, -4.8853283, -213.52867)
 
 [node name="SM_Home_eji_4" parent="." unique_id=349047960 instance=ExtResource("7_w3r0s")]
-
-[node name="SM_Home_foxes_1" parent="." unique_id=1259168738 instance=ExtResource("8_32s0w")]
-
-[node name="SM_Home_foxes_2" parent="." unique_id=1653912272 instance=ExtResource("9_58rij")]
-
-[node name="SM_Home_foxes_3" parent="." unique_id=1014115372 instance=ExtResource("10_ohmbv")]
 
 [node name="SM_Home_froges_1" parent="." unique_id=1006513173 instance=ExtResource("11_uobb6")]
 
@@ -66,22 +59,23 @@
 [node name="SM_Home_squirl_2" parent="." unique_id=2111684010 instance=ExtResource("17_squd4")]
 
 [node name="SM_Home_squirl_3" parent="." unique_id=378633245 instance=ExtResource("18_2738m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.297348, 0, 0)
 
 [node name="SM_Home_squirl_4" parent="." unique_id=727470705 instance=ExtResource("19_b3wxp")]
 
-[node name="SM_Home_wolfs_1" parent="." unique_id=621699158 instance=ExtResource("20_1bv2c")]
+[node name="SM_Home_foxes_1" parent="." unique_id=1963588102 instance=ExtResource("8_32s0w")]
 
-[node name="SM_Home_wolfs_2" parent="." unique_id=256061886 instance=ExtResource("21_bt38y")]
+[node name="SM_Home_foxes_2" parent="." unique_id=843832605 instance=ExtResource("9_58rij")]
+
+[node name="SM_Home_foxes_3" parent="." unique_id=897072004 instance=ExtResource("10_ohmbv")]
+
+[node name="SM_Tree_Elki_1" parent="." unique_id=1026577583 instance=ExtResource("24_d6rob")]
+
+[node name="SM_Tree_Elki_2" parent="." unique_id=1697653733 instance=ExtResource("25_v581e")]
 
 [node name="Sm_hub" parent="." unique_id=162840423 instance=ExtResource("22_b734s")]
 
-[node name="SM_Location" parent="." unique_id=1749979641 instance=ExtResource("23_08mbt")]
-
-[node name="SM_Tree_Elki_1" parent="." unique_id=494702700 instance=ExtResource("24_d6rob")]
-
-[node name="SM_Tree_Elki_2" parent="." unique_id=275724 instance=ExtResource("25_v581e")]
-
-[node name="SM_Tree_Tree_1" parent="." unique_id=1769602490 instance=ExtResource("26_blasr")]
+[node name="SM_Location" parent="." unique_id=1477174123 instance=ExtResource("23_08mbt")]
 
 [node name="SM_Tree_Tree_2" parent="." unique_id=553250805 instance=ExtResource("27_vrjwm")]
 
