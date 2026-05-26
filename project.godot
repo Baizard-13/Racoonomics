@@ -14,6 +14,14 @@ config/name="Racoonomics"
 run/main_scene="uid://b8tnuk3jmf5gt"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[display]
+
+window/vsync/vsync_mode=3
+
+[dotnet]
+
+project/assembly_name="Racoonomics"
+
 [input]
 
 w={
@@ -68,8 +76,13 @@ e={
 
 [physics]
 
+common/physics_jitter_fix=0.0
 3d/physics_engine="Jolt Physics"
+common/physics_interpolation=true
 
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+anti_aliasing/quality/msaa_3d=1
+anti_aliasing/quality/use_debanding=true
+anti_aliasing/quality/screen_space_aa=2
