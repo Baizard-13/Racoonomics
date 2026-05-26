@@ -1,17 +1,61 @@
 [gd_scene format=3 uid="uid://b8tnuk3jmf5gt"]
 
 [ext_resource type="PackedScene" uid="uid://birm65xx2g784" path="res://Game/Main_Lock.tscn" id="1_vju3g"]
+[ext_resource type="PackedScene" uid="uid://bu4ik4j52immm" path="res://Grid/scenes/grid_region.tscn" id="2_34a2q"]
 [ext_resource type="Script" uid="uid://b88krc8w61x6i" path="res://Location/cameralogic.gd" id="2_u6sc3"]
+[ext_resource type="PackedScene" uid="uid://bq55y3n2nyd0" path="res://Grid/scenes/world_grid.tscn" id="3_tnktr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u6sc3"]
+ground_bottom_color = Color(0.37301219, 0.68417555, 0.812935, 1)
+ground_horizon_color = Color(0.37301219, 0.68417555, 0.812935, 1)
+
+[sub_resource type="Sky" id="Sky_tnktr"]
+sky_material = SubResource("ProceduralSkyMaterial_u6sc3")
+
+[sub_resource type="Environment" id="Environment_34a2q"]
+background_mode = 2
+sky = SubResource("Sky_tnktr")
+tonemap_mode = 2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vju3g"]
 radius = 3.288
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_u6sc3"]
+size = Vector3(596.9275, 316.57446, 1)
+
 [node name="Location" type="Node3D" unique_id=668207517]
+
+[node name="WorldGrid" parent="." unique_id=1294225932 instance=ExtResource("3_tnktr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4246826, 0, 0)
+cell_size = Vector2(10, 10)
+
+[node name="GridRegion" parent="WorldGrid" unique_id=1793561490 instance=ExtResource("2_34a2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 0, -5)
+origin = Vector2i(-18, -13)
+size = Vector2i(17, 25)
+
+[node name="GridRegion4" parent="WorldGrid" unique_id=1440203446 instance=ExtResource("2_34a2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, -5)
+origin = Vector2i(5, -13)
+size = Vector2i(17, 25)
+
+[node name="GridRegion2" parent="WorldGrid" unique_id=1926414541 instance=ExtResource("2_34a2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 0, -155)
+origin = Vector2i(-13, -18)
+size = Vector2i(5, 5)
+
+[node name="GridRegion3" parent="WorldGrid" unique_id=1027696517 instance=ExtResource("2_34a2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205, 0, 55)
+origin = Vector2i(-23, 4)
+size = Vector2i(5, 5)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=595020413]
+environment = SubResource("Environment_34a2q")
 
 [node name="Environment" parent="." unique_id=1531277812 instance=ExtResource("1_vju3g")]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1858140852]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.295956, 60.80642, -0.37407875)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.10631, 55.47648, 22.76151)
 script = ExtResource("2_u6sc3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=271896591]
@@ -19,10 +63,42 @@ transform = Transform3D(1, 0, 0, 0, 0.73932576, -0.6733481, 0, 0.6733481, 0.7393
 shape = SubResource("SphereShape3D_vju3g")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=853344049]
-transform = Transform3D(1, 0, 0, 0, 0.8594065, 0.511293, 0, -0.511293, 0.8594065, 0, -11.15921, 0)
+transform = Transform3D(1, 0, 0, 0, 0.8594065, 0.511293, 0, -0.511293, 0.8594065, 0, 21.661226, 35.662178)
 current = true
 fov = 45.0
 size = 100.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1060950206]
-transform = Transform3D(1, 0, 0, 0, -0.99843097, 0.05599591, 0, -0.05599591, -0.99843097, 0, 0, 0)
+transform = Transform3D(-0.5591928, -0.66122705, -0.5000821, 0, -0.6032079, 0.7975839, -0.82903767, 0.44600314, 0.3373095, 0, 0, 0)
+light_color = Color(0.99215686, 0.9647059, 0.6117647, 1)
+light_specular = 0.0
+
+[node name="borders" type="Node3D" parent="." unique_id=1220244462]
+
+[node name="walls" type="StaticBody3D" parent="borders" unique_id=856842441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -200.12842)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls" unique_id=401334796]
+shape = SubResource("BoxShape3D_u6sc3")
+debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[node name="walls2" type="StaticBody3D" parent="borders" unique_id=1017103905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 192.5816)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls2" unique_id=294652517]
+shape = SubResource("BoxShape3D_u6sc3")
+debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[node name="walls3" type="StaticBody3D" parent="borders" unique_id=171861434]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.512878, 0, -2.9671478)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls3" unique_id=86392846]
+shape = SubResource("BoxShape3D_u6sc3")
+debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[node name="walls4" type="StaticBody3D" parent="borders" unique_id=630387140]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 236.05988, 0, -30.90267)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls4" unique_id=1993239243]
+shape = SubResource("BoxShape3D_u6sc3")
+debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bq55y3n2nyd0"]
+
+[ext_resource type="Script" uid="uid://c07fordd86c4r" path="res://Grid/scripts/world_grid.gd" id="1_xqrfh"]
+
+[node name="WorldGrid" type="Node3D" unique_id=1294225932]
+script = ExtResource("1_xqrfh")
+
+[node name="Buildings" type="Node3D" parent="." unique_id=1244849229]
