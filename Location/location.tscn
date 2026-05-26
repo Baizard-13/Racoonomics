@@ -17,18 +17,6 @@ background_mode = 2
 sky = SubResource("Sky_tnktr")
 tonemap_mode = 2
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u6sc3"]
-ground_bottom_color = Color(0.37301219, 0.68417555, 0.812935, 1)
-ground_horizon_color = Color(0.37301219, 0.68417555, 0.812935, 1)
-
-[sub_resource type="Sky" id="Sky_tnktr"]
-sky_material = SubResource("ProceduralSkyMaterial_u6sc3")
-
-[sub_resource type="Environment" id="Environment_34a2q"]
-background_mode = 2
-sky = SubResource("Sky_tnktr")
-tonemap_mode = 2
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_vju3g"]
 radius = 3.288
 
@@ -41,22 +29,47 @@ size = Vector3(596.9275, 316.57446, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4246826, 0, 0)
 cell_size = Vector2(10, 10)
 
-[node name="GridRegion" parent="WorldGrid" unique_id=1793561490 instance=ExtResource("2_34a2q")]
+[node name="WestRegion" parent="WorldGrid" unique_id=1793561490 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 0, -5)
 origin = Vector2i(-18, -13)
 size = Vector2i(17, 25)
 
-[node name="GridRegion4" parent="WorldGrid" unique_id=1440203446 instance=ExtResource("2_34a2q")]
+[node name="EastRegion" parent="WorldGrid" unique_id=1440203446 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, -5)
 origin = Vector2i(5, -13)
 size = Vector2i(17, 25)
 
-[node name="GridRegion2" parent="WorldGrid" unique_id=1926414541 instance=ExtResource("2_34a2q")]
+[node name="WolfRegion" parent="WorldGrid" unique_id=1926414541 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 0, -155)
 origin = Vector2i(-13, -18)
 size = Vector2i(5, 5)
 
-[node name="GridRegion3" parent="WorldGrid" unique_id=1027696517 instance=ExtResource("2_34a2q")]
+[node name="FrogRegion" parent="WorldGrid" unique_id=1323396244 instance=ExtResource("2_34a2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, 145)
+origin = Vector2i(-10, 13)
+size = Vector2i(5, 5)
+
+[node name="BeaverRegion" parent="WorldGrid" unique_id=7218940 instance=ExtResource("2_34a2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 0, -155)
+origin = Vector2i(8, -18)
+size = Vector2i(5, 5)
+
+[node name="RaccoonRegion" parent="WorldGrid" unique_id=337522427 instance=ExtResource("2_34a2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 235, 0, -115)
+origin = Vector2i(22, -14)
+size = Vector2i(5, 5)
+
+[node name="SquirrelRegion" parent="WorldGrid" unique_id=1937956173 instance=ExtResource("2_34a2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 235, 0, 15)
+origin = Vector2i(22, 0)
+size = Vector2i(5, 5)
+
+[node name="HareRegion" parent="WorldGrid" unique_id=388067982 instance=ExtResource("2_34a2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135, 0, 145)
+origin = Vector2i(12, 13)
+size = Vector2i(5, 5)
+
+[node name="FoxRegion" parent="WorldGrid" unique_id=1027696517 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205, 0, 55)
 origin = Vector2i(-23, 4)
 size = Vector2i(5, 5)
