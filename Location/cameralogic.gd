@@ -8,15 +8,15 @@ extends CharacterBody3D
 func _physics_process(_delta: float) -> void:
 	var rot = Input.get_axis("e", "q")
 	rotation.y += 0.05 * rot
-
+	
 	if Input.is_action_pressed("shift"):
 		speedmultiplier = 2.0
 	else :
 		speedmultiplier = 1.0
-
+	
 	var input_dir = Input.get_vector("a", "d", "w", "s") * speed * speedmultiplier
 	var move_dir = Vector3(input_dir.x, 0, input_dir.y)
-
+	
 	velocity = move_dir.rotated(Vector3.UP, rotation.y)
 
 	move_and_slide()

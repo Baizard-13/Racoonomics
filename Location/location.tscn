@@ -17,6 +17,18 @@ background_mode = 2
 sky = SubResource("Sky_tnktr")
 tonemap_mode = 2
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u6sc3"]
+ground_bottom_color = Color(0.37301219, 0.68417555, 0.812935, 1)
+ground_horizon_color = Color(0.37301219, 0.68417555, 0.812935, 1)
+
+[sub_resource type="Sky" id="Sky_tnktr"]
+sky_material = SubResource("ProceduralSkyMaterial_u6sc3")
+
+[sub_resource type="Environment" id="Environment_34a2q"]
+background_mode = 2
+sky = SubResource("Sky_tnktr")
+tonemap_mode = 2
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_vju3g"]
 radius = 3.288
 
