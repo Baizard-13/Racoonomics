@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://blbmekimot315"]
+
+[ext_resource type="PackedScene" uid="uid://birm65xx2g784" path="res://Game/Main_Lock.tscn" id="1_co7es"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aiwpg"]
+size = Vector3(596.9275, 316.57446, 1)
+
+[node name="loka" type="Node3D" unique_id=202104415]
+
+[node name="Environment" parent="." unique_id=1531277812 instance=ExtResource("1_co7es")]
+
+[node name="borders" type="Node3D" parent="." unique_id=795368541]
+
+[node name="walls" type="StaticBody3D" parent="borders" unique_id=2129717633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -200.12842)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls" unique_id=733429162]
+shape = SubResource("BoxShape3D_aiwpg")
+debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[node name="walls2" type="StaticBody3D" parent="borders" unique_id=1957912144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 192.5816)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls2" unique_id=1692159016]
+shape = SubResource("BoxShape3D_aiwpg")
+debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[node name="walls3" type="StaticBody3D" parent="borders" unique_id=2108600614]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.512878, 0, -2.9671478)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls3" unique_id=1395715612]
+shape = SubResource("BoxShape3D_aiwpg")
+debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[node name="walls4" type="StaticBody3D" parent="borders" unique_id=1300831902]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 236.05988, 0, -30.90267)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls4" unique_id=1224057016]
+shape = SubResource("BoxShape3D_aiwpg")
+debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1886248541]
+transform = Transform3D(1, 0, 0, 0, 0.60514116, 0.7961182, 0, -0.7961182, 0.60514116, 0, 119.15112, 0)

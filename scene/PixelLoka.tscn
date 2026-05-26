@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://ctbs1r5hd2ia8"]
+
+[ext_resource type="PackedScene" uid="uid://birm65xx2g784" path="res://Game/Main_Lock.tscn" id="1_tmwvo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aiwpg"]
+size = Vector3(596.9275, 316.57446, 1)
+
+[node name="Node3D" type="Node3D" unique_id=786837063]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1965199910]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1435368941]
+handle_input_locally = false
+size = Vector2i(576, 324)
+render_target_update_mode = 4
+
+[node name="loka" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=658603439]
+
+[node name="Environment" parent="SubViewportContainer/SubViewport/loka" unique_id=1531277812 instance=ExtResource("1_tmwvo")]
+
+[node name="borders" type="Node3D" parent="SubViewportContainer/SubViewport/loka" unique_id=1164291107]
+
+[node name="walls" type="StaticBody3D" parent="SubViewportContainer/SubViewport/loka/borders" unique_id=1424573133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -200.12842)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/loka/borders/walls" unique_id=942668830]
+shape = SubResource("BoxShape3D_aiwpg")
+debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[node name="walls2" type="StaticBody3D" parent="SubViewportContainer/SubViewport/loka/borders" unique_id=766377050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 192.5816)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/loka/borders/walls2" unique_id=189990669]
+shape = SubResource("BoxShape3D_aiwpg")
+debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[node name="walls3" type="StaticBody3D" parent="SubViewportContainer/SubViewport/loka/borders" unique_id=1270510474]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.512878, 0, -2.9671478)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/loka/borders/walls3" unique_id=1742357905]
+shape = SubResource("BoxShape3D_aiwpg")
+debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[node name="walls4" type="StaticBody3D" parent="SubViewportContainer/SubViewport/loka/borders" unique_id=2003539287]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 236.05988, 0, -30.90267)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/loka/borders/walls4" unique_id=2086512802]
+shape = SubResource("BoxShape3D_aiwpg")
+debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/loka" unique_id=327730377]
+transform = Transform3D(1, 0, 0, 0, 0.60514116, 0.7961182, 0, -0.7961182, 0.60514116, 0, 119.15112, 0)
