@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://pfh4q76egj74"]
+
+[ext_resource type="Script" uid="uid://7k3dykam5d6i" path="res://Grid/scripts/building.gd" id="1_tblqq"]
+
+[sub_resource type="Shader" id="Shader_tblqq"]
+code = "shader_type spatial;
+render_mode unshaded, cull_disabled;
+
+uniform float line_width_px;
+uniform float line_density;
+uniform vec4 line_color : source_color;
+uniform vec4 bg_color : source_color;
+
+void vertex() {
+	UV.y = VERTEX.y;
+}
+
+void fragment() {
+	if (abs(UV.y) > 0.4999) discard;
+	float diag = UV.x + UV.y;
+
+	float uv_deriv = fwidth(diag);
+
+	float dist = abs(fract(diag * line_density) - 0.5);
+	float threshold = (line_width_px * uv_deriv) * 0.5 * line_density;
+
+	float alpha = 1.0 - smoothstep(threshold - uv_deriv * line_density * 0.5, threshold + uv_deriv * line_density * 0.5, dist);
+
+	ALBEDO = mix(bg_color.rgb, line_color.rgb, alpha);
+	ALPHA = mix(bg_color.a, line_color.a, alpha);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_urhpk"]
+render_priority = 0
+shader = SubResource("Shader_tblqq")
+shader_parameter/line_width_px = 0.5
+shader_parameter/line_density = 12.015
+shader_parameter/line_color = Color(0.98, 0.5461867, 0.16660002, 0.34901962)
+shader_parameter/bg_color = Color(0.9411765, 0.5764706, 0.101960786, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tblqq"]
+resource_local_to_scene = true
+
+[node name="Building" type="Node3D" unique_id=155364411]
+script = ExtResource("1_tblqq")
+
+[node name="MeshBoundsVisualizer" type="MeshInstance3D" parent="." unique_id=1486330635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("ShaderMaterial_urhpk")
+mesh = SubResource("BoxMesh_tblqq")
+
+[node name="GridUIVisualizer" type="Node3D" parent="." unique_id=926903815]
