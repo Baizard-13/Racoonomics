@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://cqgovex333b2e" path="res://Location/Location_Meshes/sm_home_squirl_2.tscn" id="17_squd4"]
 [ext_resource type="PackedScene" uid="uid://bmj6ewld4jk1h" path="res://Location/Location_Meshes/sm_home_squirl_3.tscn" id="18_2738m"]
 [ext_resource type="PackedScene" uid="uid://bpxt2sgg0rnuy" path="res://Location/Location_Meshes/sm_home_squirl_4.tscn" id="19_b3wxp"]
+[ext_resource type="PackedScene" uid="uid://bpn48x6ivg5xy" path="res://Location/Location_Meshes/sm_home_wolfs_1.tscn" id="20_1bv2c"]
+[ext_resource type="PackedScene" uid="uid://uohyrx0w1151" path="res://Location/Location_Meshes/sm_home_wolfs_2.tscn" id="21_bt38y"]
 [ext_resource type="PackedScene" uid="uid://deb6pcsl0payw" path="res://Location/Location_Meshes/sm_hub.tscn" id="22_b734s"]
 [ext_resource type="PackedScene" uid="uid://b2extpusacvmt" path="res://Location/Location_Meshes/sm_location.tscn" id="23_08mbt"]
 [ext_resource type="PackedScene" uid="uid://ctbxme05cf41x" path="res://Location/Location_Meshes/sm_tree_elki_1.tscn" id="24_d6rob"]
@@ -76,6 +78,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.297348, 0, 0)
 [node name="Sm_hub" parent="." unique_id=162840423 instance=ExtResource("22_b734s")]
 
 [node name="SM_Location" parent="." unique_id=1477174123 instance=ExtResource("23_08mbt")]
+
+[node name="SM_Home_wolfs_3" parent="." unique_id=2071458005 instance=ExtResource("20_1bv2c")]
+
+[node name="SM_Home_wolfs_4" parent="." unique_id=1577740449 instance=ExtResource("21_bt38y")]
+transform = Transform3D(0.9994333, 0, 0.03366104, 0, 1, 0, -0.03366104, 0, 0.9994333, 0, 0, -4.1118546)
 
 [node name="SM_Tree_Tree_2" parent="." unique_id=553250805 instance=ExtResource("27_vrjwm")]
 
