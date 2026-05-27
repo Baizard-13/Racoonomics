@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bu4ik4j52immm" path="res://Grid/scenes/grid_region.tscn" id="2_34a2q"]
 [ext_resource type="Script" uid="uid://b88krc8w61x6i" path="res://Location/cameralogic.gd" id="2_u6sc3"]
 [ext_resource type="PackedScene" uid="uid://bq55y3n2nyd0" path="res://Grid/scenes/world_grid.tscn" id="3_tnktr"]
+[ext_resource type="Script" uid="uid://cyfhjwceljlyj" path="res://script/FarmWork.gd" id="5_wlodm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u6sc3"]
 ground_bottom_color = Color(0.37301219, 0.68417555, 0.812935, 1)
@@ -92,6 +93,7 @@ transform = Transform3D(1, 0, 0, 0, 0.8594065, 0.511293, 0, -0.511293, 0.8594065
 current = true
 fov = 45.0
 size = 100.0
+script = ExtResource("5_wlodm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1060950206]
 transform = Transform3D(-0.5591928, -0.66122705, -0.5000821, 0, -0.6032079, 0.7975839, -0.82903767, 0.44600314, 0.3373095, 0, 0, 0)

@@ -14,6 +14,10 @@ config/name="Racoonomics"
 run/main_scene="uid://b8tnuk3jmf5gt"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+Global="*uid://odxwmfgia4jl"
+
 [display]
 
 window/vsync/vsync_mode=3
