@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmj6ewld4jk1h"]
 
 [ext_resource type="PackedScene" uid="uid://djqrlfqe6qco3" path="res://Lock/SM_Home_squirl_3.fbx" id="1_22iu8"]
-[ext_resource type="Texture2D" uid="uid://cjt7hswa0waa4" path="res://Textures/Location/Belka1.png" id="2_b3277"]
+[ext_resource type="Texture2D" uid="uid://cfjn4pwxoiat5" path="res://Textures/Location/Belka4.png" id="2_b3277"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fyf1"]
 albedo_texture = ExtResource("2_b3277")

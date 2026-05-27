@@ -30,7 +30,7 @@ size = Vector3(596.9275, 316.57446, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4246826, 0, 0)
 cell_size = Vector2(10, 10)
 
-[node name="WestRegion" parent="WorldGrid" unique_id=1793561490 instance=ExtResource("2_34a2q")]
+[node name="WestRegion" parent="WorldGrid" unique_id=1534974895 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 0, -5)
 origin = Vector2i(-18, -13)
 size = Vector2i(17, 25)
@@ -41,8 +41,8 @@ origin = Vector2i(5, -13)
 size = Vector2i(17, 25)
 
 [node name="WolfRegion" parent="WorldGrid" unique_id=1926414541 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 0, -155)
-origin = Vector2i(-13, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 0, -155)
+origin = Vector2i(-11, -18)
 size = Vector2i(5, 5)
 
 [node name="FrogRegion" parent="WorldGrid" unique_id=1323396244 instance=ExtResource("2_34a2q")]

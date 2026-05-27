@@ -2,7 +2,7 @@
 class_name GridRegion
 extends Node3D
 
-## gridspace top-left
+## gridspace top-left (don't modify this directly, instead move the region in the editor and use the snap button)
 @export var origin : Vector2i
 @export var size := Vector2i.ONE:
 	set(value):
@@ -16,6 +16,16 @@ extends Node3D
 
 func contains(cell: Vector2i) -> bool:
 	return cell.x >= origin.x and cell.x < origin.x + size.x and cell.y >= origin.y and cell.y < origin.y + size.y
+
+func get_cells() -> Array[Vector2i]:
+	var cells : Array[Vector2i]
+	for x in range(origin.x, origin.x + size.x):
+		for y in range(origin.y, origin.y + size.y):
+			cells.append(Vector2i(x, y))
+	return cells
+
+func get_bounds() -> Rect2i:
+	return Rect2i(origin, size)
 
 func _ready() -> void:
 	if !Engine.is_editor_hint():
@@ -56,7 +66,7 @@ func _editor_update_visualization():
 
 	editor_region_name.text = "%s (%dx%d)" % [name, size.x, size.y]
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	_editor_update_visualization()
 
 func _get_configuration_warnings() -> PackedStringArray:
