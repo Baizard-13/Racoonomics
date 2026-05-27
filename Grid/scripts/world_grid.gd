@@ -51,11 +51,14 @@ func get_building_at_cell(cell: Vector2i) -> StringName:
 	return ""
 
 func try_place_building(building: Building) -> bool:
-    var building_cells = building.get_cells()
-    for cell in building_cells:
-        if !valid_cells.has(cell) or occupied_cells.has(cell):
-            return false
+	var building_cells = building.get_cells()
+	for cell in building_cells:
+		if !valid_cells.has(cell) or occupied_cells.has(cell):
+			return false
 
-    var building_rect = Rect2i(building.origin_cell, building.dimensions)
-    _occupy_rect(building_rect, building.title)
-    return true
+	var building_rect = Rect2i(building.origin_cell, building.dimensions)
+	_occupy_rect(building_rect, building.title)
+	if building.get_parent() != self:
+		add_child(building)
+
+	return true

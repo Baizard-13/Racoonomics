@@ -1,9 +1,9 @@
 @icon ("res://Images/paintdotnet_y9vSMDoCGH.png")
-extends Resource
 class_name Farm
+extends Resource
 
 @export_category("Данные фермы")
-@export var product_type:Global.prod_types ##тип продукта
+#@export var product_type:Global.prod_types ##тип продукта
 @export var prod_count_per_timer: int = 0 ##Количество выработки продукта в сек
 @export var prod_timer_lvl_1: float = 3 ##Время таймера lvl1 секунды
 @export var prod_timer_lvl_2: float = 1 ##Время таймера lvl2 минуты

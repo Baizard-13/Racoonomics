@@ -1,5 +1,5 @@
 extends Node
-var current_farm: Farm = preload("res://resourse/CarrotFarm.tres")
+var current_farm: Farm = preload("res://resources/CarrotFarm.tres")
 var timer_active: bool = true
 var time_accumulator: float = 0.0
 
