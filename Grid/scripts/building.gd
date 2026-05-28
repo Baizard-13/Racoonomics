@@ -2,8 +2,11 @@
 class_name Building
 extends Node3D
 
-@export var title := "Unnamed Building"
-@export var dimensions := Vector2i.ONE # for the sake of my sanity we will assume the grid size is 1x1m.
+@export var title := "Unnamed Building" # probably not great to duplicate these across both Building and BuildingDefinition, but i can't think of another way to avoid a circular dependency. if you can, please do
+@export var dimensions := Vector2i.ONE: # for the sake of my sanity we will assume the grid size is 1x1m
+	set(value):
+		dimensions = value
+		_update_editor_vis()
 ## world-space origin
 @export var origin_cell := Vector2i.ZERO
 @export var invalid_cells : Array[Vector2i]
@@ -25,8 +28,9 @@ func get_port_at_cell(cell: Vector2i) -> BuildingPort:
 			return port
 	return null
 
-# func tick() -> void:
-# 	print("someone didn't override tick(), please do (building %s)" % name)
+func _ready() -> void:
+	if !Engine.is_editor_hint():
+		mesh_bounds_visualizer.queue_free()
 
 # wherever these will eventually be called, they must be called in this order specifically
 func tick_produce() -> void:
@@ -39,8 +43,9 @@ func tick_consume() -> void:
 	pass
 
 
-func update_editor_vis() -> void:
-	pass
+func _update_editor_vis() -> void:
+	if !Engine.is_editor_hint():
+		return
 
 func _rebuild_ports():
-	pass
+	pass # may or may not be needed
