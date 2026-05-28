@@ -103,17 +103,17 @@ environment = SubResource("Environment_34a2q")
 [node name="Environment" parent="." unique_id=1531277812 instance=ExtResource("1_vju3g")]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1858140852]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.10631, 55.47648, 22.76151)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.7071068, 0, -0.7071068, 0.70710677, 113.10631, -0.5235214, 22.76151)
 script = ExtResource("2_u6sc3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=271896591]
-transform = Transform3D(1, 0, 0, 0, 0.73932576, -0.6733481, 0, 0.6733481, 0.73932576, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 shape = SubResource("SphereShape3D_vju3g")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=853344049]
-transform = Transform3D(1, 0, 0, 0, 0.8594065, 0.511293, 0, -0.511293, 0.8594065, 0, 21.661226, 35.662178)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 250)
 current = true
-fov = 45.0
+fov = 30.0
 size = 100.0
 script = ExtResource("5_wlodm")
 
@@ -122,7 +122,9 @@ transform = Transform3D(-0.5591928, -0.66122705, -0.5000821, 0, -0.6032079, 0.79
 light_color = Color(0.99, 0.86212504, 0.7425, 1)
 light_energy = 0.3
 light_specular = 0.0
-directional_shadow_max_distance = 300.0
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_max_distance = 600.0
 
 [node name="borders" type="Node3D" parent="." unique_id=1220244462]
 

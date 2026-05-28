@@ -3,6 +3,8 @@ class_name Building
 extends Node3D
 
 @export var title := "Unnamed Building" # probably not great to duplicate these across both Building and BuildingDefinition, but i can't think of another way to avoid a circular dependency. if you can, please do
+
+## DEV NOTE add 2 to both dimensions if the building needs margins
 @export var dimensions := Vector2i.ONE:
 	set(value):
 		dimensions = value
@@ -22,6 +24,7 @@ extends Node3D
 		if is_inside_tree():
 			var grid := get_parent() as WorldGrid
 			position = grid.cell_to_world(origin_cell)
+			reset_physics_interpolation()
 @export var invalid_cells : Array[Vector2i]
 @export var is_active := false
 @export var is_ghost := false
