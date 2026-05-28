@@ -17,4 +17,5 @@ func get_building_instance() -> Building:
 	building.title = title
 	building.dimensions = dimensions
 	building.ports = ports.duplicate(true)
+
 	return building

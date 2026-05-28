@@ -17,4 +17,5 @@ enum PortType {
 			return
 
 		facing = value
+
 @export var storage : ItemStorage

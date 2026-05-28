@@ -7,6 +7,7 @@ extends Resource
 @export var is_input : bool = true
 @export var is_output : bool = true
 
+@export_category("Runtime state (don't edit)")
 @export var items : Array[Item] = []
 @export var filled_capacity : int = 0
 
