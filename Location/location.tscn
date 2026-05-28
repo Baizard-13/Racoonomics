@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://b8tnuk3jmf5gt"]
 
+[ext_resource type="Script" uid="uid://cy0hh14lclptf" path="res://scripts/build_mode_controller.gd" id="1_qifc2"]
 [ext_resource type="PackedScene" uid="uid://birm65xx2g784" path="res://Game/Main_Lock.tscn" id="1_vju3g"]
 [ext_resource type="PackedScene" uid="uid://bu4ik4j52immm" path="res://Grid/scenes/grid_region.tscn" id="2_34a2q"]
 [ext_resource type="Script" uid="uid://b88krc8w61x6i" path="res://Location/cameralogic.gd" id="2_u6sc3"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_uiog4"]
+[ext_resource type="Resource" uid="uid://c8lmno2gm42xg" path="res://buildings/data/2x2_test_building.tres" id="3_34ytl"]
 [ext_resource type="PackedScene" uid="uid://bq55y3n2nyd0" path="res://Grid/scenes/world_grid.tscn" id="3_tnktr"]
 [ext_resource type="Script" uid="uid://cyfhjwceljlyj" path="res://scripts/FarmWork.gd" id="5_wlodm"]
 
@@ -25,6 +28,12 @@ radius = 3.288
 size = Vector3(596.9275, 316.57446, 1)
 
 [node name="Location" type="Node3D" unique_id=668207517]
+
+[node name="BuildModeController" type="Node" parent="." unique_id=859596041 node_paths=PackedStringArray("grid", "camera")]
+script = ExtResource("1_qifc2")
+buildings = Array[ExtResource("2_uiog4")]([ExtResource("3_34ytl")])
+grid = NodePath("../WorldGrid")
+camera = NodePath("../CharacterBody3D/Camera3D")
 
 [node name="WorldGrid" parent="." unique_id=1294225932 instance=ExtResource("3_tnktr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4246826, 0, 0)

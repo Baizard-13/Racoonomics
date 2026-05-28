@@ -3,14 +3,17 @@ class_name Building
 extends Node3D
 
 @export var title := "Unnamed Building" # probably not great to duplicate these across both Building and BuildingDefinition, but i can't think of another way to avoid a circular dependency. if you can, please do
-@export var dimensions := Vector2i.ONE: # for the sake of my sanity we will assume the grid size is 1x1m
+@export var dimensions := Vector2i.ONE:
 	set(value):
 		dimensions = value
 		_update_editor_vis()
+@export var grid_size := 10.0 # for the sake of my sanity we will assume this is fixed
+@export var bound_vis_padding := 0.01
+@export var ports : Array[BuildingPort]
+
 ## world-space origin
 @export var origin_cell := Vector2i.ZERO
 @export var invalid_cells : Array[Vector2i]
-@export var ports : Array[BuildingPort]
 
 @onready var mesh_bounds_visualizer: MeshInstance3D = $MeshBoundsVisualizer
 
@@ -46,6 +49,9 @@ func tick_consume() -> void:
 func _update_editor_vis() -> void:
 	if !Engine.is_editor_hint():
 		return
+
+	if mesh_bounds_visualizer:
+		mesh_bounds_visualizer.scale = Vector3(dimensions.x * grid_size + bound_vis_padding, 1, dimensions.y * grid_size + bound_vis_padding)
 
 func _rebuild_ports():
 	pass # may or may not be needed

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3 uid="uid://c8lmno2gm42xg"]
+
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_fo1qw"]
+[ext_resource type="PackedScene" uid="uid://c5rso41ppea5t" path="res://buildings/scenes/2x2_test_building.tscn" id="1_ow1o2"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_ow1o2"]
+[ext_resource type="Texture2D" uid="uid://lvkxuttx5mj7" path="res://Images/paintdotnet_y9vSMDoCGH.png" id="4_r84fs"]
+
+[resource]
+script = ExtResource("2_ow1o2")
+title = "2x2 Placeholder"
+shop_icon = ExtResource("4_r84fs")
+dimensions = Vector2i(2, 2)
+building_scene = ExtResource("1_ow1o2")
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"
