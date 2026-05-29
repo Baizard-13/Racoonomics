@@ -4,11 +4,11 @@ extends Node3D
 
 @export var title := "Unnamed Building" # probably not great to duplicate these across both Building and BuildingDefinition, but i can't think of another way to avoid a circular dependency. if you can, please do
 
-## DEV NOTE add 2 to both dimensions if the building needs margins
 @export var dimensions := Vector2i.ONE:
 	set(value):
 		dimensions = value
 		_update_editor_vis()
+@export var clearance := 1
 @export var grid_size := 10.0 # for the sake of my sanity we will assume this is fixed
 @export var bound_vis_padding := 0.01
 @export var ports : Array[BuildingPort]

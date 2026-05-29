@@ -6,6 +6,7 @@ extends Resource
 @export var shop_icon : Texture2D
 
 @export var dimensions := Vector2i.ONE
+@export var clearance := 1
 @export var ports : Array[BuildingPort]
 @export var building_scene : PackedScene
 

@@ -28,6 +28,7 @@ _surfaces = [{
 [node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_w2xy1")]
 title = "2x2 Placeholder"
 dimensions = Vector2i(2, 2)
+clearance = 1
 meshes = [NodePath("CSGBakedMeshInstance3D")]
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]

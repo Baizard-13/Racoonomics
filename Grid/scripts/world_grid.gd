@@ -6,6 +6,8 @@ extends Node3D
 @export_category("Runtime state (don't edit)")
 @export var region_bounds : Array[Rect2i]
 @export var occupied_bounds : Array[Rect2i]
+@export var draw_grid := false
+#@export var draw_
 
 var valid_cells : Dictionary[Vector2i, bool]
 var occupied_cells : Dictionary[Vector2i, StringName]
@@ -51,6 +53,12 @@ func get_overlap(rect: Rect2i) -> Array[Vector2i]:
 
 	return overlap_cells
 
+func get_overlap_with_clearance(rect: Rect2i, clearance: int) -> Array[Vector2i]:
+	return get_overlap(Rect2i(
+		rect.position - Vector2i(clearance, clearance),
+		rect.size + Vector2i(clearance * 2, clearance * 2)
+	))
+
 func get_building_at_cell(cell: Vector2i) -> StringName:
 	if occupied_cells.has(cell):
 		return occupied_cells[cell]
@@ -61,6 +69,9 @@ func try_place_building(building: Building) -> bool:
 	for cell in building_cells:
 		if !valid_cells.has(cell) or occupied_cells.has(cell):
 			return false
+
+	if get_overlap_with_clearance(Rect2i(building.origin_cell, building.dimensions), building.clearance).size() > 0:
+		return false
 
 	var building_rect = Rect2i(building.origin_cell, building.dimensions)
 	_occupy_rect(building_rect, building.title)

@@ -32,6 +32,13 @@ sky_material = SubResource("ProceduralSkyMaterial_u6sc3")
 background_mode = 2
 sky = SubResource("Sky_tnktr")
 tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_albedo = Color(0.85, 0.85, 0.85, 1)
+volumetric_fog_emission = Color(1, 1, 1, 1)
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_length = 640.0
+volumetric_fog_ambient_inject = 0.2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vju3g"]
 radius = 3.288
@@ -88,8 +95,8 @@ origin = Vector2i(22, 0)
 size = Vector2i(5, 5)
 
 [node name="HareRegion" parent="WorldGrid" unique_id=388067982 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135, 0, 145)
-origin = Vector2i(12, 13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 145)
+origin = Vector2i(11, 13)
 size = Vector2i(5, 5)
 
 [node name="FoxRegion" parent="WorldGrid" unique_id=1027696517 instance=ExtResource("2_34a2q")]
@@ -155,3 +162,5 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 236.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls4" unique_id=1993239243]
 shape = SubResource("BoxShape3D_u6sc3")
 debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=416770268]

@@ -29,7 +29,7 @@ func _process(_delta: float) -> void:
 
 		current_ghost.origin_cell = current_grid_pos
 
-		var is_valid := grid.get_overlap(Rect2i(current_ghost.origin_cell, current_building.dimensions)).is_empty()
+		var is_valid := grid.get_overlap_with_clearance(Rect2i(current_ghost.origin_cell, current_building.dimensions), current_building.clearance).is_empty()
 		current_ghost.set_override_property("is_valid", is_valid)
 
 func enter_build_mode(building_def: BuildingDefinition) -> void:
@@ -71,6 +71,8 @@ func _try_place_building() -> void:
 
 	if !grid.try_place_building(placed_building):
 		placed_building.queue_free()
+	#else:
+		#exit_build_mode()
 
 func _input(event: InputEvent) -> void:
 	if !current_building or !current_ghost:
