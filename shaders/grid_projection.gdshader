@@ -9,7 +9,6 @@ uniform vec2 grid_size = vec2(10.0, 10.0);
 uniform vec3 world_offset;
 
 void fragment() {
-	vec2 screen_uv = SCREEN_UV;
 	float depth = texture(depth_texture, SCREEN_UV).r;
 
 	vec4 clip_pos = vec4(SCREEN_UV * 2.0 - 1.0, depth, 1.0);

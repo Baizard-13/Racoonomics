@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bq55y3n2nyd0" path="res://Grid/scenes/world_grid.tscn" id="3_tnktr"]
 [ext_resource type="Shader" uid="uid://bdh42ejp2fjcc" path="res://shaders/building_preview.gdshader" id="4_34ytl"]
 [ext_resource type="Script" uid="uid://cyfhjwceljlyj" path="res://scripts/FarmWork.gd" id="5_wlodm"]
+[ext_resource type="Shader" uid="uid://dsb3hnoj25nhm" path="res://shaders/blueprint_postprocess.gdshader" id="5_yx7wv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uiog4"]
 render_priority = 5
@@ -20,6 +21,29 @@ shader_parameter/wire_color_valid = Color(1.8247963, 1.8247963, 1.8247963, 1)
 shader_parameter/fill_color_valid = Color(1, 1, 1, 0.16862746)
 shader_parameter/wire_color_invalid = Color(1.8247963, 0.2924505, 0.36906803, 1)
 shader_parameter/fill_color_invalid = Color(1, 0.13999999, 0.15433311, 0.59607846)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yx7wv"]
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_yx7wv"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.078877, 0.8783423, 1)
+colors = PackedColorArray(0.007500002, 0.009875036, 0.15, 1, 0.03720002, 0.14136012, 0.93, 1, 0.65, 0.96500003, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_eoaun"]
+gradient = SubResource("Gradient_yx7wv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eoaun"]
+render_priority = 0
+shader = ExtResource("5_yx7wv")
+shader_parameter/color_palette_gradient = SubResource("GradientTexture1D_eoaun")
+shader_parameter/transition_threshold = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_yx7wv"]
+material = SubResource("ShaderMaterial_eoaun")
+flip_faces = true
+size = Vector2(2, 2)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u6sc3"]
 ground_bottom_color = Color(0.37301219, 0.68417555, 0.812935, 1)
@@ -54,6 +78,23 @@ buildings = Array[ExtResource("2_uiog4")]([ExtResource("3_34ytl")])
 grid = NodePath("../WorldGrid")
 camera = NodePath("../CharacterBody3D/Camera3D")
 building_ghost_material = SubResource("ShaderMaterial_uiog4")
+
+[node name="DevButtonPrompt" type="CanvasLayer" parent="BuildModeController" unique_id=1221167571]
+
+[node name="Label" type="Label" parent="BuildModeController/DevButtonPrompt" unique_id=785760904]
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 189.0
+offset_bottom = 47.0
+text = "[F]    enter build mode
+[Esc]   exit build mode"
+label_settings = SubResource("LabelSettings_yx7wv")
+
+[node name="PostProcessQuad" type="MeshInstance3D" parent="BuildModeController" unique_id=1197606766]
+visible = false
+cast_shadow = 0
+extra_cull_margin = 500.0
+mesh = SubResource("QuadMesh_yx7wv")
 
 [node name="WorldGrid" parent="." unique_id=1294225932 instance=ExtResource("3_tnktr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4072876, 0, 0)
@@ -130,6 +171,7 @@ light_color = Color(0.99, 0.86212504, 0.7425, 1)
 light_energy = 0.9
 light_specular = 0.0
 shadow_enabled = true
+shadow_bias = 0.01
 directional_shadow_mode = 0
 directional_shadow_max_distance = 600.0
 
@@ -162,5 +204,3 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 236.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls4" unique_id=1993239243]
 shape = SubResource("BoxShape3D_u6sc3")
 debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=416770268]

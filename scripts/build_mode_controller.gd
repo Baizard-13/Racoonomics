@@ -1,5 +1,7 @@
 extends Node
 
+const _2X_2_TEST_BUILDING = preload("uid://c8lmno2gm42xg")
+
 @export var buildings : Array[BuildingDefinition]
 
 @export var grid : WorldGrid
@@ -10,10 +12,10 @@ extends Node
 @export_category("Runtime state (don't edit)")
 @export var current_building : BuildingDefinition = null
 
+@onready var post_process_quad: MeshInstance3D = $PostProcessQuad
+
 var current_ghost : Building
 var current_grid_pos : Vector2i
-
-const _2X_2_TEST_BUILDING = preload("uid://c8lmno2gm42xg")
 
 func _ready() -> void:
 	enter_build_mode(_2X_2_TEST_BUILDING)
@@ -44,10 +46,13 @@ func enter_build_mode(building_def: BuildingDefinition) -> void:
 
 	grid.set_draw_grid(true)
 	grid.add_child(current_ghost)
+	post_process_quad.show()
 
 func exit_build_mode() -> void:
 	current_building = null
 	grid.set_draw_grid(false)
+	post_process_quad.hide()
+	current_grid_pos = Vector2.ZERO
 	if current_ghost:
 		current_ghost.queue_free()
 		current_ghost = null
@@ -78,7 +83,11 @@ func _try_place_building() -> void:
 
 func _input(event: InputEvent) -> void:
 	if !current_building or !current_ghost:
+		if event.is_action_pressed("bm_enter"):
+			enter_build_mode(_2X_2_TEST_BUILDING)
 		return
 
 	if event.is_action_pressed("place_building"):
 		_try_place_building()
+	if event.is_action_pressed("bm_exit"):
+		exit_build_mode()

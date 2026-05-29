@@ -28,6 +28,8 @@ void vertex() {
 			barys = vec3(0.0, 0.0, 1.0);
 			break;
 	}
+
+	VERTEX += NORMAL * (is_valid ? 0.0 : .02);
 }
 
 void fragment() {
