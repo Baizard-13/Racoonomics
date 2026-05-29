@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://cyfhjwceljlyj" path="res://scripts/FarmWork.gd" id="5_wlodm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uiog4"]
-render_priority = 2
+render_priority = 5
 shader = ExtResource("4_34ytl")
 shader_parameter/is_valid = false
 shader_parameter/wire_width = 0.255
@@ -56,52 +56,52 @@ camera = NodePath("../CharacterBody3D/Camera3D")
 building_ghost_material = SubResource("ShaderMaterial_uiog4")
 
 [node name="WorldGrid" parent="." unique_id=1294225932 instance=ExtResource("3_tnktr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4246826, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4072876, 0, 0)
 cell_size = Vector2(10, 10)
 
 [node name="WestRegion" parent="WorldGrid" unique_id=1534974895 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 0, -5)
-origin = Vector2i(-18, -13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 0, -5)
+origin = Vector2i(-18, -12)
 size = Vector2i(17, 25)
 
 [node name="EastRegion" parent="WorldGrid" unique_id=1440203446 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, -5)
-origin = Vector2i(5, -13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 1.8293571, -5)
+origin = Vector2i(4, -12)
 size = Vector2i(17, 25)
 
 [node name="WolfRegion" parent="WorldGrid" unique_id=1926414541 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 0, -155)
-origin = Vector2i(-11, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 0, -155)
+origin = Vector2i(-12, -17)
 size = Vector2i(5, 5)
 
 [node name="FrogRegion" parent="WorldGrid" unique_id=1323396244 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, 145)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 0, 145)
 origin = Vector2i(-10, 13)
 size = Vector2i(5, 5)
 
 [node name="BeaverRegion" parent="WorldGrid" unique_id=7218940 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 0, -155)
-origin = Vector2i(8, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, -0.31860924, -155)
+origin = Vector2i(7, -17)
 size = Vector2i(5, 5)
 
 [node name="RaccoonRegion" parent="WorldGrid" unique_id=337522427 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 235, 0, -115)
-origin = Vector2i(22, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 7.3312454, -115)
+origin = Vector2i(21, -13)
 size = Vector2i(5, 5)
 
 [node name="SquirrelRegion" parent="WorldGrid" unique_id=1937956173 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 235, 0, 15)
-origin = Vector2i(22, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, -0.3942299, 25)
+origin = Vector2i(21, 1)
 size = Vector2i(5, 5)
 
 [node name="HareRegion" parent="WorldGrid" unique_id=388067982 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 145)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, -0.32754517, 145)
 origin = Vector2i(11, 13)
 size = Vector2i(5, 5)
 
 [node name="FoxRegion" parent="WorldGrid" unique_id=1027696517 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205, 0, 55)
-origin = Vector2i(-23, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215, 0, 65)
+origin = Vector2i(-23, 5)
 size = Vector2i(5, 5)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=595020413]
@@ -110,7 +110,7 @@ environment = SubResource("Environment_34a2q")
 [node name="Environment" parent="." unique_id=1531277812 instance=ExtResource("1_vju3g")]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1858140852]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.7071068, 0, -0.7071068, 0.70710677, 113.10631, -0.5235214, 22.76151)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 113.10631, -0.5235214, 22.76151)
 script = ExtResource("2_u6sc3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=271896591]
@@ -127,7 +127,7 @@ script = ExtResource("5_wlodm")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1060950206]
 transform = Transform3D(-0.5591928, -0.66122705, -0.5000821, 0, -0.6032079, 0.7975839, -0.82903767, 0.44600314, 0.3373095, 0, 0, 0)
 light_color = Color(0.99, 0.86212504, 0.7425, 1)
-light_energy = 0.3
+light_energy = 0.9
 light_specular = 0.0
 shadow_enabled = true
 directional_shadow_mode = 0

@@ -42,10 +42,12 @@ func enter_build_mode(building_def: BuildingDefinition) -> void:
 	current_ghost.set_override_property("is_valid", true)
 	current_ghost.is_ghost = true
 
+	grid.set_draw_grid(true)
 	grid.add_child(current_ghost)
 
 func exit_build_mode() -> void:
 	current_building = null
+	grid.set_draw_grid(false)
 	if current_ghost:
 		current_ghost.queue_free()
 		current_ghost = null
@@ -71,8 +73,8 @@ func _try_place_building() -> void:
 
 	if !grid.try_place_building(placed_building):
 		placed_building.queue_free()
-	#else:
-		#exit_build_mode()
+	else:
+		exit_build_mode()
 
 func _input(event: InputEvent) -> void:
 	if !current_building or !current_ghost:

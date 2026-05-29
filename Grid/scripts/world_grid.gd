@@ -14,7 +14,7 @@ var occupied_cells : Dictionary[Vector2i, StringName]
 
 func world_to_cell(world_pos: Vector3) -> Vector2i:
 	var relative_pos : Vector3 = world_pos - global_position
-	return Vector2i(round(relative_pos.x / cell_size.x), round(relative_pos.z / cell_size.y))
+	return Vector2i(floori(relative_pos.x / cell_size.x), floori(relative_pos.z / cell_size.y))
 
 func cell_to_world(cell: Vector2i) -> Vector3:
 	return Vector3(cell.x * cell_size.x, 0, cell.y * cell_size.y)
@@ -54,10 +54,23 @@ func get_overlap(rect: Rect2i) -> Array[Vector2i]:
 	return overlap_cells
 
 func get_overlap_with_clearance(rect: Rect2i, clearance: int) -> Array[Vector2i]:
-	return get_overlap(Rect2i(
-		rect.position - Vector2i(clearance, clearance),
-		rect.size + Vector2i(clearance * 2, clearance * 2)
-	))
+	var overlap_cells : Array[Vector2i]
+
+	for x in range(-clearance, rect.size.x + clearance):
+		for y in range(-clearance, rect.size.y + clearance):
+			var cell := rect.position + Vector2i(x, y)
+			var is_clearance : bool = x < 0 or x >= rect.size.x or y < 0 or y >= rect.size.y
+
+			if (!valid_cells.has(cell) and !is_clearance) or occupied_cells.has(cell):
+				overlap_cells.append(Vector2i(cell))
+
+	return overlap_cells
+
+func set_draw_grid(value: bool) -> void:
+	for child in get_children():
+		if child is GridRegion:
+			var region = child as GridRegion
+			region.set_highlight_grid(value)
 
 func get_building_at_cell(cell: Vector2i) -> StringName:
 	if occupied_cells.has(cell):
@@ -65,12 +78,7 @@ func get_building_at_cell(cell: Vector2i) -> StringName:
 	return ""
 
 func try_place_building(building: Building) -> bool:
-	var building_cells = building.get_cells()
-	for cell in building_cells:
-		if !valid_cells.has(cell) or occupied_cells.has(cell):
-			return false
-
-	if get_overlap_with_clearance(Rect2i(building.origin_cell, building.dimensions), building.clearance).size() > 0:
+	if !get_overlap_with_clearance(Rect2i(building.origin_cell, building.dimensions), building.clearance).is_empty():
 		return false
 
 	var building_rect = Rect2i(building.origin_cell, building.dimensions)

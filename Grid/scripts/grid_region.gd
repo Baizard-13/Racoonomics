@@ -8,9 +8,11 @@ extends Node3D
 	set(value):
 		size = value
 		_editor_update_visualization()
+		#_update_game_view()
 
-@export_tool_button("Snap region to WorldGrid", 'SnapGrid') var snap_button = _editor_snap_self_to_grid
+# @export_tool_button("Snap region to WorldGrid", 'SnapGrid') var snap_button = _editor_snap_self_to_grid # CURSE THIS BUTTON
 
+@onready var game_grid_view: MeshInstance3D = $GameGridView
 @onready var editor_visualizer: MeshInstance3D = $EditorVisualizer
 @onready var editor_region_name: Label3D = $EditorVisualizer/Label3D
 
@@ -31,6 +33,9 @@ func _ready() -> void:
 	if !Engine.is_editor_hint():
 		editor_visualizer.queue_free()
 		set_process(false)
+		_update_game_view()
+	else:
+		set_highlight_grid(true)
 
 func _editor_snap_self_to_grid():
 	var grid = get_parent()
@@ -66,8 +71,26 @@ func _editor_update_visualization():
 
 	editor_region_name.text = "%s (%dx%d)" % [name, size.x, size.y]
 
+func set_highlight_grid(enable: bool) -> void:
+	if enable: _update_game_view()
+	$GameGridView.visible = enable
+
+func _update_game_view() -> void:
+	var grid = get_parent()
+	if grid == null or !(grid is WorldGrid):
+		return
+	if !game_grid_view: game_grid_view = $GameGridView # godot is weird sometimes
+
+	var cell_size : Vector2 = grid.cell_size
+	game_grid_view.mesh.size = Vector3(size.x * cell_size.x, 2.0, size.y * cell_size.y)
+
+	game_grid_view.material_override.set_shader_parameter("grid_size", Vector2(cell_size.x, cell_size.y))
+	game_grid_view.material_override.set_shader_parameter("world_offset", grid.global_position)
+
 func _process(_delta: float) -> void:
-	_editor_update_visualization()
+	if Engine.get_process_frames() % 10 == 0:
+		_update_game_view()
+		_editor_update_visualization()
 
 func _get_configuration_warnings() -> PackedStringArray:
 	var warnings = PackedStringArray()
