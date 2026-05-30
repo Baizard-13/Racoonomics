@@ -2,6 +2,7 @@ extends Node
 
 const _2X_2_TEST_BUILDING = preload("uid://c8lmno2gm42xg")
 
+
 @export var buildings : Array[BuildingDefinition]
 
 @export var grid : WorldGrid
@@ -14,6 +15,7 @@ const _2X_2_TEST_BUILDING = preload("uid://c8lmno2gm42xg")
 
 @onready var post_process_quad: MeshInstance3D = $PostProcessQuad
 @onready var edit_mode_transition: AnimationPlayer = $EditModeTransition
+@onready var money_manager: Node = $"../MoneyManager" 
 
 var current_ghost : Building
 var current_grid_pos : Vector2i
@@ -71,7 +73,7 @@ func _hovered_cell() -> Vector2i:
 	return grid.world_to_cell(intersection)
 
 func _try_place_building() -> void:
-	if !current_building or !current_ghost:
+	if !current_building or !current_ghost or !money_manager.check_cost(current_building.purchase_cost):
 		return
 
 	var placed_building = current_building.get_building_instance()
@@ -79,6 +81,7 @@ func _try_place_building() -> void:
 
 	if !grid.try_place_building(placed_building):
 		placed_building.queue_free()
+		money_manager.money += current_building.purchase_cost
 	#else:
 		#exit_build_mode()
 
