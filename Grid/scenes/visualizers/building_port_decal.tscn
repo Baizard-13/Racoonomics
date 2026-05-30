@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://uf7gdg37kqtl"]
+
+[ext_resource type="Script" uid="uid://domhhxahlgvt4" path="res://scripts/building_port_decal.gd" id="1_4x6nl"]
+[ext_resource type="Texture2D" uid="uid://d4jdvc2iq4sj5" path="res://Images/io_chevrons.svg" id="1_7smi4"]
+
+[node name="Anchor" type="Node3D" unique_id=112382907]
+script = ExtResource("1_4x6nl")
+
+[node name="Decal" type="Decal" parent="." unique_id=413868443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -10)
+layers = 4
+size = Vector3(8, 10, 8)
+texture_emission = ExtResource("1_7smi4")
+modulate = Color(0.13333334, 0.9019608, 0.27450982, 1)
+cull_mask = 2
+
+[node name="Label3D" type="Label3D" parent="Decal" unique_id=1154267065]
+transform = Transform3D(1.9106855e-15, -1, -4.371139e-08, -4.371139e-08, -4.371139e-08, 1, -1, 0, -4.371139e-08, 0, 0, 0)
+pixel_size = 0.05
+no_depth_test = true
+text = "PORT"

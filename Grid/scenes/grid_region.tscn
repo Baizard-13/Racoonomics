@@ -112,6 +112,7 @@ script = ExtResource("1_wwy7w")
 
 [node name="GameGridView" type="MeshInstance3D" parent="." unique_id=955071552]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+visible = false
 material_override = SubResource("ShaderMaterial_makip")
 mesh = SubResource("BoxMesh_yr08g")
 

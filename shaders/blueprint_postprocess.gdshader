@@ -23,7 +23,10 @@ void fragment() {
 	vec3 screen_color = texture(screen_texture, SCREEN_UV).rgb;
 
 	float luminance = dot(screen_color, vec3(0.2126, 0.7152, 0.0722));
-	if (luminance < transition_threshold) discard;
+	if (luminance < transition_threshold) {
+		luminance = .2;
+		ALPHA *= abs(luminance - transition_threshold);
+	}
 
 	ALBEDO = texture(color_palette_gradient, vec2(luminance, 0.0)).rgb;
 }

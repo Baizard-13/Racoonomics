@@ -13,12 +13,13 @@ const _2X_2_TEST_BUILDING = preload("uid://c8lmno2gm42xg")
 @export var current_building : BuildingDefinition = null
 
 @onready var post_process_quad: MeshInstance3D = $PostProcessQuad
+@onready var edit_mode_transition: AnimationPlayer = $EditModeTransition
 
 var current_ghost : Building
 var current_grid_pos : Vector2i
 
-func _ready() -> void:
-	enter_build_mode(_2X_2_TEST_BUILDING)
+#func _ready() -> void:
+	#enter_build_mode(_2X_2_TEST_BUILDING)
 
 func _process(_delta: float) -> void:
 	if !current_building or !current_ghost:
@@ -44,14 +45,14 @@ func enter_build_mode(building_def: BuildingDefinition) -> void:
 	current_ghost.set_override_property("is_valid", true)
 	current_ghost.is_ghost = true
 
-	grid.set_draw_grid(true)
 	grid.add_child(current_ghost)
-	post_process_quad.show()
+	edit_mode_transition.stop()
+	edit_mode_transition.play("enter")
 
 func exit_build_mode() -> void:
 	current_building = null
-	grid.set_draw_grid(false)
-	post_process_quad.hide()
+	edit_mode_transition.stop()
+	edit_mode_transition.play("exit")
 	current_grid_pos = Vector2.ZERO
 	if current_ghost:
 		current_ghost.queue_free()
@@ -78,8 +79,8 @@ func _try_place_building() -> void:
 
 	if !grid.try_place_building(placed_building):
 		placed_building.queue_free()
-	else:
-		exit_build_mode()
+	#else:
+		#exit_build_mode()
 
 func _input(event: InputEvent) -> void:
 	if !current_building or !current_ghost:

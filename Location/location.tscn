@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b8tnuk3jmf5gt"]
 
+[ext_resource type="Script" uid="uid://dstkopnorx43q" path="res://scripts/location.gd" id="1_eoaun"]
 [ext_resource type="Script" uid="uid://cy0hh14lclptf" path="res://scripts/build_mode_controller.gd" id="1_qifc2"]
 [ext_resource type="PackedScene" uid="uid://birm65xx2g784" path="res://Game/Main_Lock.tscn" id="1_vju3g"]
 [ext_resource type="PackedScene" uid="uid://bu4ik4j52immm" path="res://Grid/scenes/grid_region.tscn" id="2_34a2q"]
@@ -21,6 +22,148 @@ shader_parameter/wire_color_valid = Color(1.8247963, 1.8247963, 1.8247963, 1)
 shader_parameter/fill_color_valid = Color(1, 1, 1, 0.16862746)
 shader_parameter/wire_color_invalid = Color(1.8247963, 0.2924505, 0.36906803, 1)
 shader_parameter/fill_color_invalid = Color(1, 0.13999999, 0.15433311, 0.59607846)
+
+[sub_resource type="Animation" id="Animation_eoaun"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PostProcessQuad:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PostProcessQuad:mesh:material:shader_parameter/transition_threshold")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PostProcessQuad:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_202do"]
+resource_name = "enter"
+length = 0.26667002
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PostProcessQuad:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PostProcessQuad:mesh:material:shader_parameter/transition_threshold")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [0.351677, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../WorldGrid")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [true],
+"method": &"set_draw_grid"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_iwrfv"]
+resource_name = "exit"
+length = 0.40000334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PostProcessQuad:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PostProcessQuad:mesh:material:shader_parameter/transition_threshold")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.38955134]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../WorldGrid")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"set_draw_grid"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PostProcessQuad:transparency")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iwrfv"]
+_data = {
+&"RESET": SubResource("Animation_eoaun"),
+&"enter": SubResource("Animation_202do"),
+&"exit": SubResource("Animation_iwrfv")
+}
 
 [sub_resource type="LabelSettings" id="LabelSettings_yx7wv"]
 outline_size = 6
@@ -71,6 +214,7 @@ radius = 3.288
 size = Vector3(596.9275, 316.57446, 1)
 
 [node name="Location" type="Node3D" unique_id=668207517]
+script = ExtResource("1_eoaun")
 
 [node name="BuildModeController" type="Node" parent="." unique_id=859596041 node_paths=PackedStringArray("grid", "camera")]
 script = ExtResource("1_qifc2")
@@ -78,6 +222,9 @@ buildings = Array[ExtResource("2_uiog4")]([ExtResource("3_34ytl")])
 grid = NodePath("../WorldGrid")
 camera = NodePath("../CharacterBody3D/Camera3D")
 building_ghost_material = SubResource("ShaderMaterial_uiog4")
+
+[node name="EditModeTransition" type="AnimationPlayer" parent="BuildModeController" unique_id=794029400]
+libraries/ = SubResource("AnimationLibrary_iwrfv")
 
 [node name="DevButtonPrompt" type="CanvasLayer" parent="BuildModeController" unique_id=1221167571]
 
@@ -150,6 +297,9 @@ environment = SubResource("Environment_34a2q")
 
 [node name="Environment" parent="." unique_id=1531277812 instance=ExtResource("1_vju3g")]
 
+[node name="Sm_hub" parent="Environment" index="22" unique_id=162840423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 5.4)
+
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1858140852]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 113.10631, -0.5235214, 22.76151)
 script = ExtResource("2_u6sc3")
@@ -204,3 +354,5 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 236.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls4" unique_id=1993239243]
 shape = SubResource("BoxShape3D_u6sc3")
 debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[editable path="Environment"]

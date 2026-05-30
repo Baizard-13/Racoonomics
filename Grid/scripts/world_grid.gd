@@ -82,7 +82,7 @@ func try_place_building(building: Building) -> bool:
 		return false
 
 	var building_rect = Rect2i(building.origin_cell, building.dimensions)
-	_occupy_rect(building_rect, building.title)
+	_occupy_rect(building_rect, building.name)
 	if building.get_parent() != self:
 		add_child(building)
 		building.update_position()
