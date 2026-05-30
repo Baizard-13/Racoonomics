@@ -12,6 +12,8 @@
 [ext_resource type="Resource" uid="uid://cdu1dcfv54umg" path="res://buildings/data/carrot_farm_manual.tres" id="5_202do"]
 [ext_resource type="Script" uid="uid://cyfhjwceljlyj" path="res://scripts/FarmWork.gd" id="5_wlodm"]
 [ext_resource type="Shader" uid="uid://dsb3hnoj25nhm" path="res://shaders/blueprint_postprocess.gdshader" id="5_yx7wv"]
+[ext_resource type="Script" uid="uid://xcormpe55lgu" path="res://scripts/money_manager.gd" id="7_202do"]
+[ext_resource type="Shader" uid="uid://ciw1jyllj5ihm" path="res://shaders/screen_pixelization.gdshader" id="13_iwrfv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uiog4"]
 render_priority = 5
@@ -189,6 +191,11 @@ material = SubResource("ShaderMaterial_eoaun")
 flip_faces = true
 size = Vector2(2, 2)
 
+[sub_resource type="LabelSettings" id="LabelSettings_eoaun"]
+font_size = 32
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u6sc3"]
 ground_bottom_color = Color(0.37301219, 0.68417555, 0.812935, 1)
 ground_horizon_color = Color(0.37301219, 0.68417555, 0.812935, 1)
@@ -213,6 +220,11 @@ radius = 3.288
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u6sc3"]
 size = Vector3(596.9275, 316.57446, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i1b54"]
+shader = ExtResource("13_iwrfv")
+shader_parameter/pixel_size = 2.0000000475
+shader_parameter/color_levels = 20.000000855
 
 [node name="Location" type="Node3D" unique_id=668207517]
 script = ExtResource("1_eoaun")
@@ -243,6 +255,25 @@ visible = false
 cast_shadow = 0
 extra_cull_margin = 500.0
 mesh = SubResource("QuadMesh_yx7wv")
+
+[node name="MoneyManager" type="Node" parent="." unique_id=937004170]
+script = ExtResource("7_202do")
+
+[node name="Money_count" type="CanvasLayer" parent="MoneyManager" unique_id=254028323]
+layer = 2
+
+[node name="MoneyLabel" type="Label" parent="MoneyManager/Money_count" unique_id=466227013]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 16.0
+offset_right = 50.0
+offset_bottom = 39.0
+grow_horizontal = 2
+text = "10/20"
+label_settings = SubResource("LabelSettings_eoaun")
+horizontal_alignment = 1
 
 [node name="WorldGrid" parent="." unique_id=1294225932 instance=ExtResource("3_tnktr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4072876, 0, 0)
@@ -355,5 +386,16 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 236.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls4" unique_id=1993239243]
 shape = SubResource("BoxShape3D_u6sc3")
 debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[node name="PostProcess" type="CanvasLayer" parent="." unique_id=1184871636]
+layer = -99
+
+[node name="ColorRect" type="ColorRect" parent="PostProcess" unique_id=1476978200]
+material = SubResource("ShaderMaterial_i1b54")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [editable path="Environment"]

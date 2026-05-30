@@ -11,4 +11,5 @@ title = "2x2 Placeholder"
 shop_icon = ExtResource("4_r84fs")
 dimensions = Vector2i(2, 2)
 building_scene = ExtResource("1_ow1o2")
+purchase_cost = 5
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
