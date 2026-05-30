@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3 uid="uid://cdu1dcfv54umg"]
+
+[ext_resource type="PackedScene" uid="uid://btp2fmn2q4cbs" path="res://buildings/scenes/carrot_farm_manual.tscn" id="1_63c0x"]
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_b1vow"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_63c0x"]
+
+[sub_resource type="Resource" id="Resource_5yl2n"]
+script = ExtResource("1_b1vow")
+cell_offset = Vector2i(1, 2)
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[resource]
+script = ExtResource("2_63c0x")
+title = "Carrot farm (manual)"
+description = "todo write description here"
+dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("1_b1vow")]([SubResource("Resource_5yl2n")])
+building_scene = ExtResource("1_63c0x")
+purchase_cost = 5
+upgrade_cost = 4
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"

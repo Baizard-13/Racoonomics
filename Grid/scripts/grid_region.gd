@@ -10,7 +10,7 @@ extends Node3D
 		_editor_update_visualization()
 		#_update_game_view()
 
-# @export_tool_button("Snap region to WorldGrid", 'SnapGrid') var snap_button = _editor_snap_self_to_grid # CURSE THIS BUTTON
+@export_tool_button("Snap region to WorldGrid", 'SnapGrid') var snap_button = _editor_snap_self_to_grid # CURSE THIS BUTTON
 
 @onready var game_grid_view: MeshInstance3D = $GameGridView
 @onready var editor_visualizer: MeshInstance3D = $EditorVisualizer
@@ -38,18 +38,14 @@ func _ready() -> void:
 		set_highlight_grid(true)
 
 func _editor_snap_self_to_grid():
-	var grid = get_parent()
-	if grid == null or !(grid is WorldGrid):
+	var grid := get_parent() as WorldGrid
+	if !grid:
 		return
 
-	var cell_size : Vector2 = grid.cell_size
+	var cell := grid.world_to_cell(global_position)
 
-	var top_left_world = global_position - Vector3(size.x * cell_size.x, 0, size.y * cell_size.y) * 0.5
-	top_left_world.x = round(top_left_world.x / cell_size.x) * cell_size.x
-	top_left_world.z = round(top_left_world.z / cell_size.y) * cell_size.y
-	position = top_left_world + Vector3(size.x * cell_size.x, 0, size.y * cell_size.y) * 0.5
-
-	origin = Vector2i(round(position.x / cell_size.x) - size.x / 2, round(position.z / cell_size.y) - size.y / 2)
+	origin = cell - Vector2i(size.x / 2, size.y / 2)
+	position = grid.cell_to_world(origin) + Vector3(size.x * grid.cell_size.x * 0.5, 0, size.y * grid.cell_size.y * 0.5)
 
 	_editor_update_visualization()
 

@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://c8lmno2gm42xg" path="res://buildings/data/2x2_test_building.tres" id="3_34ytl"]
 [ext_resource type="PackedScene" uid="uid://bq55y3n2nyd0" path="res://Grid/scenes/world_grid.tscn" id="3_tnktr"]
 [ext_resource type="Shader" uid="uid://bdh42ejp2fjcc" path="res://shaders/building_preview.gdshader" id="4_34ytl"]
+[ext_resource type="Resource" uid="uid://cdu1dcfv54umg" path="res://buildings/data/carrot_farm_manual.tres" id="5_202do"]
 [ext_resource type="Script" uid="uid://cyfhjwceljlyj" path="res://scripts/FarmWork.gd" id="5_wlodm"]
 [ext_resource type="Shader" uid="uid://dsb3hnoj25nhm" path="res://shaders/blueprint_postprocess.gdshader" id="5_yx7wv"]
 
@@ -218,7 +219,7 @@ script = ExtResource("1_eoaun")
 
 [node name="BuildModeController" type="Node" parent="." unique_id=859596041 node_paths=PackedStringArray("grid", "camera")]
 script = ExtResource("1_qifc2")
-buildings = Array[ExtResource("2_uiog4")]([ExtResource("3_34ytl")])
+buildings = Array[ExtResource("2_uiog4")]([ExtResource("3_34ytl"), ExtResource("5_202do")])
 grid = NodePath("../WorldGrid")
 camera = NodePath("../CharacterBody3D/Camera3D")
 building_ghost_material = SubResource("ShaderMaterial_uiog4")
@@ -249,47 +250,47 @@ cell_size = Vector2(10, 10)
 
 [node name="WestRegion" parent="WorldGrid" unique_id=1534974895 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 0, -5)
-origin = Vector2i(-18, -12)
+origin = Vector2i(-19, -13)
 size = Vector2i(17, 25)
 
 [node name="EastRegion" parent="WorldGrid" unique_id=1440203446 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 1.8293571, -5)
-origin = Vector2i(4, -12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 0, -5)
+origin = Vector2i(3, -13)
 size = Vector2i(17, 25)
 
 [node name="WolfRegion" parent="WorldGrid" unique_id=1926414541 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 0, -155)
-origin = Vector2i(-12, -17)
+origin = Vector2i(-13, -18)
 size = Vector2i(5, 5)
 
 [node name="FrogRegion" parent="WorldGrid" unique_id=1323396244 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 0, 145)
-origin = Vector2i(-10, 13)
+origin = Vector2i(-11, 12)
 size = Vector2i(5, 5)
 
 [node name="BeaverRegion" parent="WorldGrid" unique_id=7218940 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, -0.31860924, -155)
-origin = Vector2i(7, -17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, -155)
+origin = Vector2i(6, -18)
 size = Vector2i(5, 5)
 
 [node name="RaccoonRegion" parent="WorldGrid" unique_id=337522427 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 7.3312454, -115)
-origin = Vector2i(21, -13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, -115)
+origin = Vector2i(20, -14)
 size = Vector2i(5, 5)
 
 [node name="SquirrelRegion" parent="WorldGrid" unique_id=1937956173 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, -0.3942299, 25)
-origin = Vector2i(21, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, 25)
+origin = Vector2i(20, 0)
 size = Vector2i(5, 5)
 
 [node name="HareRegion" parent="WorldGrid" unique_id=388067982 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, -0.32754517, 145)
-origin = Vector2i(11, 13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 145)
+origin = Vector2i(10, 12)
 size = Vector2i(5, 5)
 
 [node name="FoxRegion" parent="WorldGrid" unique_id=1027696517 instance=ExtResource("2_34a2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215, 0, 65)
-origin = Vector2i(-23, 5)
+origin = Vector2i(-24, 4)
 size = Vector2i(5, 5)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=595020413]

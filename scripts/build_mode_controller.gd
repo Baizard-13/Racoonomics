@@ -1,7 +1,5 @@
 extends Node
 
-const _2X_2_TEST_BUILDING = preload("uid://c8lmno2gm42xg")
-
 @export var buildings : Array[BuildingDefinition]
 
 @export var grid : WorldGrid
@@ -85,7 +83,7 @@ func _try_place_building() -> void:
 func _input(event: InputEvent) -> void:
 	if !current_building or !current_ghost:
 		if event.is_action_pressed("bm_enter"):
-			enter_build_mode(_2X_2_TEST_BUILDING)
+			enter_build_mode(buildings[1])
 		return
 
 	if event.is_action_pressed("place_building"):

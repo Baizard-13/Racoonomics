@@ -1,3 +1,4 @@
+@tool
 class_name WorldGrid
 extends Node3D
 
@@ -33,6 +34,7 @@ func _free_rect(rect: Rect2i) -> void:
 			occupied_cells.erase(cell)
 
 func _ready() -> void:
+	if Engine.is_editor_hint(): return
 	for child in get_children():
 		if child is GridRegion:
 			var region = child as GridRegion

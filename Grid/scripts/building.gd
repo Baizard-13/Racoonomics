@@ -93,8 +93,7 @@ func _update_editor_vis() -> void:
 
 func update_position() -> void:
 	var grid := get_parent() as WorldGrid
-	# position = grid.cell_to_world(origin_cell) - get_local_top_left()
-	position = grid.cell_to_world(origin_cell)
+	position = grid.cell_to_world(origin_cell) + Vector3(dimensions.x * grid.cell_size.x * 0.5, 0, dimensions.y * grid.cell_size.y * 0.5)
 	reset_physics_interpolation()
 
 func _rebuild_ports():
