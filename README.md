@@ -43,7 +43,8 @@
 var tick_step := 0
 
 func _physics_process(_delta):
-    if Engine.get_phy
+    if Engine.get_physics_frames() % 2:
+        return
 
     if tick_step == 0:
         for building in buildings:
