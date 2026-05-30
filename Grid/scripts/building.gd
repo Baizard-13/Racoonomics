@@ -51,10 +51,10 @@ func get_cells() -> Array[Vector2i]:
 
 	return cells
 
-func get_port_at_cell(cell: Vector2i) -> BuildingPort:
+func get_port(at_cell: Vector2i, from_cell: Vector2i) -> BuildingPort:
 	for port in ports:
 		var port_cell = origin_cell + port.cell_offset
-		if port_cell == cell:
+		if port_cell == at_cell and origin_cell + port.cell_offset - from_cell == port.facing:
 			return port
 
 	return null

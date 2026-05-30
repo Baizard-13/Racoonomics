@@ -10,6 +10,9 @@ extends Resource
 @export var ports : Array[BuildingPort]
 @export var building_scene : PackedScene
 
+@export var upgrades_to : BuildingDefinition
+@export var level := 1
+
 @export var purchase_cost: int = 0
 @export var upgrade_cost: int = 0
 

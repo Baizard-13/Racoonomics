@@ -7,7 +7,6 @@ extends Node3D
 @export var region_bounds : Array[Rect2i]
 @export var occupied_bounds : Array[Rect2i]
 @export var draw_grid := false
-#@export var draw_
 
 var valid_cells : Dictionary[Vector2i, bool]
 var occupied_cells : Dictionary[Vector2i, StringName]
