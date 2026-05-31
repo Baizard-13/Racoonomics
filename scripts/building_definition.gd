@@ -20,6 +20,6 @@ func get_building_instance() -> Building:
 	var building = building_scene.instantiate() as Building
 	building.title = title
 	building.dimensions = dimensions
-	building.ports = ports.duplicate(true)
+	building.ports = ports
 
 	return building

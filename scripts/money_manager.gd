@@ -4,7 +4,7 @@ extends Node
 #signal max_money_changed(new_value)
 
 @export var update_money_add: int = 15 ##How many money player will reseave at the level_updrage
-@export var max_money: int = 20: ##How maximum money count player can have at the start 
+@export var max_money: int = 20: ##How maximum money count player can have at the start
 	set(value):
 		max_money = value
 		#max_money_changed.emit(value)

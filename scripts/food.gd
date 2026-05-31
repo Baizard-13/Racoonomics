@@ -1,11 +1,6 @@
-class_name Food
-extends Item
+class_name FoodRecipe
+extends Resource
 
-@export var components : Array[Produce]
-
-func get_produce_types() -> Array[Global.ProduceType]:
-	var types : Array[Global.ProduceType]
-	for component in components:
-		types.append(component.produce_type)
-
-	return types
+@export var ingredients: Dictionary[ItemType, int]
+@export var result: ItemType
+@export var result_quantity: int = 1

@@ -14,6 +14,7 @@ const BUILDING_PORT_DECAL = preload("uid://uf7gdg37kqtl")
 @export var grid_size := 10.0 # for the sake of my sanity we will assume this is fixed
 @export var bound_vis_padding := 0.01
 @export var ports : Array[BuildingPort]
+@export var storage : Dictionary[StringName, ItemStorage]
 ## needed for material overrides, remember to NOT add MeshBoundsVisualizer to this list
 @export var meshes : Array[MeshInstance3D]
 
@@ -54,10 +55,19 @@ func get_cells() -> Array[Vector2i]:
 func get_port(at_cell: Vector2i, from_cell: Vector2i) -> BuildingPort:
 	for port in ports:
 		var port_cell = origin_cell + port.cell_offset
-		if port_cell == at_cell and origin_cell + port.cell_offset - from_cell == port.facing:
+		if port_cell == at_cell and origin_cell + port.cell_offset - from_cell == port.get_facing_vector():
 			return port
 
 	return null
+
+func get_port_storage(port: BuildingPort) -> ItemStorage:
+	if storage.has(port.storage_id):
+		return storage[port.storage_id]
+	else:
+		push_warning("port %s requests storage %s which doesn't exist, creating and returning default" % [port, port.storage_id])
+		var new_storage = ItemStorage.new()
+		storage[port.storage_id] = new_storage
+		return new_storage
 
 func set_material_override(material: Material):
 	for mesh in meshes:
@@ -108,5 +118,6 @@ func _rebuild_ports():
 		var port_pos = get_local_top_left() + Vector3((port.cell_offset.x + 0.5) * grid_size, 0, (port.cell_offset.y + 0.5) * grid_size)
 		port_instance.position = port_pos
 		ports_node.add_child(port_instance)
-		port_instance.set_is_output(port.port_type == BuildingPort.PortType.EXPORTS)
-		port_instance.rotation.y = atan2(port.facing.x, port.facing.y)
+		port_instance.set_is_output(port.type == BuildingPort.PortType.EXPORTS)
+		var port_direction := port.get_facing_vector()
+		port_instance.rotation.y = atan2(port_direction.x, port_direction.y)

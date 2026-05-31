@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemType" format=3 uid="uid://6jrtnhoruj1x"]
+
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="1_jxkx4"]
+
+[resource]
+script = ExtResource("1_jxkx4")
+id = &"nuts"
+display_name = "Nuts"
+tags = Array[StringName]([&"produce", &"squirrels"])
+metadata/_custom_type_script = "uid://b2ef05y1cqw6k"

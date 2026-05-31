@@ -15,12 +15,19 @@
 [ext_resource type="Script" uid="uid://xcormpe55lgu" path="res://scripts/money_manager.gd" id="7_202do"]
 [ext_resource type="Shader" uid="uid://ciw1jyllj5ihm" path="res://shaders/screen_pixelization.gdshader" id="13_iwrfv"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uiog4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i1b54"]
+shader = ExtResource("13_iwrfv")
+shader_parameter/pixel_size = 2.0000000475
+shader_parameter/color_levels = 20.000000855
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ydnx3"]
 render_priority = 5
 shader = ExtResource("4_34ytl")
-shader_parameter/is_valid = false
-shader_parameter/wire_width = 0.255
-shader_parameter/wire_smoothness = 0.06000000285
+shader_parameter/is_valid = true
+shader_parameter/fresnel_power = 2.0
+shader_parameter/fresnel_sharpness = 0.800000038
+shader_parameter/scanline_scale = 500.0
+shader_parameter/scanline_speed = 1.5
 shader_parameter/wire_color_valid = Color(1.8247963, 1.8247963, 1.8247963, 1)
 shader_parameter/fill_color_valid = Color(1, 1, 1, 0.16862746)
 shader_parameter/wire_color_invalid = Color(1.8247963, 0.2924505, 0.36906803, 1)
@@ -221,20 +228,27 @@ radius = 3.288
 [sub_resource type="BoxShape3D" id="BoxShape3D_u6sc3"]
 size = Vector3(596.9275, 316.57446, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i1b54"]
-shader = ExtResource("13_iwrfv")
-shader_parameter/pixel_size = 2.0000000475
-shader_parameter/color_levels = 20.000000855
-
 [node name="Location" type="Node3D" unique_id=668207517]
 script = ExtResource("1_eoaun")
+
+[node name="PostProcess" type="CanvasLayer" parent="." unique_id=1184871636]
+layer = -99
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="PostProcess" unique_id=1476978200]
+material = SubResource("ShaderMaterial_i1b54")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="BuildModeController" type="Node" parent="." unique_id=859596041 node_paths=PackedStringArray("grid", "camera")]
 script = ExtResource("1_qifc2")
 buildings = Array[ExtResource("2_uiog4")]([ExtResource("3_34ytl"), ExtResource("5_202do")])
 grid = NodePath("../WorldGrid")
 camera = NodePath("../CharacterBody3D/Camera3D")
-building_ghost_material = SubResource("ShaderMaterial_uiog4")
+building_ghost_material = SubResource("ShaderMaterial_ydnx3")
 
 [node name="EditModeTransition" type="AnimationPlayer" parent="BuildModeController" unique_id=794029400]
 libraries/ = SubResource("AnimationLibrary_iwrfv")
@@ -280,7 +294,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4072876, 0, 0)
 cell_size = Vector2(10, 10)
 
 [node name="WestRegion" parent="WorldGrid" unique_id=1534974895 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 0, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 5.083191, -5)
 origin = Vector2i(-19, -13)
 size = Vector2i(17, 25)
 
@@ -305,7 +319,7 @@ origin = Vector2i(6, -18)
 size = Vector2i(5, 5)
 
 [node name="RaccoonRegion" parent="WorldGrid" unique_id=337522427 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, -115)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 7.55513, -115)
 origin = Vector2i(20, -14)
 size = Vector2i(5, 5)
 
@@ -386,16 +400,5 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 236.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls4" unique_id=1993239243]
 shape = SubResource("BoxShape3D_u6sc3")
 debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
-
-[node name="PostProcess" type="CanvasLayer" parent="." unique_id=1184871636]
-layer = -99
-
-[node name="ColorRect" type="ColorRect" parent="PostProcess" unique_id=1476978200]
-material = SubResource("ShaderMaterial_i1b54")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [editable path="Environment"]

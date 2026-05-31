@@ -11,6 +11,8 @@ extends Node3D
 
 var valid_cells : Dictionary[Vector2i, bool]
 var occupied_cells : Dictionary[Vector2i, StringName]
+var buildings_cache : Array[Building]
+var process_tick_step := 0
 
 func world_to_cell(world_pos: Vector3) -> Vector2i:
 	var relative_pos : Vector3 = world_pos - global_position
@@ -32,15 +34,6 @@ func _free_rect(rect: Rect2i) -> void:
 		for y in range(rect.position.y, rect.position.y + rect.size.y):
 			var cell = Vector2i(x, y)
 			occupied_cells.erase(cell)
-
-func _ready() -> void:
-	if Engine.is_editor_hint(): return
-	for child in get_children():
-		if child is GridRegion:
-			var region = child as GridRegion
-			region_bounds.append(region.get_bounds())
-			for cell in region.get_cells():
-				valid_cells[cell] = true
 
 func get_overlap(rect: Rect2i) -> Array[Vector2i]:
 	var overlap_cells : Array[Vector2i]
@@ -84,8 +77,45 @@ func try_place_building(building: Building) -> bool:
 
 	var building_rect = Rect2i(building.origin_cell, building.dimensions)
 	_occupy_rect(building_rect, building.name)
+
+	buildings_cache.append(building)
+	building.is_active = true
+
 	if building.get_parent() != self:
 		add_child(building)
 		building.update_position()
 
 	return true
+
+
+func _ready() -> void:
+	if Engine.is_editor_hint(): return
+	for child in get_children():
+		if child is GridRegion:
+			var region = child as GridRegion
+			region_bounds.append(region.get_bounds())
+			for cell in region.get_cells():
+				valid_cells[cell] = true
+
+func _physics_process(_delta: float) -> void:
+	if Engine.get_physics_frames() % 2:
+		return
+
+	var indeces_to_remove : Array[int]
+	for building in buildings_cache:
+		if !building.is_inside_tree() or !building.is_active:
+			continue
+
+		if !is_instance_valid(building):
+			indeces_to_remove.append(buildings_cache.find(building))
+			continue
+
+		match process_tick_step:
+			0: building.tick_produce()
+			1: building.tick_transport()
+			2: building.tick_consume()
+
+	for index in indeces_to_remove:
+		buildings_cache.remove_at(index)
+
+	process_tick_step = (process_tick_step + 1) % 3

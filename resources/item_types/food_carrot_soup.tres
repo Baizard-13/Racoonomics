@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemType" format=3 uid="uid://08yj5tpsvy8r"]
+
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="1_vvjwk"]
+
+[resource]
+script = ExtResource("1_vvjwk")
+id = &"carrot_soup"
+display_name = "Carrot Soup"
+tags = Array[StringName]([&"food", &"hares"])
+metadata/_custom_type_script = "uid://b2ef05y1cqw6k"

@@ -12,7 +12,7 @@ extends Node
 
 @onready var post_process_quad: MeshInstance3D = $PostProcessQuad
 @onready var edit_mode_transition: AnimationPlayer = $EditModeTransition
-@onready var money_manager: Node = $"../MoneyManager" 
+@onready var money_manager: Node = $"../MoneyManager"
 
 var current_ghost : Building
 var current_grid_pos : Vector2i

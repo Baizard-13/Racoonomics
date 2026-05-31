@@ -1,3 +1,4 @@
+@tool
 class_name BuildingPort
 extends Resource
 
@@ -5,17 +6,23 @@ enum PortType {
 	EXPORTS,
 	IMPORTS
 }
+enum Facing {
+	NORTH,
+	EAST,
+	SOUTH,
+	WEST
+}
 
-@export var port_type: PortType = PortType.EXPORTS
+@export var type: PortType = PortType.EXPORTS
 ## offset relative to building origin
 @export var cell_offset: Vector2i = Vector2i.ZERO
-## (0, -1) = north, (1, 0) = east, (0, 1) = south, (-1, 0) = west
-@export var facing: Vector2i = Vector2i(0, -1):
-	set(value):
-		if value.length_squared() != 1 and (value.x != 0 or value.y != 0):
-			push_error("port facing must be a cardinal direction")
-			return
+@export var facing: Facing
+@export var storage_id: StringName
 
-		facing = value
-
-@export var storage : ItemStorage
+func get_facing_vector() -> Vector2i:
+	match facing:
+		Facing.NORTH: return Vector2i(0, -1)
+		Facing.EAST: return Vector2i(1, 0)
+		Facing.SOUTH: return Vector2i(0, 1)
+		Facing.WEST: return Vector2i(-1, 0)
+		_: return Vector2i.ZERO
