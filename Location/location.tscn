@@ -233,7 +233,6 @@ script = ExtResource("1_eoaun")
 
 [node name="PostProcess" type="CanvasLayer" parent="." unique_id=1184871636]
 layer = -99
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="PostProcess" unique_id=1476978200]
 material = SubResource("ShaderMaterial_i1b54")
@@ -261,7 +260,9 @@ offset_top = 24.0
 offset_right = 189.0
 offset_bottom = 47.0
 text = "[F]    enter build mode
-[Esc]   exit build mode"
+[R]        rotate buliding
+[Esc]   exit build mode
+[P]               add money"
 label_settings = SubResource("LabelSettings_yx7wv")
 
 [node name="PostProcessQuad" type="MeshInstance3D" parent="BuildModeController" unique_id=1197606766]

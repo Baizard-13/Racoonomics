@@ -34,8 +34,8 @@ func _ready() -> void:
 		editor_visualizer.queue_free()
 		set_process(false)
 		_update_game_view()
-	else:
-		set_highlight_grid(true)
+	#else:
+		#set_highlight_grid(true)
 
 func _editor_snap_self_to_grid():
 	var grid := get_parent() as WorldGrid

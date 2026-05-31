@@ -16,6 +16,7 @@ extends Node
 
 var current_ghost : Building
 var current_grid_pos : Vector2i
+var current_rotation := 0
 
 #func _ready() -> void:
 	#enter_build_mode(_2X_2_TEST_BUILDING)
@@ -36,17 +37,23 @@ func _process(_delta: float) -> void:
 
 func enter_build_mode(building_def: BuildingDefinition) -> void:
 	current_building = building_def
+	current_rotation = 0
+	_refresh_ghost()
+
+	edit_mode_transition.stop()
+	edit_mode_transition.play("enter")
+
+func _refresh_ghost() -> void:
 	if current_ghost:
 		current_ghost.queue_free()
 
-	current_ghost = building_def.get_building_instance()
+	current_ghost = current_building.get_building_instance(current_rotation)
+	current_ghost.origin_cell = current_grid_pos
 	current_ghost.set_material_override(building_ghost_material)
 	current_ghost.set_override_property("is_valid", true)
 	current_ghost.is_ghost = true
 
 	grid.add_child(current_ghost)
-	edit_mode_transition.stop()
-	edit_mode_transition.play("enter")
 
 func exit_build_mode() -> void:
 	current_building = null
@@ -67,13 +74,13 @@ func _hovered_cell() -> Vector2i:
 	var target := -ray_origin.y / ray_direction.y
 	var intersection := ray_origin + ray_direction * target
 
-	return grid.world_to_cell(intersection)
+	return grid.world_to_cell(intersection) - Vector2i((current_ghost.dimensions / 2.0).floor())
 
 func _try_place_building() -> void:
 	if !current_building or !current_ghost or !money_manager.check_cost(current_building.purchase_cost):
 		return
 
-	var placed_building = current_building.get_building_instance()
+	var placed_building = current_building.get_building_instance(current_rotation)
 	placed_building.origin_cell = current_grid_pos
 
 	if !grid.try_place_building(placed_building):
@@ -90,5 +97,9 @@ func _input(event: InputEvent) -> void:
 
 	if event.is_action_pressed("place_building"):
 		_try_place_building()
+	if event.is_action_pressed("rotate_building"):
+		current_rotation = (current_rotation + 1) % 4
+		_refresh_ghost()
+		current_grid_pos = Vector2.ZERO
 	if event.is_action_pressed("bm_exit"):
 		exit_build_mode()

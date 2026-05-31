@@ -14,6 +14,7 @@ const BUILDING_PORT_DECAL = preload("uid://uf7gdg37kqtl")
 @export var grid_size := 10.0 # for the sake of my sanity we will assume this is fixed
 @export var bound_vis_padding := 0.01
 @export var ports : Array[BuildingPort]
+@export var rotation_steps := 0
 @export var storage : Dictionary[StringName, ItemStorage]
 ## needed for material overrides, remember to NOT add MeshBoundsVisualizer to this list
 @export var meshes : Array[MeshInstance3D]
@@ -78,6 +79,23 @@ func set_override_property(property_name: StringName, value):
 		if mesh.material_override:
 			mesh.material_override.set_shader_parameter(property_name, value)
 
+func rotate_cell(cell: Vector2i, cell_rotation: int, dims: Vector2i) -> Vector2i:
+	match cell_rotation % 4:
+		0: return cell
+		1: return Vector2i(dims.y - 1 - cell.y, cell.x)
+		2: return Vector2i(dims.x - 1 - cell.x, dims.y - 1 - cell.y)
+		3: return Vector2i(cell.y, dims.x - 1 - cell.x)
+	return cell
+
+func rotate_facing(facing: BuildingPort.Facing, cell_rotation: int) -> BuildingPort.Facing:
+	return (facing + cell_rotation) % 4 as BuildingPort.Facing
+
+func rotate_dimensions(dims: Vector2i, cell_rotation: int) -> Vector2i:
+	if cell_rotation % 2 == 0:
+		return dims
+
+	return Vector2i(dims.y, dims.x)
+
 func _ready() -> void:
 	_rebuild_ports()
 	if !Engine.is_editor_hint():
@@ -104,6 +122,8 @@ func _update_editor_vis() -> void:
 func update_position() -> void:
 	var grid := get_parent() as WorldGrid
 	position = grid.cell_to_world(origin_cell) + Vector3(dimensions.x * grid.cell_size.x * 0.5, 0, dimensions.y * grid.cell_size.y * 0.5)
+	rotation.y = -rotation_steps * PI * 0.5
+	ports_node.global_rotation.y = 0.0
 	reset_physics_interpolation()
 
 func _rebuild_ports():
