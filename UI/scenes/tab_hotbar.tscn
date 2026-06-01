@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://ddocjn85juvtr"]
+
+[ext_resource type="Texture2D" uid="uid://cb13wsixgscuq" path="res://UI/textures/TabHotbar/T_G_TabHotbar_Background.png" id="1_n0c2e"]
+[ext_resource type="Texture2D" uid="uid://crkbtoj27fdds" path="res://UI/textures/TabHotbar/T_G_PurchaseOption_Background_1.png" id="2_m6abe"]
+[ext_resource type="Texture2D" uid="uid://bh12joo311h5d" path="res://UI/textures/TabHotbar/T_G_PurchaseOption_Background_3.png.png" id="3_xc01u"]
+[ext_resource type="Texture2D" uid="uid://crxkh3xnxeyxr" path="res://UI/textures/TabHotbar/T_G_PurchaseOption_Background_2.png.png" id="4_tpu7o"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lu5b0"]
+texture = ExtResource("2_m6abe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nd57j"]
+texture = ExtResource("3_xc01u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cope4"]
+texture = ExtResource("4_tpu7o")
+
+[node name="TabHotbar" type="Control" unique_id=1796104784]
+layout_mode = 3
+anchor_left = 0.043
+anchor_top = 0.929
+anchor_right = 0.043
+anchor_bottom = 0.929
+offset_left = -0.5600052
+offset_top = -225.32
+offset_right = 1199.44
+offset_bottom = -0.32000732
+grow_vertical = 0
+
+[node name="UIBackgroundLight3" type="NinePatchRect" parent="." unique_id=406943157]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -225.0
+offset_right = 2400.0
+offset_bottom = 225.0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 3
+texture = ExtResource("1_n0c2e")
+region_rect = Rect2(0, 0, 200, 200)
+patch_margin_left = 104
+patch_margin_top = 104
+patch_margin_right = 104
+patch_margin_bottom = 104
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1295967221]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 30.0
+offset_right = 1070.0
+offset_bottom = 190.00003
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=1828721810]
+show_behind_parent = true
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_lu5b0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nd57j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cope4")
+
+[node name="Button2" type="Button" parent="HBoxContainer" unique_id=144872770]
+show_behind_parent = true
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_lu5b0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nd57j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cope4")
+
+[node name="Button3" type="Button" parent="HBoxContainer" unique_id=1694351701]
+show_behind_parent = true
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_lu5b0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nd57j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cope4")
+
+[node name="Button4" type="Button" parent="HBoxContainer" unique_id=1640068176]
+show_behind_parent = true
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_lu5b0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nd57j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cope4")
+
+[node name="Button5" type="Button" parent="HBoxContainer" unique_id=1951981872]
+show_behind_parent = true
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_lu5b0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nd57j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cope4")
+
+[node name="Button6" type="Button" parent="HBoxContainer" unique_id=459392737]
+show_behind_parent = true
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_lu5b0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nd57j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cope4")

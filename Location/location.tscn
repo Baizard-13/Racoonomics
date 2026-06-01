@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cy0hh14lclptf" path="res://scripts/build_mode_controller.gd" id="1_qifc2"]
 [ext_resource type="PackedScene" uid="uid://birm65xx2g784" path="res://Game/Main_Lock.tscn" id="1_vju3g"]
 [ext_resource type="PackedScene" uid="uid://bu4ik4j52immm" path="res://Grid/scenes/grid_region.tscn" id="2_34a2q"]
+[ext_resource type="PackedScene" uid="uid://cqt20jqncmpoy" path="res://UI/scenes/main_ui.tscn" id="2_pgsfy"]
 [ext_resource type="Script" uid="uid://b88krc8w61x6i" path="res://Location/cameralogic.gd" id="2_u6sc3"]
 [ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_uiog4"]
 [ext_resource type="PackedScene" uid="uid://bq55y3n2nyd0" path="res://Grid/scenes/world_grid.tscn" id="3_tnktr"]
@@ -234,6 +235,10 @@ size = Vector3(596.9275, 316.57446, 1)
 
 [node name="Location" type="Node3D" unique_id=668207517]
 script = ExtResource("1_eoaun")
+
+[node name="Main_UI" type="CanvasLayer" parent="." unique_id=81660966]
+
+[node name="Main_UI" parent="Main_UI" unique_id=1036147662 instance=ExtResource("2_pgsfy")]
 
 [node name="PostProcess" type="CanvasLayer" parent="." unique_id=1184871636]
 layer = -99

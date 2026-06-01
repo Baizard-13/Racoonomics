@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bpwgac6fl046b"]
+
+[ext_resource type="Texture2D" uid="uid://dkd25jhefvn51" path="res://UI/textures/Tab_Description/T_G_Button_Close.png" id="1_72p87"]
+[ext_resource type="Texture2D" uid="uid://b3e4xtjwn0hup" path="res://UI/textures/Tab_Description/T_G_TabDescription_Background.png" id="2_u1k7u"]
+[ext_resource type="Texture2D" uid="uid://bfp8fefj7ics6" path="res://UI/textures/Tab_Description/T_G_TabDescription_Bt_Downgrade_1.png" id="3_wej4i"]
+[ext_resource type="Texture2D" uid="uid://rxbtricc6f5s" path="res://UI/textures/Tab_Description/T_G_TabDescription_Bt_Upgrade_1.png" id="4_2mdoo"]
+[ext_resource type="Texture2D" uid="uid://bs8a67m2mu1ga" path="res://UI/textures/Tab_Description/T_G_TabDescription_Bt_Sell_1.png" id="5_j1ai2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mo0ym"]
+texture = ExtResource("3_wej4i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5qrx0"]
+texture = ExtResource("4_2mdoo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrvrn"]
+texture = ExtResource("5_j1ai2")
+
+[node name="DescriptionPopup" type="Control" unique_id=596222301]
+top_level = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 108.0
+offset_top = -439.0
+offset_right = 687.0
+offset_bottom = 379.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1855797994]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -49.0
+offset_top = -28.0
+offset_right = 271.0
+offset_bottom = 292.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_72p87")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2059308581]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -579.0
+offset_bottom = 818.0
+grow_horizontal = 0
+texture = ExtResource("2_u1k7u")
+
+[node name="BtDowngrade" type="Button" parent="." unique_id=180608791]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 555.0
+offset_right = 517.0
+offset_bottom = 655.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mo0ym")
+
+[node name="BtUpgrade" type="Button" parent="." unique_id=1693452720]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 555.0
+offset_right = 404.0
+offset_bottom = 655.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_5qrx0")
+
+[node name="BtSell" type="Button" parent="." unique_id=1566956745]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 703.0
+offset_right = 542.0
+offset_bottom = 781.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_yrvrn")

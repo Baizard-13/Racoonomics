@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cbsy65gckd1xe"]
+
+[ext_resource type="Texture2D" uid="uid://c5031mbjmjvp" path="res://UI/textures/Bar_Loyalty/T_G_Bar_Loyalty_Background.svg" id="1_oqbif"]
+[ext_resource type="Texture2D" uid="uid://boprlg8ei5sor" path="res://UI/textures/Bar_Loyalty/T_G_Bar_Loyalty_FillSprite_Brown.svg" id="2_s85qq"]
+[ext_resource type="Texture2D" uid="uid://ia7t252johp" path="res://UI/textures/Bar_Loyalty/T_G_Bar_Loyalty_Icon.svg" id="3_uhx4h"]
+
+[node name="BarLoyalty" type="Control" unique_id=1630970414]
+layout_mode = 3
+anchor_left = 1.0
+anchor_top = 0.46
+anchor_right = 1.0
+anchor_bottom = 0.46
+offset_left = -206.0
+offset_top = -361.80002
+offset_right = -50.0
+offset_bottom = 362.19998
+
+[node name="BarLoyalty_Progress" type="TextureProgressBar" parent="." unique_id=1608154782]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.43
+anchor_right = 1.0
+anchor_bottom = 0.43
+offset_left = -109.00012
+offset_top = -298.32
+offset_right = -65.00012
+offset_bottom = 99.67999
+grow_horizontal = 0
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+step = 0.1
+value = 44.5
+fill_mode = 3
+texture_under = ExtResource("1_oqbif")
+texture_progress = ExtResource("2_s85qq")
+texture_progress_offset = Vector2(10.545, 10.81)
+
+[node name="BarLoyalty_Icon" type="TextureRect" parent="." unique_id=1098309355]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 573.0
+offset_right = 103.0
+offset_bottom = 663.0
+scale = Vector2(1.5, 1.5)
+size_flags_vertical = 4
+texture = ExtResource("3_uhx4h")
