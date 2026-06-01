@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://rxbtricc6f5s" path="res://UI/textures/Tab_Description/T_G_TabDescription_Bt_Upgrade_1.png" id="4_2mdoo"]
 [ext_resource type="Texture2D" uid="uid://bs8a67m2mu1ga" path="res://UI/textures/Tab_Description/T_G_TabDescription_Bt_Sell_1.png" id="5_j1ai2"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2mdoo"]
+texture = ExtResource("1_72p87")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mo0ym"]
 texture = ExtResource("3_wej4i")
 
@@ -23,14 +26,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 108.0
-offset_top = -439.0
-offset_right = 687.0
-offset_bottom = 379.0
+offset_left = -747.0
+offset_top = -430.0
+offset_right = -168.0
+offset_bottom = 388.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1855797994]
+[node name="BtClose" type="Button" parent="." unique_id=77439417]
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
@@ -41,7 +44,7 @@ offset_top = -28.0
 offset_right = 271.0
 offset_bottom = 292.0
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_72p87")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2mdoo")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=2059308581]
 layout_mode = 1

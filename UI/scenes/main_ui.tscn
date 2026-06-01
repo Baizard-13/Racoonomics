@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cqt20jqncmpoy"]
 
 [ext_resource type="PackedScene" uid="uid://bpwgac6fl046b" path="res://UI/scenes/tab_description.tscn" id="1_i5lw3"]
+[ext_resource type="Script" uid="uid://mhftiya6ghd0" path="res://UI/scenes/MainUI.gd" id="1_ssore"]
 [ext_resource type="PackedScene" uid="uid://cbsy65gckd1xe" path="res://UI/scenes/bar_loyalty.tscn" id="2_ssore"]
 [ext_resource type="PackedScene" uid="uid://ddocjn85juvtr" path="res://UI/scenes/tab_hotbar.tscn" id="3_xytjo"]
 
@@ -11,16 +12,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_ssore")
 
 [node name="BarLoyalty" parent="." unique_id=1630970414 instance=ExtResource("2_ssore")]
 layout_mode = 1
+mouse_filter = 2
 
 [node name="TabHotbar" parent="." unique_id=1796104784 instance=ExtResource("3_xytjo")]
 layout_mode = 1
+mouse_filter = 2
 
 [node name="DescriptionPopup" parent="." unique_id=596222301 instance=ExtResource("1_i5lw3")]
 layout_mode = 1
-offset_left = 71.0
-offset_top = -516.0
-offset_right = 650.0
-offset_bottom = 302.0
+offset_left = 67.0
+offset_top = -452.0
+offset_right = 646.0
+offset_bottom = 366.0
+mouse_filter = 2
+
+[connection signal="pressed" from="DescriptionPopup/BtClose" to="." method="_on_bt_close_pressed"]
+
+[editable path="DescriptionPopup"]
