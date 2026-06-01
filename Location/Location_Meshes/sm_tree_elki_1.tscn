@@ -8,5 +8,5 @@ albedo_texture = ExtResource("2_23mh1")
 
 [node name="SM_Tree_Elki_1" unique_id=1026577583 instance=ExtResource("1_23mh1")]
 
-[node name="SM_Tree_Elki_1" parent="." index="0" unique_id=151483866]
+[node name="SM_Tree_Elki_1" parent="." index="0" unique_id=1539178913]
 surface_material_override/0 = SubResource("StandardMaterial3D_n2wsc")

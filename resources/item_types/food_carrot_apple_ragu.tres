@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemType" format=3 uid="uid://3hs2aikpxow"]
+
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="1_pidpq"]
+
+[resource]
+script = ExtResource("1_pidpq")
+id = &"carrot_apple_ragu"
+display_name = "Carrot and Apple Ragù"
+tags = Array[StringName]([&"food", &"hedgehogs", &"hares"])
+metadata/_custom_type_script = "uid://b2ef05y1cqw6k"

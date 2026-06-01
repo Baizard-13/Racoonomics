@@ -1,9 +1,207 @@
 [gd_scene format=3 uid="uid://b8tnuk3jmf5gt"]
 
+[ext_resource type="Script" uid="uid://dstkopnorx43q" path="res://scripts/location.gd" id="1_eoaun"]
+[ext_resource type="Script" uid="uid://cy0hh14lclptf" path="res://scripts/build_mode_controller.gd" id="1_qifc2"]
 [ext_resource type="PackedScene" uid="uid://birm65xx2g784" path="res://Game/Main_Lock.tscn" id="1_vju3g"]
 [ext_resource type="PackedScene" uid="uid://bu4ik4j52immm" path="res://Grid/scenes/grid_region.tscn" id="2_34a2q"]
 [ext_resource type="Script" uid="uid://b88krc8w61x6i" path="res://Location/cameralogic.gd" id="2_u6sc3"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_uiog4"]
+[ext_resource type="Resource" uid="uid://c8lmno2gm42xg" path="res://buildings/data/2x2_test_building.tres" id="3_34ytl"]
 [ext_resource type="PackedScene" uid="uid://bq55y3n2nyd0" path="res://Grid/scenes/world_grid.tscn" id="3_tnktr"]
+[ext_resource type="Shader" uid="uid://bdh42ejp2fjcc" path="res://shaders/building_preview.gdshader" id="4_34ytl"]
+[ext_resource type="Resource" uid="uid://cdu1dcfv54umg" path="res://buildings/data/carrot_farm_manual.tres" id="5_202do"]
+[ext_resource type="Script" uid="uid://cyfhjwceljlyj" path="res://scripts/FarmWork.gd" id="5_wlodm"]
+[ext_resource type="Shader" uid="uid://dsb3hnoj25nhm" path="res://shaders/blueprint_postprocess.gdshader" id="5_yx7wv"]
+[ext_resource type="Script" uid="uid://xcormpe55lgu" path="res://scripts/money_manager.gd" id="7_202do"]
+[ext_resource type="Shader" uid="uid://ciw1jyllj5ihm" path="res://shaders/screen_pixelization.gdshader" id="13_iwrfv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i1b54"]
+shader = ExtResource("13_iwrfv")
+shader_parameter/pixel_size = 2.0000000475
+shader_parameter/color_levels = 20.000000855
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ydnx3"]
+render_priority = 5
+shader = ExtResource("4_34ytl")
+shader_parameter/is_valid = true
+shader_parameter/fresnel_power = 2.0
+shader_parameter/fresnel_sharpness = 0.800000038
+shader_parameter/scanline_scale = 500.0
+shader_parameter/scanline_speed = 1.5
+shader_parameter/wire_color_valid = Color(1.8247963, 1.8247963, 1.8247963, 1)
+shader_parameter/fill_color_valid = Color(1, 1, 1, 0.16862746)
+shader_parameter/wire_color_invalid = Color(1.8247963, 0.2924505, 0.36906803, 1)
+shader_parameter/fill_color_invalid = Color(1, 0.13999999, 0.15433311, 0.59607846)
+
+[sub_resource type="Animation" id="Animation_eoaun"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PostProcessQuad:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PostProcessQuad:mesh:material:shader_parameter/transition_threshold")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PostProcessQuad:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_202do"]
+resource_name = "enter"
+length = 0.26667002
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PostProcessQuad:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PostProcessQuad:mesh:material:shader_parameter/transition_threshold")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [0.351677, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../WorldGrid")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [true],
+"method": &"set_draw_grid"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_iwrfv"]
+resource_name = "exit"
+length = 0.40000334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PostProcessQuad:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PostProcessQuad:mesh:material:shader_parameter/transition_threshold")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.38955134]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../WorldGrid")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"set_draw_grid"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PostProcessQuad:transparency")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iwrfv"]
+_data = {
+&"RESET": SubResource("Animation_eoaun"),
+&"enter": SubResource("Animation_202do"),
+&"exit": SubResource("Animation_iwrfv")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_yx7wv"]
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_yx7wv"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.078877, 0.8783423, 1)
+colors = PackedColorArray(0.007500002, 0.009875036, 0.15, 1, 0.03720002, 0.14136012, 0.93, 1, 0.65, 0.96500003, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_eoaun"]
+gradient = SubResource("Gradient_yx7wv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eoaun"]
+render_priority = 0
+shader = ExtResource("5_yx7wv")
+shader_parameter/color_palette_gradient = SubResource("GradientTexture1D_eoaun")
+shader_parameter/transition_threshold = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_yx7wv"]
+material = SubResource("ShaderMaterial_eoaun")
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eoaun"]
+font_size = 32
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u6sc3"]
 ground_bottom_color = Color(0.37301219, 0.68417555, 0.812935, 1)
@@ -16,6 +214,13 @@ sky_material = SubResource("ProceduralSkyMaterial_u6sc3")
 background_mode = 2
 sky = SubResource("Sky_tnktr")
 tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_albedo = Color(0.85, 0.85, 0.85, 1)
+volumetric_fog_emission = Color(1, 1, 1, 1)
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_length = 640.0
+volumetric_fog_ambient_inject = 0.2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vju3g"]
 radius = 3.288
@@ -24,19 +229,79 @@ radius = 3.288
 size = Vector3(596.9275, 316.57446, 1)
 
 [node name="Location" type="Node3D" unique_id=668207517]
+script = ExtResource("1_eoaun")
+
+[node name="PostProcess" type="CanvasLayer" parent="." unique_id=1184871636]
+layer = -99
+
+[node name="ColorRect" type="ColorRect" parent="PostProcess" unique_id=1476978200]
+material = SubResource("ShaderMaterial_i1b54")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BuildModeController" type="Node" parent="." unique_id=859596041 node_paths=PackedStringArray("grid", "camera")]
+script = ExtResource("1_qifc2")
+buildings = Array[ExtResource("2_uiog4")]([ExtResource("3_34ytl"), ExtResource("5_202do")])
+grid = NodePath("../WorldGrid")
+camera = NodePath("../CharacterBody3D/Camera3D")
+building_ghost_material = SubResource("ShaderMaterial_ydnx3")
+
+[node name="EditModeTransition" type="AnimationPlayer" parent="BuildModeController" unique_id=794029400]
+libraries/ = SubResource("AnimationLibrary_iwrfv")
+
+[node name="DevButtonPrompt" type="CanvasLayer" parent="BuildModeController" unique_id=1221167571]
+
+[node name="Label" type="Label" parent="BuildModeController/DevButtonPrompt" unique_id=785760904]
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 189.0
+offset_bottom = 47.0
+text = "[F]    enter build mode
+[R]        rotate buliding
+[Esc]   exit build mode
+[P]               add money"
+label_settings = SubResource("LabelSettings_yx7wv")
+
+[node name="PostProcessQuad" type="MeshInstance3D" parent="BuildModeController" unique_id=1197606766]
+visible = false
+cast_shadow = 0
+extra_cull_margin = 500.0
+mesh = SubResource("QuadMesh_yx7wv")
+
+[node name="MoneyManager" type="Node" parent="." unique_id=937004170]
+script = ExtResource("7_202do")
+
+[node name="Money_count" type="CanvasLayer" parent="MoneyManager" unique_id=254028323]
+layer = 2
+
+[node name="MoneyLabel" type="Label" parent="MoneyManager/Money_count" unique_id=466227013]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 16.0
+offset_right = 50.0
+offset_bottom = 39.0
+grow_horizontal = 2
+text = "10/20"
+label_settings = SubResource("LabelSettings_eoaun")
+horizontal_alignment = 1
 
 [node name="WorldGrid" parent="." unique_id=1294225932 instance=ExtResource("3_tnktr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4246826, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4072876, 0, 0)
 cell_size = Vector2(10, 10)
 
-[node name="WestRegion" parent="WorldGrid" unique_id=1793561490 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 0, -5)
-origin = Vector2i(-18, -13)
+[node name="WestRegion" parent="WorldGrid" unique_id=1534974895 instance=ExtResource("2_34a2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 5.083191, -5)
+origin = Vector2i(-19, -13)
 size = Vector2i(17, 25)
 
 [node name="EastRegion" parent="WorldGrid" unique_id=1440203446 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, -5)
-origin = Vector2i(5, -13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 0, -5)
+origin = Vector2i(3, -13)
 size = Vector2i(17, 25)
 
 [node name="WolfRegion" parent="WorldGrid" unique_id=1926414541 instance=ExtResource("2_34a2q")]
@@ -45,33 +310,33 @@ origin = Vector2i(-13, -18)
 size = Vector2i(5, 5)
 
 [node name="FrogRegion" parent="WorldGrid" unique_id=1323396244 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, 145)
-origin = Vector2i(-10, 13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 0, 145)
+origin = Vector2i(-11, 12)
 size = Vector2i(5, 5)
 
 [node name="BeaverRegion" parent="WorldGrid" unique_id=7218940 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 0, -155)
-origin = Vector2i(8, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, -155)
+origin = Vector2i(6, -18)
 size = Vector2i(5, 5)
 
 [node name="RaccoonRegion" parent="WorldGrid" unique_id=337522427 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 235, 0, -115)
-origin = Vector2i(22, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 7.55513, -115)
+origin = Vector2i(20, -14)
 size = Vector2i(5, 5)
 
 [node name="SquirrelRegion" parent="WorldGrid" unique_id=1937956173 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 235, 0, 15)
-origin = Vector2i(22, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, 25)
+origin = Vector2i(20, 0)
 size = Vector2i(5, 5)
 
 [node name="HareRegion" parent="WorldGrid" unique_id=388067982 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135, 0, 145)
-origin = Vector2i(12, 13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 145)
+origin = Vector2i(10, 12)
 size = Vector2i(5, 5)
 
 [node name="FoxRegion" parent="WorldGrid" unique_id=1027696517 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205, 0, 55)
-origin = Vector2i(-23, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215, 0, 65)
+origin = Vector2i(-24, 4)
 size = Vector2i(5, 5)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=595020413]
@@ -79,24 +344,33 @@ environment = SubResource("Environment_34a2q")
 
 [node name="Environment" parent="." unique_id=1531277812 instance=ExtResource("1_vju3g")]
 
+[node name="Sm_hub" parent="Environment" index="22" unique_id=162840423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 5.4)
+
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1858140852]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.10631, 55.47648, 22.76151)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 113.10631, -0.5235214, 22.76151)
 script = ExtResource("2_u6sc3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=271896591]
-transform = Transform3D(1, 0, 0, 0, 0.73932576, -0.6733481, 0, 0.6733481, 0.73932576, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 shape = SubResource("SphereShape3D_vju3g")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=853344049]
-transform = Transform3D(1, 0, 0, 0, 0.8594065, 0.511293, 0, -0.511293, 0.8594065, 0, 21.661226, 35.662178)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 250)
 current = true
-fov = 45.0
+fov = 30.0
 size = 100.0
+script = ExtResource("5_wlodm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1060950206]
 transform = Transform3D(-0.5591928, -0.66122705, -0.5000821, 0, -0.6032079, 0.7975839, -0.82903767, 0.44600314, 0.3373095, 0, 0, 0)
-light_color = Color(0.99215686, 0.9647059, 0.6117647, 1)
+light_color = Color(0.99, 0.86212504, 0.7425, 1)
+light_energy = 0.9
 light_specular = 0.0
+shadow_enabled = true
+shadow_bias = 0.01
+directional_shadow_mode = 0
+directional_shadow_max_distance = 600.0
 
 [node name="borders" type="Node3D" parent="." unique_id=1220244462]
 
@@ -127,3 +401,5 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 236.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls4" unique_id=1993239243]
 shape = SubResource("BoxShape3D_u6sc3")
 debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[editable path="Environment"]

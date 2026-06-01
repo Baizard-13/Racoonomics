@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="FoodRecipe" format=3 uid="uid://drgtgh6g0x6ch"]
+
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="1_dwqrk"]
+[ext_resource type="Resource" uid="uid://bak5ndnurptaa" path="res://resources/item_types/food_apple_sauce.tres" id="2_7gnx8"]
+[ext_resource type="Script" uid="uid://tn6puc2bj5me" path="res://scripts/food.gd" id="2_eleqo"]
+[ext_resource type="Resource" uid="uid://yh4xgipw00mq" path="res://resources/item_types/apples.tres" id="2_hyqvw"]
+
+[resource]
+script = ExtResource("2_eleqo")
+ingredients = Dictionary[ExtResource("1_dwqrk"), int]({
+ExtResource("2_hyqvw"): 1
+})
+result = ExtResource("2_7gnx8")
+metadata/_custom_type_script = "uid://tn6puc2bj5me"

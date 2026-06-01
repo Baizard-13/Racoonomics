@@ -48,6 +48,8 @@ transform = Transform3D(0.27736497, 0, -0.96076465, 0, 1, 0, 0.96076465, 0, 0.27
 
 [node name="SM_Home_froges_1" parent="." unique_id=1006513173 instance=ExtResource("11_uobb6")]
 
+[node name="SM_Location" parent="." unique_id=1631105442 instance=ExtResource("23_08mbt")]
+
 [node name="SM_Home_froges_2" parent="." unique_id=2028386846 instance=ExtResource("12_rkqoh")]
 
 [node name="SM_Home_rabbit_1" parent="." unique_id=1695318074 instance=ExtResource("13_olaql")]
@@ -76,8 +78,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.297348, 0, 0)
 [node name="SM_Tree_Elki_2" parent="." unique_id=1697653733 instance=ExtResource("25_v581e")]
 
 [node name="Sm_hub" parent="." unique_id=162840423 instance=ExtResource("22_b734s")]
-
-[node name="SM_Location" parent="." unique_id=1477174123 instance=ExtResource("23_08mbt")]
 
 [node name="SM_Home_wolfs_3" parent="." unique_id=2071458005 instance=ExtResource("20_1bv2c")]
 

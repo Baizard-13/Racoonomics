@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemType" format=3 uid="uid://d3ungd38obpld"]
+
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="1_6yqxv"]
+
+[resource]
+script = ExtResource("1_6yqxv")
+id = &"fried_bark"
+display_name = "Fried Bark"
+tags = Array[StringName]([&"food", &"beavers"])
+metadata/_custom_type_script = "uid://b2ef05y1cqw6k"

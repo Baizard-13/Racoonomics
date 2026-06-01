@@ -4,5 +4,3 @@
 
 [node name="WorldGrid" type="Node3D" unique_id=1294225932]
 script = ExtResource("1_xqrfh")
-
-[node name="Buildings" type="Node3D" parent="." unique_id=1244849229]

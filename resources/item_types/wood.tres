@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemType" format=3 uid="uid://bnweg3woogiok"]
+
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="1_sjdrd"]
+
+[resource]
+script = ExtResource("1_sjdrd")
+id = &"wood"
+display_name = "Wood"
+tags = Array[StringName]([&"produce", &"beavers"])
+metadata/_custom_type_script = "uid://b2ef05y1cqw6k"

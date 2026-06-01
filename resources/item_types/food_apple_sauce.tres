@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemType" format=3 uid="uid://bak5ndnurptaa"]
+
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="1_bnagk"]
+
+[resource]
+script = ExtResource("1_bnagk")
+id = &"apple_sauce"
+display_name = "Apple Sauce"
+tags = Array[StringName]([&"food", &"hedgehogs"])
+metadata/_custom_type_script = "uid://b2ef05y1cqw6k"

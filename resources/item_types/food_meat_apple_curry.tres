@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemType" format=3 uid="uid://cnpci28et6of3"]
+
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="1_prohm"]
+
+[resource]
+script = ExtResource("1_prohm")
+id = &"meat_apple_curry"
+display_name = "Meat and Apple Curry"
+tags = Array[StringName]([&"food", &"foxes", &"wolves", &"hedgehogs"])
+metadata/_custom_type_script = "uid://b2ef05y1cqw6k"

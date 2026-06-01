@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemType" format=3 uid="uid://rvpd84p8d71v"]
+
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="1_fjhl7"]
+
+[resource]
+script = ExtResource("1_fjhl7")
+id = &"honey_apple_pie"
+display_name = "Honey Apple Pie"
+tags = Array[StringName]([&"food", &"hedgehogs", &"bears"])
+metadata/_custom_type_script = "uid://b2ef05y1cqw6k"

@@ -1,0 +1,105 @@
+extends Node
+
+@export var buildings : Array[BuildingDefinition]
+
+@export var grid : WorldGrid
+@export var camera : Camera3D
+
+@export var building_ghost_material : ShaderMaterial
+
+@export_category("Runtime state (don't edit)")
+@export var current_building : BuildingDefinition = null
+
+@onready var post_process_quad: MeshInstance3D = $PostProcessQuad
+@onready var edit_mode_transition: AnimationPlayer = $EditModeTransition
+@onready var money_manager: Node = $"../MoneyManager"
+
+var current_ghost : Building
+var current_grid_pos : Vector2i
+var current_rotation := 0
+
+#func _ready() -> void:
+	#enter_build_mode(_2X_2_TEST_BUILDING)
+
+func _process(_delta: float) -> void:
+	if !current_building or !current_ghost:
+		return
+
+	var mouse_grid_pos := _hovered_cell()
+
+	if mouse_grid_pos != current_grid_pos:
+		current_grid_pos = mouse_grid_pos
+
+		current_ghost.origin_cell = current_grid_pos
+
+		var is_valid := grid.get_overlap_with_clearance(Rect2i(current_ghost.origin_cell, current_building.dimensions), current_building.clearance).is_empty()
+		current_ghost.set_override_property("is_valid", is_valid)
+
+func enter_build_mode(building_def: BuildingDefinition) -> void:
+	current_building = building_def
+	current_rotation = 0
+	_refresh_ghost()
+
+	edit_mode_transition.stop()
+	edit_mode_transition.play("enter")
+
+func _refresh_ghost() -> void:
+	if current_ghost:
+		current_ghost.queue_free()
+
+	current_ghost = current_building.get_building_instance(current_rotation)
+	current_ghost.origin_cell = current_grid_pos
+	current_ghost.set_material_override(building_ghost_material)
+	current_ghost.set_override_property("is_valid", true)
+	current_ghost.is_ghost = true
+
+	grid.add_child(current_ghost)
+
+func exit_build_mode() -> void:
+	current_building = null
+	edit_mode_transition.stop()
+	edit_mode_transition.play("exit")
+	current_grid_pos = Vector2.ZERO
+	if current_ghost:
+		current_ghost.queue_free()
+		current_ghost = null
+
+func _hovered_cell() -> Vector2i:
+	var viewport := get_viewport()
+	var mouse_pos := viewport.get_mouse_position()
+
+	var ray_origin := camera.project_ray_origin(mouse_pos)
+	var ray_direction := camera.project_ray_normal(mouse_pos)
+
+	var target := -ray_origin.y / ray_direction.y
+	var intersection := ray_origin + ray_direction * target
+
+	return grid.world_to_cell(intersection) - Vector2i((current_ghost.dimensions / 2.0).floor())
+
+func _try_place_building() -> void:
+	if !current_building or !current_ghost or !money_manager.check_cost(current_building.purchase_cost):
+		return
+
+	var placed_building = current_building.get_building_instance(current_rotation)
+	placed_building.origin_cell = current_grid_pos
+
+	if !grid.try_place_building(placed_building):
+		placed_building.queue_free()
+		money_manager.money += current_building.purchase_cost
+	#else:
+		#exit_build_mode()
+
+func _input(event: InputEvent) -> void:
+	if !current_building or !current_ghost:
+		if event.is_action_pressed("bm_enter"):
+			enter_build_mode(buildings[1])
+		return
+
+	if event.is_action_pressed("place_building"):
+		_try_place_building()
+	if event.is_action_pressed("rotate_building"):
+		current_rotation = (current_rotation + 1) % 4
+		_refresh_ghost()
+		current_grid_pos = Vector2.ZERO
+	if event.is_action_pressed("bm_exit"):
+		exit_build_mode()

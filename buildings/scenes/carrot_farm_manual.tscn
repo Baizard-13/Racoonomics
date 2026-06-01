@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://btp2fmn2q4cbs"]
+
+[ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_bohua"]
+[ext_resource type="Script" uid="uid://cchl2mnjqrv3m" path="res://buildings/scripts/carrot_farm_manual.gd" id="2_to3tu"]
+[ext_resource type="PackedScene" uid="uid://c102f0hmsp3ah" path="res://models/Carrot_lvl1_work.fbx" id="3_5yl2n"]
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="3_to3tu"]
+[ext_resource type="Script" uid="uid://fufmogn6slbf" path="res://scripts/item_storage.gd" id="4_qsil6"]
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="5_iq5xd"]
+[ext_resource type="Resource" uid="uid://cjb8ype3a5ygw" path="res://resources/item_types/carrots.tres" id="6_m0g0q"]
+[ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="7_pxkjs"]
+
+[sub_resource type="Resource" id="Resource_6qyug"]
+script = ExtResource("3_to3tu")
+cell_offset = Vector2i(1, 2)
+storage_id = &"carrots_out"
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_tj4wi"]
+script = ExtResource("7_pxkjs")
+mode = 0
+allowed_types = Array[ExtResource("5_iq5xd")]([ExtResource("6_m0g0q")])
+metadata/_custom_type_script = "uid://b3goh20b5qa4r"
+
+[sub_resource type="Resource" id="Resource_05363"]
+resource_local_to_scene = true
+script = ExtResource("4_qsil6")
+filter = SubResource("Resource_tj4wi")
+metadata/_custom_type_script = "uid://fufmogn6slbf"
+
+[sub_resource type="BoxMesh" id="BoxMesh_to3tu"]
+resource_local_to_scene = true
+
+[node name="CarrotFarmManual" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_bohua")]
+script = ExtResource("2_to3tu")
+title = "Carrot farm (manual)"
+dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("3_to3tu")]([SubResource("Resource_6qyug")])
+storage = Dictionary[StringName, ExtResource("4_qsil6")]({
+&"carrots_out": SubResource("Resource_05363")
+})
+meshes = [NodePath("Carrot_lvl1_work/Anim_Farm_Carrot_lvl1/Skeleton3D/SK_Farm_Carrot_lvl1")]
+
+[node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
+transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_to3tu")
+
+[node name="Carrot_lvl1_work" parent="." index="2" unique_id=707614248 instance=ExtResource("3_5yl2n")]
+transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.4, 0)
+
+[node name="Skeleton3D" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1" parent_id_path=PackedInt32Array(707614248, 1494052243) index="0" unique_id=1601052670]
+bones/1/position = Vector3(-0.053723484, 0.023518458, 0.00038251525)
+bones/1/rotation = Quaternion(0.012978623, -0.12446496, 0.22381389, 0.9665647)
+bones/2/position = Vector3(-0.049634445, 0.021378942, -0.00019431114)
+bones/2/scale = Vector3(0.72056824, 0.72056824, 0.72056824)
+bones/3/position = Vector3(-0.049662095, 0.025895057, 0.00010256842)
+bones/3/rotation = Quaternion(0.027998786, 0.06961687, -0.36386752, 0.9284234)
+bones/4/position = Vector3(-0.05194355, 0.022118025, -0.0028051306)
+bones/4/rotation = Quaternion(-0.079541124, 0.009286271, 0.17464411, 0.9813697)
+bones/5/position = Vector3(-0.05028739, 0.027206369, -0.0011253804)
+bones/5/rotation = Quaternion(0.1404929, -0.38364062, 0.29465926, 0.863862)
+bones/6/position = Vector3(-0.049367934, 0.022226436, 0.0021736156)
+bones/6/rotation = Quaternion(0.16082086, -0.16487125, -0.1456679, 0.9621512)
+bones/7/position = Vector3(-0.05155771, 0.021429718, -0.00033968137)
+bones/7/scale = Vector3(0.72056824, 0.72056824, 0.72056824)
+bones/8/position = Vector3(-0.052926894, 0.022001375, -0.0013170373)
+bones/8/scale = Vector3(0.72056824, 0.72056824, 0.72056824)
+bones/9/position = Vector3(-0.051514383, 0.025839936, 0.0004152879)
+bones/9/rotation = Quaternion(0.23678787, 0.5803726, -0.09646588, 0.77317107)
+
+[node name="AnimationPlayer" parent="Carrot_lvl1_work" index="1" unique_id=663317617]
+autoplay = &"Anim_Farm_Carrot_lvl1|Anim_Farm_Carrot_lvl1|Anim_Farm_Carrot_lvl1"
+
+[editable path="Carrot_lvl1_work"]
