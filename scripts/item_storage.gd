@@ -14,6 +14,15 @@ func get_filled_capacity() -> int:
 
 	return total
 
+func get_available_capacity() -> int:
+	return capacity - get_filled_capacity()
+
+func is_empty() -> bool:
+	return get_filled_capacity() == 0
+
+func is_full() -> bool:
+	return get_filled_capacity() >= capacity
+
 func get_type_count(type: ItemType) -> int:
 	return stacks.get(type.id, 0)
 
@@ -35,7 +44,7 @@ func take(type: ItemType, quantity: int) -> int:
 
 	return can_take
 
-func take_filtered(filter: ItemFilter, quantity: int) -> Dictionary[StringName, int]:
+func take_filtered(filter_: ItemFilter, quantity: int) -> Dictionary[StringName, int]:
 	var taken : Dictionary[StringName, int]
 	var remaining := quantity
 
@@ -44,10 +53,17 @@ func take_filtered(filter: ItemFilter, quantity: int) -> Dictionary[StringName, 
 			break
 
 		var type := Global.get_type(type_id)
-		if filter.accepts(type):
+		if filter_.accepts(type):
 			var can_take := take(type, remaining)
 			if can_take > 0:
 				taken[type_id] = can_take
 				remaining -= can_take
 
 	return taken
+
+func auto_receive_from(source: ItemStorage) -> void:
+	var can_take := source.take_filtered(filter, get_available_capacity())
+
+	for type_id in can_take.keys():
+		var type := Global.get_type(type_id)
+		put(type, can_take[type_id])

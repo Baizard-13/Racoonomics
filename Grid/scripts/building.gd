@@ -33,8 +33,12 @@ const BUILDING_PORT_DECAL = preload("uid://uf7gdg37kqtl")
 @export var invalid_cells : Array[Vector2i]
 @export var is_active := false
 @export var is_ghost := false
+@export var definition_CLEAR_ME : BuildingDefinition
+
+@export_tool_button("make definition from current state", "ResourcePreloader") var make_definition_button = _make_definition
 
 @onready var mesh_bounds_visualizer: MeshInstance3D = $MeshBoundsVisualizer
+
 
 var ports_node: Node3D
 
@@ -55,8 +59,8 @@ func get_cells() -> Array[Vector2i]:
 
 func get_port(at_cell: Vector2i, from_cell: Vector2i) -> BuildingPort:
 	for port in ports:
-		var port_cell = origin_cell + port.cell_offset
-		if port_cell == at_cell and origin_cell + port.cell_offset - from_cell == port.get_facing_vector():
+		var port_world_cell := origin_cell + port.cell_offset
+		if port_world_cell == at_cell and (from_cell - at_cell) == port.get_facing_vector():
 			return port
 
 	return null
@@ -65,7 +69,7 @@ func get_port_storage(port: BuildingPort) -> ItemStorage:
 	if storage.has(port.storage_id):
 		return storage[port.storage_id]
 	else:
-		push_warning("port %s requests storage %s which doesn't exist, creating and returning default" % [port, port.storage_id])
+		push_warning("(%s) port %s requests storage %s which doesn't exist, creating and returning default" % [name, port, port.storage_id])
 		var new_storage = ItemStorage.new()
 		storage[port.storage_id] = new_storage
 		return new_storage
@@ -88,7 +92,7 @@ func rotate_cell(cell: Vector2i, cell_rotation: int, dims: Vector2i) -> Vector2i
 	return cell
 
 func rotate_facing(facing: BuildingPort.Facing, cell_rotation: int) -> BuildingPort.Facing:
-	return (facing + cell_rotation) % 4 as BuildingPort.Facing
+	return posmod(facing + cell_rotation, 4) as BuildingPort.Facing
 
 func rotate_dimensions(dims: Vector2i, cell_rotation: int) -> Vector2i:
 	if cell_rotation % 2 == 0:
@@ -100,6 +104,10 @@ func _ready() -> void:
 	_rebuild_ports()
 	if !Engine.is_editor_hint():
 		mesh_bounds_visualizer.queue_free()
+	_extends_ready()
+
+func _extends_ready() -> void:
+	pass
 
 # wherever these will eventually be called, they must be called in this order specifically
 func tick_produce() -> void:
@@ -123,8 +131,17 @@ func update_position() -> void:
 	var grid := get_parent() as WorldGrid
 	position = grid.cell_to_world(origin_cell) + Vector3(dimensions.x * grid.cell_size.x * 0.5, 0, dimensions.y * grid.cell_size.y * 0.5)
 	rotation.y = -rotation_steps * PI * 0.5
-	ports_node.global_rotation.y = 0.0
+	if ports_node: ports_node.global_rotation.y = 0.0
 	reset_physics_interpolation()
+
+func _make_definition():
+	var def = BuildingDefinition.new()
+	def.title = title
+	def.dimensions = dimensions
+	def.clearance = clearance
+	def.ports = ports
+
+	definition_CLEAR_ME = def
 
 func _rebuild_ports():
 	if ports_node:
@@ -138,6 +155,12 @@ func _rebuild_ports():
 		var port_pos = get_local_top_left() + Vector3((port.cell_offset.x + 0.5) * grid_size, 0, (port.cell_offset.y + 0.5) * grid_size)
 		port_instance.position = port_pos
 		ports_node.add_child(port_instance)
+		port.vis_node_path = port_instance.get_path()
 		port_instance.set_is_output(port.type == BuildingPort.PortType.EXPORTS)
 		var port_direction := port.get_facing_vector()
-		port_instance.rotation.y = atan2(port_direction.x, port_direction.y)
+		port_instance.rotation.y = atan2(port_direction.x, port_direction.y) + PI
+
+func set_show_port(port: BuildingPort, show_: bool) -> void:
+	var port_node := get_node(port.vis_node_path) as Node3D
+	if port_node:
+		port_node.visible = show_

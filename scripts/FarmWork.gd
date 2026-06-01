@@ -4,7 +4,7 @@ var timer_active: bool = true
 var time_accumulator: float = 0.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	#time_accumulator += delta
 	#if timer_active == true and time_accumulator >= 1.0:

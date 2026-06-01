@@ -6,13 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://bu4ik4j52immm" path="res://Grid/scenes/grid_region.tscn" id="2_34a2q"]
 [ext_resource type="Script" uid="uid://b88krc8w61x6i" path="res://Location/cameralogic.gd" id="2_u6sc3"]
 [ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_uiog4"]
-[ext_resource type="Resource" uid="uid://c8lmno2gm42xg" path="res://buildings/data/2x2_test_building.tres" id="3_34ytl"]
 [ext_resource type="PackedScene" uid="uid://bq55y3n2nyd0" path="res://Grid/scenes/world_grid.tscn" id="3_tnktr"]
 [ext_resource type="Shader" uid="uid://bdh42ejp2fjcc" path="res://shaders/building_preview.gdshader" id="4_34ytl"]
 [ext_resource type="Resource" uid="uid://cdu1dcfv54umg" path="res://buildings/data/carrot_farm_manual.tres" id="5_202do"]
 [ext_resource type="Script" uid="uid://cyfhjwceljlyj" path="res://scripts/FarmWork.gd" id="5_wlodm"]
 [ext_resource type="Shader" uid="uid://dsb3hnoj25nhm" path="res://shaders/blueprint_postprocess.gdshader" id="5_yx7wv"]
 [ext_resource type="Script" uid="uid://xcormpe55lgu" path="res://scripts/money_manager.gd" id="7_202do"]
+[ext_resource type="Resource" uid="uid://c5v6tpeuqjm41" path="res://buildings/data/pipe_right_turn.tres" id="7_qwiua"]
+[ext_resource type="Resource" uid="uid://behwpwgqjkaqt" path="res://buildings/data/pipe_straight.tres" id="7_ydnx3"]
+[ext_resource type="Resource" uid="uid://b314wq1n1hgrl" path="res://buildings/data/pipe_left_turn.tres" id="8_qwiua"]
 [ext_resource type="Shader" uid="uid://ciw1jyllj5ihm" path="res://shaders/screen_pixelization.gdshader" id="13_iwrfv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i1b54"]
@@ -24,6 +26,7 @@ shader_parameter/color_levels = 20.000000855
 render_priority = 5
 shader = ExtResource("4_34ytl")
 shader_parameter/is_valid = true
+shader_parameter/is_warning = false
 shader_parameter/fresnel_power = 2.0
 shader_parameter/fresnel_sharpness = 0.800000038
 shader_parameter/scanline_scale = 500.0
@@ -32,6 +35,7 @@ shader_parameter/wire_color_valid = Color(1.8247963, 1.8247963, 1.8247963, 1)
 shader_parameter/fill_color_valid = Color(1, 1, 1, 0.16862746)
 shader_parameter/wire_color_invalid = Color(1.8247963, 0.2924505, 0.36906803, 1)
 shader_parameter/fill_color_invalid = Color(1, 0.13999999, 0.15433311, 0.59607846)
+shader_parameter/warning_color = Color(0.9019608, 0.2627451, 0.13333334, 1)
 
 [sub_resource type="Animation" id="Animation_eoaun"]
 length = 0.001
@@ -241,10 +245,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="BuildModeController" type="Node" parent="." unique_id=859596041 node_paths=PackedStringArray("grid", "camera")]
 script = ExtResource("1_qifc2")
-buildings = Array[ExtResource("2_uiog4")]([ExtResource("3_34ytl"), ExtResource("5_202do")])
+buildings = Array[ExtResource("2_uiog4")]([ExtResource("5_202do"), ExtResource("7_ydnx3"), ExtResource("7_qwiua"), ExtResource("8_qwiua")])
 grid = NodePath("../WorldGrid")
 camera = NodePath("../CharacterBody3D/Camera3D")
 building_ghost_material = SubResource("ShaderMaterial_ydnx3")
@@ -264,6 +269,12 @@ text = "[F]    enter build mode
 [Esc]   exit build mode
 [P]               add money"
 label_settings = SubResource("LabelSettings_yx7wv")
+
+[node name="BuildingSelector" type="OptionButton" parent="BuildModeController/DevButtonPrompt" unique_id=875910082]
+offset_left = 32.0
+offset_top = 144.0
+offset_right = 64.0
+offset_bottom = 164.0
 
 [node name="PostProcessQuad" type="MeshInstance3D" parent="BuildModeController" unique_id=1197606766]
 visible = false
@@ -401,5 +412,15 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 236.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls4" unique_id=1993239243]
 shape = SubResource("BoxShape3D_u6sc3")
 debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=1015094851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167, 29.5, 0)
+size = Vector3(321, 79, 507)
+
+[node name="ReflectionProbe2" type="ReflectionProbe" parent="." unique_id=1746807071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140, 29.5, 0)
+size = Vector3(321, 79, 507)
+
+[connection signal="item_selected" from="BuildModeController/DevButtonPrompt/BuildingSelector" to="BuildModeController" method="_on_building_selected"]
 
 [editable path="Environment"]

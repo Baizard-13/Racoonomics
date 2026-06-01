@@ -18,9 +18,10 @@ enum Facing {
 @export var cell_offset: Vector2i = Vector2i.ZERO
 @export var facing: Facing
 @export var storage_id: StringName
+@export var vis_node_path : NodePath
 
-func get_facing_vector() -> Vector2i:
-	match facing:
+func get_facing_vector(f := facing) -> Vector2i:
+	match f:
 		Facing.NORTH: return Vector2i(0, -1)
 		Facing.EAST: return Vector2i(1, 0)
 		Facing.SOUTH: return Vector2i(0, 1)

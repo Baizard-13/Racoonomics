@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3 uid="uid://c5v6tpeuqjm41"]
+
+[ext_resource type="PackedScene" uid="uid://ddvuilmm264ub" path="res://buildings/scenes/pipe_right_turn.tscn" id="1_ysdqv"]
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="2_0pega"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="3_vmgpb"]
+
+[sub_resource type="Resource" id="Resource_r1tx4"]
+script = ExtResource("2_0pega")
+facing = 3
+storage_id = &"pipe_temp"
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeRightTurn/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_5qhtt"]
+script = ExtResource("2_0pega")
+type = 1
+storage_id = &"pipe_temp"
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/PipeRightTurn/Ports/@Node3D@63360")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[resource]
+script = ExtResource("3_vmgpb")
+title = "Pipe (right bend)"
+clearance = 0
+ports = Array[ExtResource("2_0pega")]([SubResource("Resource_r1tx4"), SubResource("Resource_5qhtt")])
+building_scene = ExtResource("1_ysdqv")
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"
