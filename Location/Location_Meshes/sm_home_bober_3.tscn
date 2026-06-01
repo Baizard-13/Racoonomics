@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://c84j4v14cekye"]
-
-[ext_resource type="PackedScene" uid="uid://bavm3htscvpj6" path="res://Lock/SM_Home_bober_3.fbx" id="1_0ngt7"]
-
-[node name="SM_Home_bober_3" unique_id=1791956331 instance=ExtResource("1_0ngt7")]

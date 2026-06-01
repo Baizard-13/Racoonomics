@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://c30k4flamtuix"]
-
-[ext_resource type="PackedScene" uid="uid://l7vdasr6whbd" path="res://Lock/SM_Home_eji_4.fbx" id="1_888ps"]
-
-[node name="SM_Home_eji_4" unique_id=349047960 instance=ExtResource("1_888ps")]

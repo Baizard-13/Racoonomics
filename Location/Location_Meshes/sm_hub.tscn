@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://deb6pcsl0payw"]
-
-[ext_resource type="PackedScene" uid="uid://gu1t2a0vqi1n" path="res://Lock/Sm_hub.fbx" id="1_q4ftb"]
-
-[node name="Sm_hub" unique_id=162840423 instance=ExtResource("1_q4ftb")]
