@@ -1,52 +1,76 @@
 [gd_scene format=3 uid="uid://bpwgac6fl046b"]
 
 [ext_resource type="Texture2D" uid="uid://dkd25jhefvn51" path="res://UI/textures/Tab_Description/T_G_Button_Close.png" id="1_72p87"]
+[ext_resource type="Script" uid="uid://wtpd73re5xj7" path="res://scripts/JuiceComponent.gd" id="2_5qrx0"]
 [ext_resource type="Texture2D" uid="uid://b3e4xtjwn0hup" path="res://UI/textures/Tab_Description/T_G_TabDescription_Background.png" id="2_u1k7u"]
+[ext_resource type="Texture2D" uid="uid://lvkxuttx5mj7" path="res://Images/paintdotnet_y9vSMDoCGH.png" id="3_j1ai2"]
 [ext_resource type="Texture2D" uid="uid://bfp8fefj7ics6" path="res://UI/textures/Tab_Description/T_G_TabDescription_Bt_Downgrade_1.png" id="3_wej4i"]
 [ext_resource type="Texture2D" uid="uid://rxbtricc6f5s" path="res://UI/textures/Tab_Description/T_G_TabDescription_Bt_Upgrade_1.png" id="4_2mdoo"]
 [ext_resource type="Texture2D" uid="uid://bs8a67m2mu1ga" path="res://UI/textures/Tab_Description/T_G_TabDescription_Bt_Sell_1.png" id="5_j1ai2"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_5qrx0"]
+font_color = Color(0, 0, 0, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2mdoo"]
 texture = ExtResource("1_72p87")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j1ai2"]
+texture = ExtResource("1_72p87")
+modulate_color = Color(0.30323282, 0.30323282, 0.30323282, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qy7mc"]
+texture = ExtResource("1_72p87")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mo0ym"]
 texture = ExtResource("3_wej4i")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kdspt"]
+texture = ExtResource("3_wej4i")
+modulate_color = Color(0.44291076, 0.44291076, 0.44291073, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f26i4"]
+load_path = "res://.godot/imported/T_G_TabDescription_Bt_Downgrade_1.png-b6b09347c5ad418071c1a52d9bec2461.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xjp1d"]
+texture = SubResource("CompressedTexture2D_f26i4")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5qrx0"]
 texture = ExtResource("4_2mdoo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5stso"]
+texture = ExtResource("4_2mdoo")
+modulate_color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0imv4"]
+load_path = "res://.godot/imported/T_G_TabDescription_Bt_Upgrade_1.png-761628d07e647931d507e2ce3437b05d.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_acq8r"]
+texture = SubResource("CompressedTexture2D_0imv4")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrvrn"]
 texture = ExtResource("5_j1ai2")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f26i4"]
+texture = ExtResource("5_j1ai2")
+modulate_color = Color(0.50534403, 0.5053441, 0.50534403, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0imv4"]
+texture = ExtResource("5_j1ai2")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
 [node name="DescriptionPopup" type="Control" unique_id=596222301]
 top_level = true
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -747.0
-offset_top = -430.0
-offset_right = -168.0
-offset_bottom = 388.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 579.0
+offset_bottom = 818.0
 
-[node name="BtClose" type="Button" parent="." unique_id=77439417]
-z_index = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -49.0
-offset_top = -28.0
-offset_right = 271.0
-offset_bottom = 292.0
-scale = Vector2(0.25, 0.25)
-theme_override_styles/normal = SubResource("StyleBoxTexture_2mdoo")
-
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=2059308581]
+[node name="BG" type="TextureRect" parent="." unique_id=2059308581]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -56,26 +80,127 @@ offset_bottom = 818.0
 grow_horizontal = 0
 texture = ExtResource("2_u1k7u")
 
+[node name="Building_icon" type="TextureRect" parent="." unique_id=30581243]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 82.0
+offset_top = 83.0
+offset_right = -82.0
+offset_bottom = 350.0
+texture = ExtResource("3_j1ai2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="." unique_id=1560093602]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 109.0
+offset_top = 43.0
+offset_right = -110.0
+offset_bottom = 76.0
+text = "Building Name Long Very Longw"
+label_settings = SubResource("LabelSettings_5qrx0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="." unique_id=2096860074]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 44.0
+offset_top = 384.0
+offset_right = -47.0
+offset_bottom = 488.0
+text = "IDK "
+label_settings = SubResource("LabelSettings_5qrx0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtClose" type="Button" parent="." unique_id=77439417]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -175.0
+offset_top = -146.0
+offset_right = 145.0
+offset_bottom = 174.0
+grow_horizontal = 0
+scale = Vector2(0.25, 0.25)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxTexture_2mdoo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j1ai2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qy7mc")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_2mdoo")
+theme_override_styles/focus = SubResource("StyleBoxTexture_2mdoo")
+
+[node name="CompJuice" type="Node" parent="BtClose" unique_id=1095024590]
+script = ExtResource("2_5qrx0")
+scale_value = Vector2(0.28, 0.28)
+init_scale = Vector2(0.25, 0.25)
+metadata/_custom_type_script = "uid://wtpd73re5xj7"
+
 [node name="BtDowngrade" type="Button" parent="." unique_id=180608791]
-layout_mode = 0
-offset_left = 417.0
-offset_top = 555.0
-offset_right = 517.0
-offset_bottom = 655.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -162.0
+offset_top = -263.0
+offset_right = -62.0
+offset_bottom = -163.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_styles/normal = SubResource("StyleBoxTexture_mo0ym")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kdspt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xjp1d")
+
+[node name="CompJuice" type="Node" parent="BtDowngrade" unique_id=1603330537]
+script = ExtResource("2_5qrx0")
+metadata/_custom_type_script = "uid://wtpd73re5xj7"
 
 [node name="BtUpgrade" type="Button" parent="." unique_id=1693452720]
-layout_mode = 0
-offset_left = 304.0
-offset_top = 555.0
-offset_right = 404.0
-offset_bottom = 655.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -275.0
+offset_top = -263.0
+offset_right = -175.0
+offset_bottom = -163.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_styles/normal = SubResource("StyleBoxTexture_5qrx0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5stso")
+theme_override_styles/hover = SubResource("StyleBoxTexture_acq8r")
+
+[node name="CompJuice" type="Node" parent="BtUpgrade" unique_id=2066349986]
+script = ExtResource("2_5qrx0")
+metadata/_custom_type_script = "uid://wtpd73re5xj7"
 
 [node name="BtSell" type="Button" parent="." unique_id=1566956745]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 37.0
-offset_top = 703.0
-offset_right = 542.0
-offset_bottom = 781.0
+offset_top = -115.0
+offset_right = -37.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_styles/normal = SubResource("StyleBoxTexture_yrvrn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f26i4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0imv4")
+
+[node name="CompJuice" type="Node" parent="BtSell" unique_id=1387472712]
+script = ExtResource("2_5qrx0")
+scale_value = Vector2(1.05, 1.05)
+metadata/_custom_type_script = "uid://wtpd73re5xj7"

@@ -14,7 +14,7 @@ script = ExtResource("3_to3tu")
 cell_offset = Vector2i(1, 2)
 facing = 2
 storage_id = &"carrots_out"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/CarrotFarmManual/Ports/Anchor")
+vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/CarrotFarmManual/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_tj4wi"]
@@ -41,6 +41,7 @@ storage = Dictionary[StringName, ExtResource("4_qsil6")]({
 &"carrots_out": SubResource("Resource_qsil6")
 })
 meshes = [NodePath("Carrot_lvl1_work/Anim_Farm_Carrot_lvl1/Skeleton3D/SK_Farm_Carrot_lvl1")]
+definition_paths = Array[String](["res://buildings/data/carrot_farm_manual.tres"])
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
@@ -49,30 +50,15 @@ mesh = SubResource("BoxMesh_iq5xd")
 [node name="Carrot_lvl1_work" parent="." index="2" unique_id=707614248 instance=ExtResource("3_5yl2n")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.4, 0)
 
-[node name="Skeleton3D" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1" parent_id_path=PackedInt32Array(707614248, 1494052243) index="0" unique_id=1601052670]
-bones/1/position = Vector3(-0.053723484, 0.023518458, 0.00038251525)
-bones/1/rotation = Quaternion(0.012978623, -0.12446496, 0.22381389, 0.9665647)
-bones/2/position = Vector3(-0.049634445, 0.021378942, -0.00019431114)
-bones/2/scale = Vector3(0.72056824, 0.72056824, 0.72056824)
-bones/3/position = Vector3(-0.049662095, 0.025895057, 0.00010256842)
-bones/3/rotation = Quaternion(0.027998786, 0.06961687, -0.36386752, 0.9284234)
-bones/4/position = Vector3(-0.05194355, 0.022118025, -0.0028051306)
-bones/4/rotation = Quaternion(-0.079541124, 0.009286271, 0.17464411, 0.9813697)
-bones/5/position = Vector3(-0.05028739, 0.027206369, -0.0011253804)
-bones/5/rotation = Quaternion(0.1404929, -0.38364062, 0.29465926, 0.863862)
-bones/6/position = Vector3(-0.049367934, 0.022226436, 0.0021736156)
-bones/6/rotation = Quaternion(0.16082086, -0.16487125, -0.1456679, 0.9621512)
-bones/7/position = Vector3(-0.05155771, 0.021429718, -0.00033968137)
-bones/7/scale = Vector3(0.72056824, 0.72056824, 0.72056824)
-bones/8/position = Vector3(-0.052926894, 0.022001375, -0.0013170373)
-bones/8/scale = Vector3(0.72056824, 0.72056824, 0.72056824)
-bones/9/position = Vector3(-0.051514383, 0.025839936, 0.0004152879)
-bones/9/rotation = Quaternion(0.23678787, 0.5803726, -0.09646588, 0.77317107)
+[node name="Skeleton3D" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1" parent_id_path=PackedInt32Array(707614248, 1764824998) index="0" unique_id=1449503616]
+bones/1/position = Vector3(0, 0.018328475, 1.4210853e-16)
+bones/4/position = Vector3(-0.02, 0.018328475, 1.4210853e-16)
+bones/7/position = Vector3(0.02, 0.018328475, 1.4210853e-16)
 
-[node name="SK_Farm_Carrot_lvl1" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1/Skeleton3D" index="0" unique_id=509827692]
+[node name="SK_Farm_Carrot_lvl1" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1/Skeleton3D" index="0" unique_id=2078988864]
 transform = Transform3D(1.0000004, 0, 0, -7.1054274e-15, 1.0000004, -5.684342e-14, 0, 5.684342e-14, 1.0000004, 0, 0, 0)
 
-[node name="AnimationPlayer" parent="Carrot_lvl1_work" index="1" unique_id=663317617]
+[node name="AnimationPlayer" parent="Carrot_lvl1_work" index="1" unique_id=782666839]
 autoplay = &"Anim_Farm_Carrot_lvl1|Anim_Farm_Carrot_lvl1|Anim_Farm_Carrot_lvl1"
 
 [editable path="Carrot_lvl1_work"]

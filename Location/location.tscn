@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cqt20jqncmpoy" path="res://UI/scenes/main_ui.tscn" id="2_pgsfy"]
 [ext_resource type="Script" uid="uid://b88krc8w61x6i" path="res://Location/cameralogic.gd" id="2_u6sc3"]
 [ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_uiog4"]
+[ext_resource type="Script" uid="uid://ctxopqfvyihsn" path="res://Location/buildings_changes.gd" id="2_wscak"]
 [ext_resource type="PackedScene" uid="uid://bq55y3n2nyd0" path="res://Grid/scenes/world_grid.tscn" id="3_tnktr"]
 [ext_resource type="Shader" uid="uid://bdh42ejp2fjcc" path="res://shaders/building_preview.gdshader" id="4_34ytl"]
 [ext_resource type="Resource" uid="uid://cdu1dcfv54umg" path="res://buildings/data/carrot_farm_manual.tres" id="5_202do"]
@@ -236,9 +237,14 @@ size = Vector3(596.9275, 316.57446, 1)
 [node name="Location" type="Node3D" unique_id=668207517]
 script = ExtResource("1_eoaun")
 
+[node name="BuildingsInteractionController" type="Node" parent="." unique_id=1644019868 node_paths=PackedStringArray("camera")]
+script = ExtResource("2_wscak")
+camera = NodePath("../CharacterBody3D/Camera3D")
+
 [node name="Main_UI" type="CanvasLayer" parent="." unique_id=81660966]
 
 [node name="Main_UI" parent="Main_UI" unique_id=1036147662 instance=ExtResource("2_pgsfy")]
+unique_name_in_owner = true
 
 [node name="PostProcess" type="CanvasLayer" parent="." unique_id=1184871636]
 layer = -99
@@ -272,14 +278,15 @@ offset_bottom = 47.0
 text = "[F]    enter build mode
 [R]        rotate buliding
 [Esc]   exit build mode
-[P]               add money"
+[P]               add money
+[LMB] open build desc"
 label_settings = SubResource("LabelSettings_yx7wv")
 
 [node name="BuildingSelector" type="OptionButton" parent="BuildModeController/DevButtonPrompt" unique_id=875910082]
-offset_left = 32.0
-offset_top = 144.0
-offset_right = 64.0
-offset_bottom = 164.0
+offset_left = 213.0
+offset_top = 27.0
+offset_right = 245.0
+offset_bottom = 47.0
 
 [node name="PostProcessQuad" type="MeshInstance3D" parent="BuildModeController" unique_id=1197606766]
 visible = false

@@ -39,6 +39,7 @@ const BUILDING_PORT_DECAL = preload("uid://uf7gdg37kqtl")
 
 @onready var mesh_bounds_visualizer: MeshInstance3D = $MeshBoundsVisualizer
 
+@export var definition_paths : Array[String] = [] ##For loading definition info when you need it
 
 var ports_node: Node3D
 
