@@ -295,8 +295,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4072876, 0, 0)
 cell_size = Vector2(10, 10)
 
 [node name="WestRegion" parent="WorldGrid" unique_id=1534974895 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 5.083191, -5)
-origin = Vector2i(-19, -13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235, 0, -5)
+origin = Vector2i(-32, -13)
 size = Vector2i(17, 25)
 
 [node name="EastRegion" parent="WorldGrid" unique_id=1440203446 instance=ExtResource("2_34a2q")]
@@ -305,13 +305,13 @@ origin = Vector2i(3, -13)
 size = Vector2i(17, 25)
 
 [node name="WolfRegion" parent="WorldGrid" unique_id=1926414541 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 0, -155)
-origin = Vector2i(-13, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235, 0, -155)
+origin = Vector2i(-26, -18)
 size = Vector2i(5, 5)
 
 [node name="FrogRegion" parent="WorldGrid" unique_id=1323396244 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 0, 145)
-origin = Vector2i(-11, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215, 0, 145)
+origin = Vector2i(-24, 12)
 size = Vector2i(5, 5)
 
 [node name="BeaverRegion" parent="WorldGrid" unique_id=7218940 instance=ExtResource("2_34a2q")]
@@ -335,17 +335,14 @@ origin = Vector2i(10, 12)
 size = Vector2i(5, 5)
 
 [node name="FoxRegion" parent="WorldGrid" unique_id=1027696517 instance=ExtResource("2_34a2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215, 0, 65)
-origin = Vector2i(-24, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -345, 0, 65)
+origin = Vector2i(-37, 4)
 size = Vector2i(5, 5)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=595020413]
 environment = SubResource("Environment_34a2q")
 
 [node name="Environment" parent="." unique_id=1531277812 instance=ExtResource("1_vju3g")]
-
-[node name="Sm_hub" parent="Environment" index="22" unique_id=162840423]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 5.4)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1858140852]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 113.10631, -0.5235214, 22.76151)

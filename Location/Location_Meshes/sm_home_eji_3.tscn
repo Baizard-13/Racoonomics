@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://clrmsuxxdlstt"]
+[gd_scene format=3 uid="uid://dcviadsh6482j"]
 
-[ext_resource type="PackedScene" uid="uid://c6c08vv3klmhc" path="res://Lock/SM_Home_eji_3.fbx" id="1_igsys"]
+[ext_resource type="PackedScene" uid="uid://coxafp83bmej0" path="res://Location/Location_Meshes/SM_Home_eji_3.fbx" id="1_igsys"]
 [ext_resource type="Texture2D" uid="uid://ba7lk8qnbrhm6" path="res://Textures/Location/Ej3.png" id="2_wf81c"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_px4fa"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wf81c"]
 albedo_texture = ExtResource("2_wf81c")
 
-[node name="SM_Home_eji_3" unique_id=1290987173 instance=ExtResource("1_igsys")]
+[node name="SM_Home_eji_3" unique_id=1819603643 instance=ExtResource("1_igsys")]
 
-[node name="SM_Home_eji_3" parent="." index="0" unique_id=818339332]
-surface_material_override/0 = SubResource("StandardMaterial3D_px4fa")
+[node name="SM_Home_eji_3" parent="." index="0" unique_id=1718292025]
+surface_material_override/0 = SubResource("StandardMaterial3D_wf81c")

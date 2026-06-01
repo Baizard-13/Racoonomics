@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://cmqmll4nmrary"]
+[gd_scene format=3 uid="uid://dco383xp5llxs"]
 
-[ext_resource type="PackedScene" uid="uid://dthbv8xwob48n" path="res://Lock/SM_Home_rabbit_1.fbx" id="1_vtxuq"]
+[ext_resource type="PackedScene" uid="uid://c3y08mnalmj7r" path="res://Location/Location_Meshes/SM_Home_rabbit_1.fbx" id="1_vtxuq"]
 [ext_resource type="Texture2D" uid="uid://byvclrd5m2vqb" path="res://Textures/Location/Rabbit1.png" id="2_peu0r"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kk40"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_peu0r"]
 albedo_texture = ExtResource("2_peu0r")
 
-[node name="SM_Home_rabbit_1" unique_id=1695318074 instance=ExtResource("1_vtxuq")]
+[node name="SM_Home_rabbit_1" unique_id=1659452929 instance=ExtResource("1_vtxuq")]
 
-[node name="SM_Home_rabbit_1" parent="." index="0" unique_id=311099370]
-surface_material_override/0 = SubResource("StandardMaterial3D_3kk40")
+[node name="SM_Home_rabbit_1" parent="." index="0" unique_id=1716352264]
+surface_material_override/0 = SubResource("StandardMaterial3D_peu0r")

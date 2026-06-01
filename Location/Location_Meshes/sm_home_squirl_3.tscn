@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://bmj6ewld4jk1h"]
+[gd_scene format=3 uid="uid://beq6ybiytp276"]
 
-[ext_resource type="PackedScene" uid="uid://djqrlfqe6qco3" path="res://Lock/SM_Home_squirl_3.fbx" id="1_22iu8"]
+[ext_resource type="PackedScene" uid="uid://gr7xsgt4ovwr" path="res://Location/Location_Meshes/SM_Home_squirl_3.fbx" id="1_b3277"]
 [ext_resource type="Texture2D" uid="uid://cfjn4pwxoiat5" path="res://Textures/Location/Belka4.png" id="2_b3277"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fyf1"]
 albedo_texture = ExtResource("2_b3277")
 
-[node name="SM_Home_squirl_3" unique_id=378633245 instance=ExtResource("1_22iu8")]
+[node name="SM_Home_squirl_3" unique_id=8805485 instance=ExtResource("1_b3277")]
 
-[node name="SM_Home_squirl_3" parent="." index="0" unique_id=530953315]
+[node name="SM_Home_squirl_3" parent="." index="0" unique_id=1880987275]
 surface_material_override/0 = SubResource("StandardMaterial3D_8fyf1")
