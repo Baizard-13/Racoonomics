@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://b8rvb5jcarfdo"]
+
+[ext_resource type="Texture2D" uid="uid://by3p4xgtwlxk1" path="res://Textures/Main_menu/Background.png" id="1_nkogj"]
+[ext_resource type="Script" uid="uid://dvdgekpmw8qte" path="res://Location/Main_Menu/authors.gd" id="1_suar1"]
+[ext_resource type="Texture2D" uid="uid://dol42ios56dgm" path="res://Textures/Main_menu/M_Background_1.png" id="3_1eb55"]
+[ext_resource type="Texture2D" uid="uid://cs2kay0sbwh6w" path="res://Textures/Main_menu/Menu (1).png" id="3_x08g0"]
+[ext_resource type="Texture2D" uid="uid://bvrsa7jkfwrol" path="res://Textures/Main_menu/Exit.png" id="4_xa7p4"]
+[ext_resource type="Script" uid="uid://wtpd73re5xj7" path="res://scripts/JuiceComponent.gd" id="6_suar1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcoq8"]
+texture = ExtResource("4_xa7p4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uvc6j"]
+texture = ExtResource("4_xa7p4")
+modulate_color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xuwwm"]
+texture = ExtResource("4_xa7p4")
+modulate_color = Color(0.89059, 0.89059, 0.8905901, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1975795891]
+script = ExtResource("1_suar1")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=813761285]
+position = Vector2(960.0001, 540.50006)
+scale = Vector2(0.7515626, 0.7520834)
+texture = ExtResource("1_nkogj")
+
+[node name="MBackground2" type="Sprite2D" parent="." unique_id=1825271909]
+visible = false
+position = Vector2(1381, 541.5)
+scale = Vector2(1, 1.0046296)
+texture = ExtResource("3_1eb55")
+
+[node name="MBackground1" type="Sprite2D" parent="." unique_id=808113494]
+position = Vector2(1414, 538)
+scale = Vector2(1, 1.0046296)
+texture = ExtResource("3_x08g0")
+
+[node name="Exit" type="Button" parent="." unique_id=1963821631]
+custom_minimum_size = Vector2(340.67, 80)
+offset_left = 1297.0
+offset_top = 942.0
+offset_right = 1668.675
+offset_bottom = 1027.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_rcoq8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uvc6j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xuwwm")
+
+[node name="CompJuice" type="Node" parent="Exit" unique_id=1022800734]
+script = ExtResource("6_suar1")
+trans = 6
+time = 0.5
+scale_value = Vector2(1.05, 1.05)
+metadata/_custom_type_script = "uid://wtpd73re5xj7"
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Racoonomics"
-run/main_scene="uid://b8tnuk3jmf5gt"
+run/main_scene="uid://dks0bbnaqodbq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
