@@ -6,5 +6,6 @@
 
 [resource]
 script = ExtResource("2_nikss")
+dimensions = Vector2i(3, 3)
 building_scene = ExtResource("1_nikss")
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"

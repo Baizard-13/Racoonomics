@@ -6,5 +6,6 @@
 
 [resource]
 script = ExtResource("2_dw67u")
+dimensions = Vector2i(3, 3)
 building_scene = ExtResource("1_dw67u")
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
