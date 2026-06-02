@@ -78,6 +78,9 @@ func set_draw_grid(value: bool) -> void:
 		if child is GridRegion:
 			var region = child as GridRegion
 			region.set_highlight_grid(value)
+			
+
+
 
 func get_building_at_cell(cell: Vector2i) -> Node:
 	if occupied_cells.has(cell) and occupied_cells[cell].is_inside_tree():
