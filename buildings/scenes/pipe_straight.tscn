@@ -29,7 +29,7 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 script = ExtResource("2_7wqp3")
 type = 1
 storage_id = &"pipe_temp"
-vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/PipeStraight/Ports/@Node3D@212104")
+vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/PipeStraight/Ports/@Node3D@218964")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_l7gxa"]
@@ -170,7 +170,7 @@ definition_paths = Array[String](["res://buildings/data/pipe_straight.tres"])
 mesh = SubResource("BoxMesh_50o8n")
 
 [node name="TUBE PERP" type="MeshInstance3D" parent="." index="2" unique_id=628812669]
-transform = Transform3D(196.15, 0, 0, 0, 196.15, -1.8868852e-05, 0, 8.573988e-06, 431.669, 0, 3.661, 0)
+transform = Transform3D(191.61, 0, 0, 0, 191.61, -1.843213e-05, 0, 8.375539e-06, 421.678, 0, 3.661, 0)
 mesh = SubResource("ArrayMesh_1yxbd")
 surface_material_override/0 = SubResource("StandardMaterial3D_50o8n")
 surface_material_override/1 = ExtResource("16_1yxbd")

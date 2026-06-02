@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://b8rvb5jcarfdo"]
+
+[ext_resource type="Texture2D" uid="uid://by3p4xgtwlxk1" path="res://Textures/Main_menu/Background.png" id="1_nkogj"]
+[ext_resource type="Script" uid="uid://dvdgekpmw8qte" path="res://Location/Main_Menu/authors.gd" id="1_suar1"]
+[ext_resource type="Texture2D" uid="uid://dwtqcmwuactbk" path="res://Textures/Main_menu/Menu.png" id="2_x08g0"]
+[ext_resource type="Texture2D" uid="uid://b0cno3f8bb6en" path="res://Textures/Main_menu/Logo_Test.png" id="3_1eb55"]
+[ext_resource type="Texture2D" uid="uid://bvrsa7jkfwrol" path="res://Textures/Main_menu/Exit.png" id="4_xa7p4"]
+[ext_resource type="Texture2D" uid="uid://518iffesld1u" path="res://Textures/Main_menu/No Exit.png" id="5_5qbba"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcoq8"]
+texture = ExtResource("4_xa7p4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uvc6j"]
+texture = ExtResource("5_5qbba")
+modulate_color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xuwwm"]
+texture = ExtResource("5_5qbba")
+modulate_color = Color(0.89059, 0.89059, 0.8905901, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1975795891]
+script = ExtResource("1_suar1")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=813761285]
+position = Vector2(960.0001, 540.50006)
+scale = Vector2(0.7515626, 0.7520834)
+texture = ExtResource("1_nkogj")
+
+[node name="MBackground1" type="Sprite2D" parent="." unique_id=808113494]
+position = Vector2(1378, 541.5)
+scale = Vector2(1, 1.0046296)
+texture = ExtResource("2_x08g0")
+
+[node name="Exit" type="Button" parent="." unique_id=1963821631]
+custom_minimum_size = Vector2(340.67, 80)
+offset_left = 1318.0001
+offset_top = 942.0
+offset_right = 1689.6752
+offset_bottom = 1027.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_rcoq8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uvc6j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xuwwm")
+
+[node name="LogoTest" type="Sprite2D" parent="." unique_id=387883691]
+position = Vector2(1636.5588, 208.8425)
+scale = Vector2(0.9202328, 0.8141508)
+texture = ExtResource("3_1eb55")
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

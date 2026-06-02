@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://dks0bbnaqodbq"]
+
+[ext_resource type="Texture2D" uid="uid://by3p4xgtwlxk1" path="res://Textures/Main_menu/Background.png" id="1_2u02p"]
+[ext_resource type="Script" uid="uid://dlyfy1y6dyhq0" path="res://Location/Main_Menu/main_menu.gd" id="1_se7wc"]
+[ext_resource type="Texture2D" uid="uid://dol42ios56dgm" path="res://Textures/Main_menu/M_Background_1.png" id="2_bg720"]
+[ext_resource type="Texture2D" uid="uid://rvbm67syj606" path="res://Textures/Main_menu/Play.png" id="3_5wyst"]
+[ext_resource type="Texture2D" uid="uid://bvrsa7jkfwrol" path="res://Textures/Main_menu/Exit.png" id="4_0olee"]
+[ext_resource type="Texture2D" uid="uid://krqsvlforv51" path="res://Textures/Main_menu/Authors.png" id="5_o02cv"]
+[ext_resource type="Texture2D" uid="uid://518iffesld1u" path="res://Textures/Main_menu/No Exit.png" id="6_o02cv"]
+[ext_resource type="Texture2D" uid="uid://vnjsadi1kg31" path="res://Textures/Main_menu/Additonal.png" id="6_se7wc"]
+[ext_resource type="Texture2D" uid="uid://b0cno3f8bb6en" path="res://Textures/Main_menu/Logo_Test.png" id="7_0olee"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5wyst"]
+texture = ExtResource("3_5wyst")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0olee"]
+texture = ExtResource("3_5wyst")
+modulate_color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_se7wc"]
+texture = ExtResource("3_5wyst")
+modulate_color = Color(0.89059, 0.89059, 0.8905901, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o02cv"]
+texture = ExtResource("5_o02cv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qlfli"]
+texture = ExtResource("5_o02cv")
+modulate_color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kefae"]
+texture = ExtResource("5_o02cv")
+modulate_color = Color(0.89059, 0.89059, 0.8905901, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hy4gi"]
+texture = ExtResource("6_se7wc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_csom1"]
+texture = ExtResource("6_se7wc")
+modulate_color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2qvg3"]
+texture = ExtResource("6_se7wc")
+modulate_color = Color(0.89059, 0.89059, 0.8905901, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vaquc"]
+texture = ExtResource("4_0olee")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u2i01"]
+texture = ExtResource("6_o02cv")
+modulate_color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3w3xy"]
+texture = ExtResource("6_o02cv")
+modulate_color = Color(0.89059, 0.89059, 0.8905901, 1)
+
+[node name="Node2D" type="Node2D" unique_id=191263861]
+script = ExtResource("1_se7wc")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1294218200]
+position = Vector2(960.0001, 540.50006)
+scale = Vector2(0.7515626, 0.7520834)
+texture = ExtResource("1_2u02p")
+
+[node name="MBackground1" type="Sprite2D" parent="." unique_id=1632179567]
+position = Vector2(1378, 541.5)
+scale = Vector2(1, 1.0046296)
+texture = ExtResource("2_bg720")
+
+[node name="LogoTest" type="Sprite2D" parent="." unique_id=471096912]
+position = Vector2(1518.0001, 271)
+scale = Vector2(1.2094185, 1.07)
+texture = ExtResource("7_0olee")
+
+[node name="Play" type="Button" parent="." unique_id=1546127341]
+custom_minimum_size = Vector2(571.965, 90)
+offset_left = 1125.0
+offset_top = 482.0
+offset_right = 1824.0684
+offset_bottom = 592.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_5wyst")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0olee")
+theme_override_styles/hover = SubResource("StyleBoxTexture_se7wc")
+
+[node name="Authors" type="Button" parent="." unique_id=571986283]
+custom_minimum_size = Vector2(464.805, 85)
+offset_left = 1125.0
+offset_top = 621.0
+offset_right = 1715.0
+offset_bottom = 718.0
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_o02cv")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qlfli")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kefae")
+
+[node name="Additional" type="Button" parent="." unique_id=77698048]
+custom_minimum_size = Vector2(464.805, 85)
+offset_left = 1125.0
+offset_top = 746.0
+offset_right = 1606.0
+offset_bottom = 843.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_hy4gi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_csom1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2qvg3")
+
+[node name="Exit" type="Button" parent="." unique_id=455650367]
+custom_minimum_size = Vector2(340.67, 80)
+offset_left = 1125.0
+offset_top = 870.0
+offset_right = 1496.675
+offset_bottom = 955.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_vaquc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u2i01")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3w3xy")
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Authors" to="." method="_on_authors_pressed"]
+[connection signal="pressed" from="Additional" to="." method="_on_additional_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
