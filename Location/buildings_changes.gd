@@ -8,7 +8,6 @@ var selected_build: Building
 @onready var build_mode_controller: Node = $"../BuildModeController"
 @onready var main_ui: Control = %Main_UI
 
-
 func _input(event: InputEvent) -> void:
 	if event.is_action_released("Info") and !build_mode_controller.current_ghost:
 		var cell = _hovered_cell()

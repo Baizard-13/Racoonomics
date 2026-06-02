@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://v58qa5fr26n1"]
+
+[ext_resource type="Texture2D" uid="uid://dcon7t8sm4lj1" path="res://UI/textures/TabPurchase/T_G_TabPurchase_Background.png" id="1_op6xj"]
+[ext_resource type="Texture2D" uid="uid://crfgu4vxv3p54" path="res://UI/textures/TabPurchase/T_G_TabPurchase_Bt_Buy_2.png" id="2_jhiy8"]
+[ext_resource type="Texture2D" uid="uid://i6oqc5x7o1h5" path="res://UI/textures/TabPurchase/T_G_TabPurchase_Bt_Buy_3.png" id="3_upwqg"]
+[ext_resource type="Texture2D" uid="uid://p7jy71s04xj2" path="res://UI/textures/TabPurchase/T_G_TabPurchase_Bt_Buy_1.png" id="4_3rdxi"]
+[ext_resource type="Texture2D" uid="uid://cuhsenra1ckfy" path="res://UI/textures/TabHotbar/Icon_Money.png" id="5_jhiy8"]
+[ext_resource type="Texture2D" uid="uid://dkd25jhefvn51" path="res://UI/textures/Tab_Description/T_G_Button_Close.png" id="6_3rdxi"]
+[ext_resource type="Script" uid="uid://wtpd73re5xj7" path="res://scripts/JuiceComponent.gd" id="7_abiya"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_upwqg"]
+font_size = 26
+font_color = Color(0.38039216, 0.29411766, 0.23921569, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_abiya"]
+texture = ExtResource("2_jhiy8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xqhlr"]
+texture = ExtResource("3_upwqg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3xrb8"]
+texture = ExtResource("4_3rdxi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xx8wr"]
+texture = ExtResource("6_3rdxi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_koey5"]
+texture = ExtResource("6_3rdxi")
+modulate_color = Color(0.30323282, 0.30323282, 0.30323282, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tlqot"]
+texture = ExtResource("6_3rdxi")
+modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+
+[node name="TabPurchase" type="Control" unique_id=2039677113]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="BG" type="TextureRect" parent="." unique_id=217068393]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_op6xj")
+
+[node name="Title" type="Label" parent="." unique_id=2059394763]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 43.0
+offset_right = 468.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.38039216, 0.29411766, 0.23921569, 1)
+theme_override_font_sizes/font_size = 26
+text = "Название здания"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="." unique_id=1488264053]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 383.0
+offset_right = 530.0
+offset_bottom = 555.0
+theme_override_colors/font_color = Color(0.38039216, 0.29411766, 0.23921569, 1)
+theme_override_font_sizes/font_size = 26
+text = "ASDASDIDOIDAISOPD DASDIASI ODSADASIDOPAODASIDAS PODAPIDS"
+label_settings = SubResource("LabelSettings_upwqg")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BuyButton" type="Button" parent="." unique_id=1144304134]
+custom_minimum_size = Vector2(210, 100)
+layout_mode = 0
+offset_left = 307.0
+offset_top = 555.0
+offset_right = 517.0
+offset_bottom = 655.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxTexture_abiya")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xqhlr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3xrb8")
+
+[node name="CompJuice" type="Node" parent="BuyButton" unique_id=1629235248]
+script = ExtResource("7_abiya")
+metadata/_custom_type_script = "uid://wtpd73re5xj7"
+
+[node name="MoneyIcon" type="TextureRect" parent="BuyButton" unique_id=221034322]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.5
+offset_top = -21.5
+offset_right = -17.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("5_jhiy8")
+
+[node name="Title" type="Label" parent="BuyButton" unique_id=916775949]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5
+offset_top = -22.5
+offset_right = 63.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.38039216, 0.29411766, 0.23921569, 1)
+theme_override_font_sizes/font_size = 32
+text = "20 М"
+
+[node name="BtClose" type="Button" parent="." unique_id=590017449]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 405.0
+offset_top = -150.0
+offset_right = 725.0
+offset_bottom = 170.0
+grow_horizontal = 0
+scale = Vector2(0.25, 0.25)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxTexture_xx8wr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_koey5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tlqot")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_xx8wr")
+theme_override_styles/focus = SubResource("StyleBoxTexture_xx8wr")
+
+[node name="CompJuice" type="Node" parent="BtClose" unique_id=1625510368]
+script = ExtResource("7_abiya")
+scale_value = Vector2(0.28, 0.28)
+init_scale = Vector2(0.25, 0.25)
+metadata/_custom_type_script = "uid://wtpd73re5xj7"

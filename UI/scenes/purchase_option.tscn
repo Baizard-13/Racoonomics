@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://cfjc61hkjr35h"]
+
+[ext_resource type="Texture2D" uid="uid://crxkh3xnxeyxr" path="res://UI/textures/TabHotbar/T_G_PurchaseOption_Background_2.png.png" id="1_ouprr"]
+[ext_resource type="Texture2D" uid="uid://bh12joo311h5d" path="res://UI/textures/TabHotbar/T_G_PurchaseOption_Background_3.png.png" id="2_2osks"]
+[ext_resource type="Texture2D" uid="uid://crkbtoj27fdds" path="res://UI/textures/TabHotbar/T_G_PurchaseOption_Background_1.png" id="3_fgxnn"]
+[ext_resource type="Script" uid="uid://wtpd73re5xj7" path="res://scripts/JuiceComponent.gd" id="4_3j2fm"]
+[ext_resource type="Script" uid="uid://cdfr8og8b0s7e" path="res://UI/scripts/purchase_option.gd" id="4_cx15p"]
+[ext_resource type="Texture2D" uid="uid://dblicopd07vxs" path="res://UI/textures/TabHotbar/T_G_PurchaseOption_Price.png" id="5_fgxnn"]
+[ext_resource type="Texture2D" uid="uid://cuhsenra1ckfy" path="res://UI/textures/TabHotbar/Icon_Money.png" id="6_3j2fm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xc01u"]
+texture = ExtResource("1_ouprr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m6abe"]
+texture = ExtResource("2_2osks")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n0c2e"]
+texture = ExtResource("3_fgxnn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cx15p"]
+texture = ExtResource("5_fgxnn")
+
+[node name="PurchaseOption" type="Button" unique_id=799758273 groups=["purchasebutton"]]
+show_behind_parent = true
+custom_minimum_size = Vector2(165, 155)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxTexture_xc01u")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_m6abe")
+theme_override_styles/hover = SubResource("StyleBoxTexture_n0c2e")
+script = ExtResource("4_cx15p")
+
+[node name="CompJuice" type="Node" parent="." unique_id=8669337]
+script = ExtResource("4_3j2fm")
+scale_value = Vector2(1.05, 1.05)
+metadata/_custom_type_script = "uid://wtpd73re5xj7"
+
+[node name="Title" type="Label" parent="." unique_id=1933794551]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.5
+offset_top = -1.0
+offset_right = 60.5
+offset_bottom = 22.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.38039216, 0.29411766, 0.23921569, 1)
+text = "Название"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=1414564541]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -47.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_cx15p")
+
+[node name="MoneyIcon" type="TextureRect" parent="Panel" unique_id=1942900777]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -21.5
+offset_right = -1.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.515, 0.515)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("6_3j2fm")
+
+[node name="Price" type="Label" parent="Panel" unique_id=760129586]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.499996
+offset_top = -11.5
+offset_right = 44.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.38039216, 0.29411766, 0.23921569, 1)
+text = "20 М"
