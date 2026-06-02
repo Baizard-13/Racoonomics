@@ -4,14 +4,16 @@
 [ext_resource type="Script" uid="uid://d37t4s3yaum20" path="res://buildings/scripts/nuts_farm.gd" id="2_mkisv"]
 [ext_resource type="PackedScene" uid="uid://cdy1fbdrn1jri" path="res://models/Farm_Oreh/Lvl1/anim_farm_oreh_lvl_1.tscn" id="3_os46o"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_wkw0h"]
+[sub_resource type="BoxMesh" id="BoxMesh_os46o"]
 resource_local_to_scene = true
 
 [node name="Building" unique_id=155364411 instance=ExtResource("1_ospnj")]
 script = ExtResource("2_mkisv")
+title = "Hazel"
+dimensions = Vector2i(3, 3)
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
-mesh = SubResource("BoxMesh_wkw0h")
+mesh = SubResource("BoxMesh_os46o")
 
 [node name="Anim_Farm_Oreh_lvl1" parent="." index="1" unique_id=1460956550 instance=ExtResource("3_os46o")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

@@ -52,7 +52,7 @@ func take_filtered(filter_: ItemFilter, quantity: int) -> Dictionary[StringName,
 		if remaining <= 0:
 			break
 
-		var type := Global.get_type(type_id)
+		var type : ItemType = Global.get_type(type_id)
 		if filter_.accepts(type):
 			var can_take := take(type, remaining)
 			if can_take > 0:
@@ -65,5 +65,5 @@ func auto_receive_from(source: ItemStorage) -> void:
 	var can_take := source.take_filtered(filter, get_available_capacity())
 
 	for type_id in can_take.keys():
-		var type := Global.get_type(type_id)
+		var type : ItemType = Global.get_type(type_id)
 		put(type, can_take[type_id])
