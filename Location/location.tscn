@@ -284,18 +284,17 @@ offset_left = 32.0
 offset_top = 24.0
 offset_right = 189.0
 offset_bottom = 47.0
-text = "[F]    enter build mode
-[R]        rotate buliding
-[Esc]   exit build mode
-[P]               add money
-[LMB] open build desc"
+text = "[F]    enter/exit build mode
+[R]                rotate buliding
+[P]                      add money
+[LMB]         open build desc"
 label_settings = SubResource("LabelSettings_yx7wv")
 
 [node name="BuildingSelector" type="OptionButton" parent="BuildModeController/DevButtonPrompt" unique_id=875910082]
-offset_left = 213.0
-offset_top = 27.0
-offset_right = 245.0
-offset_bottom = 47.0
+offset_left = 245.0
+offset_top = 26.0
+offset_right = 277.0
+offset_bottom = 46.0
 
 [node name="PostProcessQuad" type="MeshInstance3D" parent="BuildModeController" unique_id=1197606766]
 visible = false

@@ -112,8 +112,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		_refresh_ghost()
 		current_grid_pos = Vector2i.ZERO
 		is_manual_rotation = true
-	if event.is_action_pressed("bm_exit"):
-		exit_build_mode()
 
 func _on_building_selected(index: int) -> void:
 	selected_building_index = index

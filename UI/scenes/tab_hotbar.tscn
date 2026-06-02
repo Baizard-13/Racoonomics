@@ -54,6 +54,7 @@ offset_right = 1205.0
 offset_bottom = 207.00006
 
 [node name="HBCHotbars" type="HBoxContainer" parent="." unique_id=1305814489]
+visible = false
 layout_mode = 0
 offset_left = 60.0
 offset_top = -101.0
