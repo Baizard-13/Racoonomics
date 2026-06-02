@@ -3,19 +3,45 @@
 [ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_ospnj"]
 [ext_resource type="Script" uid="uid://d37t4s3yaum20" path="res://buildings/scripts/nuts_farm.gd" id="2_mkisv"]
 [ext_resource type="PackedScene" uid="uid://cdy1fbdrn1jri" path="res://models/Farm_Oreh/Lvl1/anim_farm_oreh_lvl_1.tscn" id="3_os46o"]
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="3_wkw0h"]
+[ext_resource type="Script" uid="uid://fufmogn6slbf" path="res://scripts/item_storage.gd" id="4_2cvn4"]
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="5_yk2ge"]
+[ext_resource type="Resource" uid="uid://6jrtnhoruj1x" path="res://resources/item_types/nuts.tres" id="6_spkt7"]
+[ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="7_6301r"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_os46o"]
+[sub_resource type="Resource" id="Resource_lm0on"]
+script = ExtResource("3_wkw0h")
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"nuts_out"
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_8bj7u"]
+script = ExtResource("7_6301r")
+allowed_types = Array[ExtResource("5_yk2ge")]([ExtResource("6_spkt7")])
+metadata/_custom_type_script = "uid://b3goh20b5qa4r"
+
+[sub_resource type="Resource" id="Resource_ibiub"]
+script = ExtResource("4_2cvn4")
+filter = SubResource("Resource_8bj7u")
+metadata/_custom_type_script = "uid://fufmogn6slbf"
+
+[sub_resource type="BoxMesh" id="BoxMesh_41bsy"]
 resource_local_to_scene = true
 
 [node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_ospnj")]
 script = ExtResource("2_mkisv")
 title = "Hazel"
 dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("3_wkw0h")]([SubResource("Resource_lm0on")])
+storage = Dictionary[StringName, ExtResource("4_2cvn4")]({
+&"nuts_out": SubResource("Resource_ibiub")
+})
 meshes = [NodePath("Anim_Farm_Oreh_lvl1/Anim_Farm_Oreh_lvl1/Skeleton3D/Sk_Farm_Oreh_lvl1_001")]
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_os46o")
+mesh = SubResource("BoxMesh_41bsy")
 
 [node name="Anim_Farm_Oreh_lvl1" parent="." index="1" unique_id=1460956550 instance=ExtResource("3_os46o")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

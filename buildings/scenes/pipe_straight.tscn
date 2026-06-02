@@ -6,6 +6,14 @@
 [ext_resource type="Script" uid="uid://fufmogn6slbf" path="res://scripts/item_storage.gd" id="4_c2lce"]
 [ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="5_1rflj"]
 [ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="6_m4d2b"]
+[ext_resource type="Resource" uid="uid://yh4xgipw00mq" path="res://resources/item_types/apples.tres" id="6_p4mih"]
+[ext_resource type="Resource" uid="uid://cjb8ype3a5ygw" path="res://resources/item_types/carrots.tres" id="7_xo00u"]
+[ext_resource type="Resource" uid="uid://6jrtnhoruj1x" path="res://resources/item_types/nuts.tres" id="8_eo6a7"]
+[ext_resource type="Resource" uid="uid://bnweg3woogiok" path="res://resources/item_types/wood.tres" id="9_1yxbd"]
+[ext_resource type="Resource" uid="uid://b0kokabntul2y" path="res://resources/item_types/food_nut_snack.tres" id="10_50o8n"]
+[ext_resource type="Resource" uid="uid://d3ungd38obpld" path="res://resources/item_types/food_fried_bark.tres" id="11_dmd0i"]
+[ext_resource type="Resource" uid="uid://08yj5tpsvy8r" path="res://resources/item_types/food_carrot_soup.tres" id="12_tv7mv"]
+[ext_resource type="Resource" uid="uid://bak5ndnurptaa" path="res://resources/item_types/food_apple_sauce.tres" id="13_66rgq"]
 
 [sub_resource type="Resource" id="Resource_b2kaw"]
 script = ExtResource("2_7wqp3")
@@ -18,20 +26,21 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 script = ExtResource("2_7wqp3")
 type = 1
 storage_id = &"pipe_temp"
-vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/PipeStraight/Ports/@Node3D@18528")
+vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/PipeStraight/Ports/@Node3D@43131")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_l7gxa"]
 script = ExtResource("6_m4d2b")
+allowed_types = Array[ExtResource("5_1rflj")]([ExtResource("6_p4mih"), ExtResource("7_xo00u"), ExtResource("8_eo6a7"), ExtResource("9_1yxbd"), ExtResource("10_50o8n"), ExtResource("11_dmd0i"), ExtResource("12_tv7mv"), ExtResource("13_66rgq")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_c2lce"]
+[sub_resource type="Resource" id="Resource_yh8mo"]
 resource_local_to_scene = true
 script = ExtResource("4_c2lce")
 filter = SubResource("Resource_l7gxa")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_1rflj"]
+[sub_resource type="BoxMesh" id="BoxMesh_m41iq"]
 resource_local_to_scene = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7wqp3"]
@@ -79,13 +88,13 @@ title = "Pipe"
 clearance = 0
 ports = Array[ExtResource("2_7wqp3")]([SubResource("Resource_b2kaw"), SubResource("Resource_7wqp3")])
 storage = Dictionary[StringName, ExtResource("4_c2lce")]({
-&"pipe_temp": SubResource("Resource_c2lce")
+&"pipe_temp": SubResource("Resource_yh8mo")
 })
 meshes = [NodePath("CSGBakedMeshInstance3D")]
 definition_paths = Array[String](["res://buildings/data/pipe_straight.tres"])
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
-mesh = SubResource("BoxMesh_1rflj")
+mesh = SubResource("BoxMesh_m41iq")
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="." index="2" unique_id=837436450]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)

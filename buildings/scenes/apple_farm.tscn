@@ -2,7 +2,30 @@
 
 [ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_mlhkh"]
 [ext_resource type="Script" uid="uid://c2fa2a8lbkaul" path="res://buildings/scripts/apple_farm.gd" id="2_x5kix"]
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="3_2w66f"]
 [ext_resource type="PackedScene" uid="uid://dx5wgoumf4r4v" path="res://models/Farm_Apple/Lvl1/anim_farm_apple_lvl_1.tscn" id="4_mddat"]
+[ext_resource type="Script" uid="uid://fufmogn6slbf" path="res://scripts/item_storage.gd" id="4_mmcm8"]
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="5_vd48f"]
+[ext_resource type="Resource" uid="uid://yh4xgipw00mq" path="res://resources/item_types/apples.tres" id="6_kkb0y"]
+[ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="7_g4oh3"]
+
+[sub_resource type="Resource" id="Resource_lhenu"]
+script = ExtResource("3_2w66f")
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"apples_out"
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_g658f"]
+script = ExtResource("7_g4oh3")
+mode = 0
+allowed_types = Array[ExtResource("5_vd48f")]([ExtResource("6_kkb0y")])
+metadata/_custom_type_script = "uid://b3goh20b5qa4r"
+
+[sub_resource type="Resource" id="Resource_ygd21"]
+script = ExtResource("4_mmcm8")
+filter = SubResource("Resource_g658f")
+metadata/_custom_type_script = "uid://fufmogn6slbf"
 
 [sub_resource type="BoxMesh" id="BoxMesh_s7qhb"]
 resource_local_to_scene = true
@@ -10,10 +33,14 @@ resource_local_to_scene = true
 [node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_mlhkh")]
 script = ExtResource("2_x5kix")
 dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("3_2w66f")]([SubResource("Resource_lhenu")])
+storage = Dictionary[StringName, ExtResource("4_mmcm8")]({
+&"apples_out": SubResource("Resource_ygd21")
+})
 meshes = [NodePath("Anim_Farm_Apple_lvl1/Anim_Farm_Apple_lvl1/Skeleton3D/SK_Farm_Apple_lvl1")]
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
-transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
+transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.61675644, -0.0049858093)
 mesh = SubResource("BoxMesh_s7qhb")
 
 [node name="Anim_Farm_Apple_lvl1" parent="." index="1" unique_id=1558338815 instance=ExtResource("4_mddat")]

@@ -2,19 +2,46 @@
 
 [ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_n6xy6"]
 [ext_resource type="Script" uid="uid://ckbdjjvum8ne0" path="res://buildings/scripts/carrot_farm.gd" id="2_bwhfq"]
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="3_f5eet"]
 [ext_resource type="PackedScene" uid="uid://bpkhaqp5f4wy6" path="res://models/Farm_Carrot/Lvl1/carrot_lvl_1_work.tscn" id="3_j14mh"]
+[ext_resource type="Script" uid="uid://fufmogn6slbf" path="res://scripts/item_storage.gd" id="4_sxy8e"]
+[ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="5_x3wo1"]
+[ext_resource type="Resource" uid="uid://cjb8ype3a5ygw" path="res://resources/item_types/carrots.tres" id="6_qmcku"]
+[ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="7_7ot8q"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_j14mh"]
+[sub_resource type="Resource" id="Resource_urg8m"]
+script = ExtResource("3_f5eet")
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"carrots_out"
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
+[sub_resource type="Resource" id="Resource_ox42p"]
+script = ExtResource("7_7ot8q")
+mode = 0
+allowed_types = Array[ExtResource("5_x3wo1")]([ExtResource("6_qmcku")])
+metadata/_custom_type_script = "uid://b3goh20b5qa4r"
+
+[sub_resource type="Resource" id="Resource_n4nh0"]
+script = ExtResource("4_sxy8e")
+filter = SubResource("Resource_ox42p")
+metadata/_custom_type_script = "uid://fufmogn6slbf"
+
+[sub_resource type="BoxMesh" id="BoxMesh_lk8md"]
 resource_local_to_scene = true
 
 [node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_n6xy6")]
 script = ExtResource("2_bwhfq")
 dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("3_f5eet")]([SubResource("Resource_urg8m")])
+storage = Dictionary[StringName, ExtResource("4_sxy8e")]({
+&"carrots_out": SubResource("Resource_n4nh0")
+})
 meshes = [NodePath("Carrot_lvl1_work/Anim_Farm_Carrot_lvl1/Skeleton3D/SK_Farm_Carrot_lvl1")]
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_j14mh")
+mesh = SubResource("BoxMesh_lk8md")
 
 [node name="Carrot_lvl1_work" parent="." index="1" unique_id=3326800 instance=ExtResource("3_j14mh")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
