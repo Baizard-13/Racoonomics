@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://douv4q37spsj8"]
+
+[ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_2gwwa"]
+[ext_resource type="Script" uid="uid://qrsq2rjctmcd" path="res://buildings/scripts/wood_farm.gd" id="2_wacov"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wacov"]
+resource_local_to_scene = true
+
+[node name="Building" unique_id=155364411 instance=ExtResource("1_2gwwa")]
+script = ExtResource("2_wacov")
+
+[node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
+mesh = SubResource("BoxMesh_wacov")

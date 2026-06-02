@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3 uid="uid://bm68ehewitxe1"]
+
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_f5v16"]
+[ext_resource type="PackedScene" uid="uid://cjcuu6q1fwew5" path="res://buildings/scenes/apple_farm.tscn" id="1_kgocx"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_kgocx"]
+
+[resource]
+script = ExtResource("2_kgocx")
+building_scene = ExtResource("1_kgocx")
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"

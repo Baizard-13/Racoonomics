@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3 uid="uid://boudmf84aorir"]
+
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_hcgba"]
+[ext_resource type="PackedScene" uid="uid://douv4q37spsj8" path="res://buildings/scenes/wood_farm.tscn" id="1_shhg5"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_shhg5"]
+
+[resource]
+script = ExtResource("2_shhg5")
+building_scene = ExtResource("1_shhg5")
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"

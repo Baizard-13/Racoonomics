@@ -1,26 +1,13 @@
 [gd_scene format=3 uid="uid://dqge7dm1uy5l4"]
 
 [ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_n6xy6"]
-[ext_resource type="Script" uid="uid://c3qhapeq2aroe" path="res://buildings/scripts/carrot_farm.gd" id="2_bwhfq"]
+[ext_resource type="Script" uid="uid://ckbdjjvum8ne0" path="res://buildings/scripts/carrot_farm.gd" id="2_bwhfq"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_bwhfq"]
+[sub_resource type="BoxMesh" id="BoxMesh_n6xy6"]
 resource_local_to_scene = true
 
 [node name="Building" unique_id=155364411 instance=ExtResource("1_n6xy6")]
 script = ExtResource("2_bwhfq")
-title = null
-dimensions = null
-clearance = null
-grid_size = null
-bound_vis_padding = null
-ports = null
-rotation_steps = null
-storage = null
-origin_cell = null
-invalid_cells = null
-is_active = null
-is_ghost = null
-definition_paths = null
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
-mesh = SubResource("BoxMesh_bwhfq")
+mesh = SubResource("BoxMesh_n6xy6")

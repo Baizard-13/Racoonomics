@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3 uid="uid://b6m3onvwjex0s"]
+
+[ext_resource type="PackedScene" uid="uid://d2nsjbayoy264" path="res://buildings/scenes/nuts_farm.tscn" id="1_dw67u"]
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_n4uu4"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_dw67u"]
+
+[resource]
+script = ExtResource("2_dw67u")
+building_scene = ExtResource("1_dw67u")
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d2nsjbayoy264"]
+
+[ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_ospnj"]
+[ext_resource type="Script" uid="uid://d37t4s3yaum20" path="res://buildings/scripts/nuts_farm.gd" id="2_mkisv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mkisv"]
+resource_local_to_scene = true
+
+[node name="Building" unique_id=155364411 instance=ExtResource("1_ospnj")]
+script = ExtResource("2_mkisv")
+
+[node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
+mesh = SubResource("BoxMesh_mkisv")

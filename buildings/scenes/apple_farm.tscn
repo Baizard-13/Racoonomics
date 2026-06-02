@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cjcuu6q1fwew5"]
+
+[ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_mlhkh"]
+[ext_resource type="Script" uid="uid://c2fa2a8lbkaul" path="res://buildings/scripts/apple_farm.gd" id="2_x5kix"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_x5kix"]
+resource_local_to_scene = true
+
+[node name="Building" unique_id=155364411 instance=ExtResource("1_mlhkh")]
+script = ExtResource("2_x5kix")
+
+[node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
+mesh = SubResource("BoxMesh_x5kix")

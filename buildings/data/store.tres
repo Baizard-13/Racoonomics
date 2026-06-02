@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3 uid="uid://dmbwevjl6lkxv"]
+
+[ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_kmmib"]
+[ext_resource type="PackedScene" uid="uid://dt1aj7j1p8t8w" path="res://buildings/scenes/store.tscn" id="1_pdpwp"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_pdpwp"]
+
+[resource]
+script = ExtResource("2_pdpwp")
+building_scene = ExtResource("1_pdpwp")
+metadata/_custom_type_script = "uid://daiac4wtjs0vv"
