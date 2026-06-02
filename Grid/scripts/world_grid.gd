@@ -78,7 +78,7 @@ func set_draw_grid(value: bool) -> void:
 		if child is GridRegion:
 			var region = child as GridRegion
 			region.set_highlight_grid(value)
-			
+
 
 
 

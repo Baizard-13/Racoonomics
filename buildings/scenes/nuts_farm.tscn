@@ -7,13 +7,17 @@
 [sub_resource type="BoxMesh" id="BoxMesh_os46o"]
 resource_local_to_scene = true
 
-[node name="Building" unique_id=155364411 instance=ExtResource("1_ospnj")]
+[node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_ospnj")]
 script = ExtResource("2_mkisv")
 title = "Hazel"
 dimensions = Vector2i(3, 3)
+meshes = [NodePath("Anim_Farm_Oreh_lvl1/Anim_Farm_Oreh_lvl1/Skeleton3D/Sk_Farm_Oreh_lvl1_001")]
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
+transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_os46o")
 
 [node name="Anim_Farm_Oreh_lvl1" parent="." index="1" unique_id=1460956550 instance=ExtResource("3_os46o")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[editable path="Anim_Farm_Oreh_lvl1"]

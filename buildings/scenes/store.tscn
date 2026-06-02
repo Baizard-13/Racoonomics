@@ -8,9 +8,10 @@
 script = ExtResource("3_apduc")
 type = 1
 cell_offset = Vector2i(1, 0)
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="BoxMesh" id="BoxMesh_m8gox"]
+[sub_resource type="BoxMesh" id="BoxMesh_apduc"]
 resource_local_to_scene = true
 
 [node name="Building" unique_id=155364411 instance=ExtResource("1_whalh")]
@@ -20,7 +21,5 @@ dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_apduc")]([SubResource("Resource_7qmwc")])
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
-mesh = SubResource("BoxMesh_m8gox")
-
-[node name="lavka_lvl2" parent="." index="2" unique_id=1548892041]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_apduc")
