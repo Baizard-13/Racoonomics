@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_hto0e"]
 [ext_resource type="Script" uid="uid://ciqkpod4d5iil" path="res://buildings/scripts/small_kitchen.gd" id="2_jwha4"]
+[ext_resource type="PackedScene" uid="uid://ys6uf70far04" path="res://models/kitchen/kitchen_lvl2.fbx" id="3_q40r8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jwha4"]
 resource_local_to_scene = true
@@ -11,3 +12,6 @@ script = ExtResource("2_jwha4")
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 mesh = SubResource("BoxMesh_jwha4")
+
+[node name="kitchen_lvl2" parent="." index="3" unique_id=722038417 instance=ExtResource("3_q40r8")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

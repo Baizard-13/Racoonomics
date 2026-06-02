@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_whalh"]
 [ext_resource type="Script" uid="uid://ch0upxqpuimsx" path="res://buildings/scripts/store.gd" id="2_mmsfx"]
+[ext_resource type="PackedScene" uid="uid://duel8lhptnvhi" path="res://models/Lavka/lavka_lvl2.fbx" id="3_apduc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_mmsfx"]
 resource_local_to_scene = true
@@ -11,3 +12,6 @@ script = ExtResource("2_mmsfx")
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 mesh = SubResource("BoxMesh_mmsfx")
+
+[node name="lavka_lvl2" parent="." index="3" unique_id=1548892041 instance=ExtResource("3_apduc")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

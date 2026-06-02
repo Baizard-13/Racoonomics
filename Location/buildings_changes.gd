@@ -21,8 +21,6 @@ func build_desc_open(build: Building):
 	var definition = load(selected_build.definition_paths[0])
 	main_ui.current_building = build
 	main_ui.openDescription(definition)
-	
-
 
 
 func _hovered_cell() -> Vector2i:

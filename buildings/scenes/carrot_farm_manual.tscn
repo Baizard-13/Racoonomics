@@ -50,15 +50,15 @@ mesh = SubResource("BoxMesh_iq5xd")
 [node name="Carrot_lvl1_work" parent="." index="2" unique_id=707614248 instance=ExtResource("3_5yl2n")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.4, 0)
 
-[node name="Skeleton3D" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1" parent_id_path=PackedInt32Array(707614248, 1764824998) index="0" unique_id=1449503616]
+[node name="Skeleton3D" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1" parent_id_path=PackedInt32Array(707614248, 1542133509) index="0" unique_id=789573442]
 bones/1/position = Vector3(0, 0.018328475, 1.4210853e-16)
 bones/4/position = Vector3(-0.02, 0.018328475, 1.4210853e-16)
 bones/7/position = Vector3(0.02, 0.018328475, 1.4210853e-16)
 
-[node name="SK_Farm_Carrot_lvl1" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1/Skeleton3D" index="0" unique_id=2078988864]
+[node name="SK_Farm_Carrot_lvl1" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1/Skeleton3D" index="0" unique_id=50166869]
 transform = Transform3D(1.0000004, 0, 0, -7.1054274e-15, 1.0000004, -5.684342e-14, 0, 5.684342e-14, 1.0000004, 0, 0, 0)
 
-[node name="AnimationPlayer" parent="Carrot_lvl1_work" index="1" unique_id=782666839]
+[node name="AnimationPlayer" parent="Carrot_lvl1_work" index="1" unique_id=462738600]
 autoplay = &"Anim_Farm_Carrot_lvl1|Anim_Farm_Carrot_lvl1|Anim_Farm_Carrot_lvl1"
 
 [editable path="Carrot_lvl1_work"]
