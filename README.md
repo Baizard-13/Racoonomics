@@ -43,22 +43,22 @@
 var tick_step := 0
 
 func _physics_process(_delta):
-    if Engine.get_physics_frames() % 2:
-        return
+	if Engine.get_physics_frames() % 2:
+		return
 
-    if tick_step == 0:
-        for building in buildings:
-            building.tick_produce()
+	if tick_step == 0:
+		for building in buildings:
+			building.tick_produce()
 
-    elif tick_step == 1:
-        for building in buildings:
-            building.tick_transport()
+	elif tick_step == 1:
+		for building in buildings:
+			building.tick_transport()
 
-    elif tick_step == 2:
-        for building in buildings:
-            building.tick_consume()
+	elif tick_step == 2:
+		for building in buildings:
+			building.tick_consume()
 
-    tick_step = (tick_step + 1) % 3
+	tick_step = (tick_step + 1) % 3
 ```
 
 ---

@@ -105,6 +105,8 @@ func _try_place_building() -> void:
 		#exit_build_mode()
 
 func _unhandled_input(event: InputEvent) -> void:
+	if !current_building:
+		return
 	if event.is_action_pressed("place_building"):
 		_try_place_building()
 	if event.is_action_pressed("rotate_building"):
