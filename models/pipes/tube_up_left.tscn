@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://eeqp6fx73wwi"]
+
+[ext_resource type="PackedScene" uid="uid://bbd2r18qp4flb" path="res://models/pipes/TUBE UP LEFT.fbx" id="1_82064"]
+[ext_resource type="Texture2D" uid="uid://doosljw6eqlgt" path="res://Textures/Buildings/Left_Base_color.png" id="2_uq56i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgrnp"]
+albedo_texture = ExtResource("2_uq56i")
+
+[node name="TUBE UP LEFT" unique_id=657106152 instance=ExtResource("1_82064")]
+
+[node name="TUBE UP LEFT" parent="." index="0" unique_id=2120029889]
+surface_material_override/0 = SubResource("StandardMaterial3D_wgrnp")

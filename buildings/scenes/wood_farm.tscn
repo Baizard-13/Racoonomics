@@ -6,37 +6,46 @@
 [ext_resource type="Script" uid="uid://fufmogn6slbf" path="res://scripts/item_storage.gd" id="4_3k61m"]
 [ext_resource type="PackedScene" uid="uid://de8lvq4nm8s25" path="res://models/Farm_Tree/Lvl1/Anim_Farm_Tree_lvl1_Idle.fbx" id="4_7drup"]
 [ext_resource type="Script" uid="uid://b2ef05y1cqw6k" path="res://scripts/item_type.gd" id="5_5toue"]
+[ext_resource type="Resource" uid="uid://bnweg3woogiok" path="res://resources/item_types/wood.tres" id="6_kmo6q"]
 [ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="6_mu2cn"]
 
 [sub_resource type="Resource" id="Resource_22cl1"]
 script = ExtResource("3_ubcvb")
 cell_offset = Vector2i(1, 2)
 facing = 2
+storage_id = &"wood_out"
+vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
-[sub_resource type="Resource" id="Resource_5toue"]
+[sub_resource type="Resource" id="Resource_mu2cn"]
 script = ExtResource("6_mu2cn")
+mode = 0
+allowed_types = Array[ExtResource("5_5toue")]([ExtResource("6_kmo6q")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_mu2cn"]
+[sub_resource type="Resource" id="Resource_kmo6q"]
 script = ExtResource("4_3k61m")
-filter = SubResource("Resource_5toue")
+filter = SubResource("Resource_mu2cn")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_3k61m"]
+[sub_resource type="BoxMesh" id="BoxMesh_5toue"]
 resource_local_to_scene = true
 
-[node name="Building" unique_id=155364411 instance=ExtResource("1_2gwwa")]
+[node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_2gwwa")]
 script = ExtResource("2_wacov")
 title = "Forest"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_ubcvb")]([SubResource("Resource_22cl1")])
 storage = Dictionary[StringName, ExtResource("4_3k61m")]({
-&"wood_out": SubResource("Resource_mu2cn")
+&"wood_out": SubResource("Resource_kmo6q")
 })
+meshes = [NodePath("Anim_Farm_Tree_lvl1_Idle/Anim_Farm_Tree_Idle/Skeleton3D/SK_Farm_Tree_Idle")]
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
-mesh = SubResource("BoxMesh_3k61m")
+transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_5toue")
 
 [node name="Anim_Farm_Tree_lvl1_Idle" parent="." index="2" unique_id=1569454571 instance=ExtResource("4_7drup")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[editable path="Anim_Farm_Tree_lvl1_Idle"]

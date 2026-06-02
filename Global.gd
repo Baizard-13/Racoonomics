@@ -1,14 +1,5 @@
 extends Node
 
-#var devotion: int = 0 ##преданность # по регионам же..?
-
-#enum prod_types{
-	#carrot = 0, ##морковка, даёт сытность для зайчиков = довольность :O
-	#nut = 1, ##орехи, даёт сытность для белочек = довольность :O
-	#apple = 2, ##яблочки, даёт сытность для ёжиков = довольность :O
-	#wood = 3, ##брёвна, даёт сытность для бобров = довольность :O
-#}
-
 @export var type_lookup : Dictionary[StringName, ItemType]
 
 func _ready() -> void:
