@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://hcu62wbu483"
-path="res://.godot/imported/kitchen_lvl2.fbx-f0dffc65c0cf594fc4608553b99d8101.scn"
+uid="uid://c80vwtvry7m0"
+path="res://.godot/imported/lavka_lvl2.fbx-c3326ceb8d8a134297602dd33cbc74f5.scn"
 
 [deps]
 
-source_file="res://models/Lavka/kitchen_lvl2.fbx"
-dest_files=["res://.godot/imported/kitchen_lvl2.fbx-f0dffc65c0cf594fc4608553b99d8101.scn"]
+source_file="res://models/Lavka/lavka_lvl2.fbx"
+dest_files=["res://.godot/imported/lavka_lvl2.fbx-c3326ceb8d8a134297602dd33cbc74f5.scn"]
 
 [params]
 

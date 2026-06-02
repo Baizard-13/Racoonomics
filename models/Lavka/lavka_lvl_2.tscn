@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://gf1yjlyhotbo"]
+
+[ext_resource type="PackedScene" uid="uid://c80vwtvry7m0" path="res://models/Lavka/lavka_lvl2.fbx" id="1_mshtg"]
+[ext_resource type="Texture2D" uid="uid://dv3xl77vrw5r6" path="res://Textures/Buildings/store.png" id="2_l0yhs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5co8o"]
+albedo_texture = ExtResource("2_l0yhs")
+
+[node name="lavka_lvl2" unique_id=223115633 instance=ExtResource("1_mshtg")]
+
+[node name="Skeleton3D" parent="Rig_Rabbit" parent_id_path=PackedInt32Array(700053461) index="0" unique_id=1382405533]
+bones/4/rotation = Quaternion(0.8827164, 0, 0, -0.46990606)
+bones/5/rotation = Quaternion(-0.25063226, -0.04883473, 0.0006276402, 0.96684974)
+bones/7/rotation = Quaternion(0.20724238, -0.024628095, 0.035473578, 0.977336)
+bones/11/rotation = Quaternion(0.5163825, 1.0208582e-07, 6.1557586e-08, 0.85635805)
+bones/17/rotation = Quaternion(-0.77865505, -1.4959627e-07, 2.53718e-07, 0.62745225)
+
+[node name="Sm_Lavka_Lvl2" parent="Rig_Rabbit/Skeleton3D" index="0" unique_id=1640793015]
+surface_material_override/0 = SubResource("StandardMaterial3D_5co8o")
