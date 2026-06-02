@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dol42ios56dgm" path="res://Textures/Main_menu/M_Background_1.png" id="3_1eb55"]
 [ext_resource type="Texture2D" uid="uid://cs2kay0sbwh6w" path="res://Textures/Main_menu/Menu (1).png" id="3_x08g0"]
 [ext_resource type="Texture2D" uid="uid://bvrsa7jkfwrol" path="res://Textures/Main_menu/Exit.png" id="4_xa7p4"]
+[ext_resource type="Script" uid="uid://wtpd73re5xj7" path="res://scripts/JuiceComponent.gd" id="6_suar1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcoq8"]
 texture = ExtResource("4_xa7p4")
@@ -42,10 +43,18 @@ offset_left = 1297.0
 offset_top = 942.0
 offset_right = 1668.675
 offset_bottom = 1027.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_rcoq8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_uvc6j")
 theme_override_styles/hover = SubResource("StyleBoxTexture_xuwwm")
+
+[node name="CompJuice" type="Node" parent="Exit" unique_id=1022800734]
+script = ExtResource("6_suar1")
+trans = 6
+time = 0.5
+scale_value = Vector2(1.05, 1.05)
+metadata/_custom_type_script = "uid://wtpd73re5xj7"
 
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
