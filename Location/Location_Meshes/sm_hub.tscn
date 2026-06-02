@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dssr6rgsihbbs"]
+
+[ext_resource type="PackedScene" uid="uid://ct1fjtawdobjq" path="res://Location/Location_Meshes/Sm_hub.fbx" id="1_ni57p"]
+[ext_resource type="Texture2D" uid="uid://di64pkw5xuqwv" path="res://Textures/Location/hub.png" id="2_oafam"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_img88"]
+albedo_color = Color(0.25490198, 0.5254902, 1, 1)
+albedo_texture = ExtResource("2_oafam")
+
+[node name="Sm_hub" unique_id=2049188883 instance=ExtResource("1_ni57p")]
+
+[node name="Sm_hub" parent="." index="0" unique_id=1777794759]
+surface_material_override/0 = SubResource("StandardMaterial3D_img88")

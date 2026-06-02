@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bitbcg0f0rj3v"]
+
+[ext_resource type="PackedScene" uid="uid://cfe57tj23kuj0" path="res://Location/Location_Meshes/SM_Home_bober_3.fbx" id="1_pdwth"]
+[ext_resource type="Texture2D" uid="uid://ipivgde3rgem" path="res://Textures/Location/bober3.png" id="2_nae7v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n50wh"]
+albedo_texture = ExtResource("2_nae7v")
+
+[node name="SM_Home_bober_3" unique_id=896275793 instance=ExtResource("1_pdwth")]
+
+[node name="SM_Home_bober_3" parent="." index="0" unique_id=1987358122]
+surface_material_override/0 = SubResource("StandardMaterial3D_n50wh")

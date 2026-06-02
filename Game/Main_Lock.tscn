@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://birm65xx2g784"]
 
-[ext_resource type="PackedScene" uid="uid://wtdfqpd7naco" path="res://Location/Location_Meshes/SM_Home_bober_1.fbx" id="2_bqh1e"]
-[ext_resource type="PackedScene" uid="uid://dfe0djvocljxd" path="res://Location/Location_Meshes/SM_Home_bober_2.fbx" id="3_wj6da"]
+[ext_resource type="PackedScene" uid="uid://dssr6rgsihbbs" path="res://Location/Location_Meshes/sm_hub.tscn" id="3_y46d2"]
 [ext_resource type="PackedScene" uid="uid://dg0lfujh4bylx" path="res://Location/Location_Meshes/sm_home_eji_1.tscn" id="4_8x6re"]
-[ext_resource type="PackedScene" uid="uid://cfe57tj23kuj0" path="res://Location/Location_Meshes/SM_Home_bober_3.fbx" id="4_pha5t"]
 [ext_resource type="PackedScene" uid="uid://broxl3yab5quk" path="res://Location/Location_Meshes/sm_home_eji_2.tscn" id="5_omyc5"]
 [ext_resource type="PackedScene" uid="uid://dcviadsh6482j" path="res://Location/Location_Meshes/sm_home_eji_3.tscn" id="6_pf4fl"]
+[ext_resource type="PackedScene" uid="uid://r4o1vbddvg45" path="res://Location/Location_Meshes/sm_home_bober_1.tscn" id="12_y46d2"]
+[ext_resource type="PackedScene" uid="uid://ci301glgp4pqe" path="res://Location/Location_Meshes/sm_home_bober_2.tscn" id="13_bqh1e"]
 [ext_resource type="PackedScene" uid="uid://5wup54kgky0g" path="res://Location/Location_Meshes/sm_tree_tree_1.tscn" id="13_flrqr"]
 [ext_resource type="PackedScene" uid="uid://dco383xp5llxs" path="res://Location/Location_Meshes/sm_home_rabbit_1.tscn" id="13_olaql"]
 [ext_resource type="PackedScene" uid="uid://ysb5hxmbto7g" path="res://Location/Location_Meshes/sm_home_rabbit_2.tscn" id="14_sc27h"]
+[ext_resource type="PackedScene" uid="uid://bitbcg0f0rj3v" path="res://Location/Location_Meshes/sm_home_bober_3.tscn" id="14_wj6da"]
 [ext_resource type="PackedScene" uid="uid://bt15g1r0xc4bg" path="res://Location/Location_Meshes/sm_home_rabbit_3.tscn" id="15_k5gex"]
 [ext_resource type="PackedScene" uid="uid://bugebqo7mx2dx" path="res://Location/Location_Meshes/sm_home_squirl_1.tscn" id="16_rxxfc"]
 [ext_resource type="PackedScene" uid="uid://bmhwhkx6x1w1r" path="res://Location/Location_Meshes/sm_home_squirl_2.tscn" id="17_squd4"]
-[ext_resource type="PackedScene" uid="uid://ct1fjtawdobjq" path="res://Location/Location_Meshes/Sm_hub.fbx" id="18_32s0w"]
 [ext_resource type="PackedScene" uid="uid://beq6ybiytp276" path="res://Location/Location_Meshes/sm_home_squirl_3.tscn" id="18_2738m"]
 [ext_resource type="PackedScene" uid="uid://bbkbw46whjjbf" path="res://Location/Location_Meshes/sm_home_squirl_4.tscn" id="19_b3wxp"]
 [ext_resource type="PackedScene" uid="uid://b2extpusacvmt" path="res://Location/Location_Meshes/sm_location.tscn" id="23_08mbt"]
@@ -21,11 +21,11 @@
 
 [node name="Environment" type="Node3D" unique_id=1531277812]
 
-[node name="Sm_hub" parent="." unique_id=2049188883 instance=ExtResource("18_32s0w")]
-
 [node name="SM_Home_eji_1" parent="." unique_id=2077602417 instance=ExtResource("4_8x6re")]
 
 [node name="SM_Home_eji_2" parent="." unique_id=529237704 instance=ExtResource("5_omyc5")]
+
+[node name="Sm_hub" parent="." unique_id=2049188883 instance=ExtResource("3_y46d2")]
 
 [node name="SM_Home_eji_3" parent="." unique_id=1819603643 instance=ExtResource("6_pf4fl")]
 
@@ -43,11 +43,11 @@
 
 [node name="SM_Home_squirl_4" parent="." unique_id=84539755 instance=ExtResource("19_b3wxp")]
 
-[node name="SM_Home_bober_1" parent="." unique_id=1379689078 instance=ExtResource("2_bqh1e")]
+[node name="SM_Home_bober_1" parent="." unique_id=1379689078 instance=ExtResource("12_y46d2")]
 
-[node name="SM_Home_bober_2" parent="." unique_id=1695541897 instance=ExtResource("3_wj6da")]
+[node name="SM_Home_bober_2" parent="." unique_id=1695541897 instance=ExtResource("13_bqh1e")]
 
-[node name="SM_Home_bober_3" parent="." unique_id=896275793 instance=ExtResource("4_pha5t")]
+[node name="SM_Home_bober_3" parent="." unique_id=896275793 instance=ExtResource("14_wj6da")]
 
 [node name="SM_Location" parent="." unique_id=392982900 instance=ExtResource("23_08mbt")]
 
