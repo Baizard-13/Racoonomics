@@ -2,12 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_mlhkh"]
 [ext_resource type="Script" uid="uid://c2fa2a8lbkaul" path="res://buildings/scripts/apple_farm.gd" id="2_x5kix"]
+[ext_resource type="PackedScene" uid="uid://dx5wgoumf4r4v" path="res://models/Farm_Apple/Lvl1/anim_farm_apple_lvl_1.tscn" id="3_s7qhb"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_x5kix"]
+[sub_resource type="BoxMesh" id="BoxMesh_mddat"]
 resource_local_to_scene = true
 
 [node name="Building" unique_id=155364411 instance=ExtResource("1_mlhkh")]
 script = ExtResource("2_x5kix")
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
-mesh = SubResource("BoxMesh_x5kix")
+mesh = SubResource("BoxMesh_mddat")
+
+[node name="Anim_Farm_Apple_lvl1" parent="." index="1" unique_id=1558338815 instance=ExtResource("3_s7qhb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bpkhaqp5f4wy6"]
+
+[ext_resource type="PackedScene" uid="uid://ddxhwbdyv0vn7" path="res://models/Farm_Carrot/Lvl1/Carrot_lvl1_work.fbx" id="1_kpxoy"]
+[ext_resource type="Texture2D" uid="uid://cy1p2dwv8rxkw" path="res://Textures/Buildings/Carrot.png" id="2_nkyqa"]
+[ext_resource type="Texture2D" uid="uid://diw0vw3f0snfd" path="res://Textures/Buildings/Korzina.png" id="3_iynrm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qejc"]
+albedo_texture = ExtResource("2_nkyqa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cupa"]
+albedo_texture = ExtResource("3_iynrm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_egkwk"]
+albedo_texture = ExtResource("2_nkyqa")
+
+[node name="Carrot_lvl1_work" unique_id=3326800 instance=ExtResource("1_kpxoy")]
+
+[node name="Skeleton3D" parent="Anim_Farm_Carrot_lvl1" parent_id_path=PackedInt32Array(1186733295) index="0" unique_id=1359731931]
+bones/1/position = Vector3(0, 0.018328475, 1.4210853e-16)
+bones/4/position = Vector3(-0.02, 0.018328475, 1.4210853e-16)
+bones/7/position = Vector3(0.02, 0.018328475, 1.4210853e-16)
+
+[node name="SK_Farm_Carrot_lvl1" parent="Anim_Farm_Carrot_lvl1/Skeleton3D" index="0" unique_id=713465026]
+surface_material_override/0 = SubResource("StandardMaterial3D_8qejc")
+surface_material_override/1 = SubResource("StandardMaterial3D_7cupa")
+surface_material_override/2 = SubResource("StandardMaterial3D_egkwk")

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cdy1fbdrn1jri"]
+
+[ext_resource type="PackedScene" uid="uid://bdowjwhpdhe22" path="res://models/Farm_Oreh/Lvl1/Anim_Farm_Oreh_lvl1.fbx" id="1_fhjkx"]
+[ext_resource type="Texture2D" uid="uid://d2j6ww0qjbqfh" path="res://Textures/Buildings/Oreh.png" id="2_2qu7v"]
+[ext_resource type="Texture2D" uid="uid://diw0vw3f0snfd" path="res://Textures/Buildings/Korzina.png" id="3_83tsu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_doa50"]
+albedo_texture = ExtResource("2_2qu7v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cy7kg"]
+albedo_texture = ExtResource("3_83tsu")
+
+[node name="Anim_Farm_Oreh_lvl1" unique_id=1460956550 instance=ExtResource("1_fhjkx")]
+
+[node name="Skeleton3D" parent="Anim_Farm_Oreh_lvl1" parent_id_path=PackedInt32Array(274761835) index="0" unique_id=1656695560]
+bones/3/rotation = Quaternion(0.26809257, -0.013493141, -0.06954631, 0.9607849)
+bones/4/rotation = Quaternion(-0.15965436, 0.09999417, 0.019346347, 0.981905)
+bones/5/rotation = Quaternion(-1.2522963e-07, -5.476056e-08, 0.46638688, 0.88458097)
+bones/6/rotation = Quaternion(-0.015563605, -0.050787933, -0.5191681, 0.85301983)
+bones/7/rotation = Quaternion(-0.06197368, 0.13070862, -0.5229057, 0.84002626)
+bones/8/rotation = Quaternion(0.23030947, 0.07183692, -0.69977224, 0.6723957)
+bones/9/rotation = Quaternion(8.460694e-08, -2.475513e-08, -0.5544521, 0.8322156)
+bones/11/rotation = Quaternion(-0.0779347, 0.10462062, 0.61719143, 0.77592236)
+bones/12/rotation = Quaternion(0.09408184, 0.019231245, 0.4655871, 0.87977695)
+
+[node name="Sk_Farm_Oreh_lvl1_001" parent="Anim_Farm_Oreh_lvl1/Skeleton3D" index="0" unique_id=439478665]
+surface_material_override/0 = SubResource("StandardMaterial3D_doa50")
+surface_material_override/1 = SubResource("StandardMaterial3D_cy7kg")

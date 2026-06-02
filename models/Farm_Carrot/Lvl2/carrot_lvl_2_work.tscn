@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://10fngv8b8rmk"]
+
+[ext_resource type="PackedScene" uid="uid://dafyak1e5fx67" path="res://models/Farm_Carrot/Lvl2/Carrot_lvl2_work.fbx" id="1_684cw"]
+[ext_resource type="Texture2D" uid="uid://cy1p2dwv8rxkw" path="res://Textures/Buildings/Carrot.png" id="2_hhl5w"]
+[ext_resource type="Texture2D" uid="uid://diw0vw3f0snfd" path="res://Textures/Buildings/Korzina.png" id="3_g35ua"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7tmx"]
+albedo_texture = ExtResource("2_hhl5w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lx3et"]
+albedo_texture = ExtResource("3_g35ua")
+
+[node name="Carrot_lvl2_work" unique_id=1593777561 instance=ExtResource("1_684cw")]
+
+[node name="Skeleton3D" parent="Anim_Farm_Carrot_lvl2" parent_id_path=PackedInt32Array(780955337) index="0" unique_id=1732085725]
+bones/13/rotation = Quaternion(0.88206255, 0.03396986, -0.018083546, -0.469558)
+bones/14/rotation = Quaternion(-0.11830431, -0.054874144, -0.014322644, 0.9913566)
+bones/16/rotation = Quaternion(0.16120638, 0.058450155, -0.013660748, 0.9850937)
+bones/20/rotation = Quaternion(0.5163826, 1.0208576e-07, 6.1557564e-08, 0.85635805)
+bones/22/rotation = Quaternion(-0.5163826, 2.0417158e-07, 3.6934568e-07, 0.85635805)
+bones/24/rotation = Quaternion(-0.6982933, 0.009883605, -0.009032029, 0.7156866)
+bones/25/rotation = Quaternion(9.4156974e-08, 0.7071068, 0.7071067, 9.4156974e-08)
+bones/26/rotation = Quaternion(-0.71267784, -0.009078942, 0.0064290143, 0.7014033)
+bones/27/rotation = Quaternion(9.4156974e-08, 0.7071068, 0.7071067, 9.415696e-08)
+bones/30/rotation = Quaternion(0.88206255, 0.03396986, -0.018083546, -0.469558)
+bones/30/scale = Vector3(1, 1, 1.0000001)
+bones/31/rotation = Quaternion(-0.11830431, -0.054874144, -0.014322642, 0.9913566)
+bones/33/rotation = Quaternion(0.16120642, 0.058450162, -0.013660744, 0.98509365)
+bones/37/rotation = Quaternion(0.5163826, 1.0208578e-07, 6.155757e-08, 0.85635805)
+bones/39/rotation = Quaternion(-0.5163826, 2.0417158e-07, 3.6934568e-07, 0.85635805)
+bones/41/rotation = Quaternion(-0.6982933, 0.009883605, -0.009032029, 0.7156866)
+bones/42/rotation = Quaternion(9.4156974e-08, 0.7071068, 0.7071067, 9.4156974e-08)
+bones/43/rotation = Quaternion(-0.71267784, -0.009078942, 0.0064290143, 0.7014033)
+
+[node name="SK_Farm_Carrot_lvl2" parent="Anim_Farm_Carrot_lvl2/Skeleton3D" index="0" unique_id=1297644443]
+surface_material_override/0 = SubResource("StandardMaterial3D_a7tmx")
+surface_material_override/1 = SubResource("StandardMaterial3D_lx3et")

@@ -2,12 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://pfh4q76egj74" path="res://Grid/scenes/building.tscn" id="1_n6xy6"]
 [ext_resource type="Script" uid="uid://ckbdjjvum8ne0" path="res://buildings/scripts/carrot_farm.gd" id="2_bwhfq"]
+[ext_resource type="PackedScene" uid="uid://bpkhaqp5f4wy6" path="res://models/Farm_Carrot/Lvl1/carrot_lvl_1_work.tscn" id="3_j14mh"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_n6xy6"]
+[sub_resource type="BoxMesh" id="BoxMesh_f5eet"]
 resource_local_to_scene = true
 
 [node name="Building" unique_id=155364411 instance=ExtResource("1_n6xy6")]
 script = ExtResource("2_bwhfq")
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
-mesh = SubResource("BoxMesh_n6xy6")
+mesh = SubResource("BoxMesh_f5eet")
+
+[node name="Carrot_lvl1_work" parent="." index="1" unique_id=3326800 instance=ExtResource("3_j14mh")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

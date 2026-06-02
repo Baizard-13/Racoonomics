@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dx5wgoumf4r4v"]
+
+[ext_resource type="PackedScene" uid="uid://3vpebx0un2uc" path="res://models/Farm_Apple/Lvl1/Anim_Farm_Apple_lvl1.fbx" id="1_3ojyu"]
+[ext_resource type="Texture2D" uid="uid://b8fmij6u8raj7" path="res://Textures/Buildings/Apple.png" id="2_skapr"]
+[ext_resource type="Texture2D" uid="uid://diw0vw3f0snfd" path="res://Textures/Buildings/Korzina.png" id="3_up0lq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1vf5o"]
+albedo_texture = ExtResource("2_skapr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jg536"]
+albedo_texture = ExtResource("3_up0lq")
+
+[node name="Anim_Farm_Apple_lvl1" unique_id=1558338815 instance=ExtResource("1_3ojyu")]
+
+[node name="Skeleton3D" parent="Anim_Farm_Apple_lvl1" parent_id_path=PackedInt32Array(1023285357) index="0" unique_id=2108832292]
+bones/1/rotation = Quaternion(-8.9933415e-08, 1.2266118e-08, -0.13897608, 0.99029577)
+bones/2/rotation = Quaternion(1.602234e-08, 7.221876e-08, -0.011169016, 0.9999377)
+bones/3/rotation = Quaternion(5.002571e-08, -1.137886e-09, 0.0045471056, 0.99998975)
+bones/4/position = Vector3(0.012651302, 0.006848214, -0.014124205)
+bones/4/rotation = Quaternion(7.624334e-08, 2.2314461e-07, 0.32725042, 0.94493777)
+bones/5/position = Vector3(-0.009887603, 0.013206589, -0.0122533785)
+bones/5/rotation = Quaternion(1.0688341e-09, 3.25368e-09, -0.31209216, 0.95005184)
+bones/6/position = Vector3(-0.007344346, 0.010338528, 0.021601314)
+bones/6/rotation = Quaternion(-0.1374881, -0.115890324, -0.231614, 0.9560446)
+bones/7/position = Vector3(0.0032416042, -0.0013029885, 0.019014902)
+bones/7/rotation = Quaternion(-0.0986966, -0.076080844, 0.18861638, 0.9741122)
+bones/8/position = Vector3(0.012777608, 0.009786119, 0.017700909)
+bones/8/rotation = Quaternion(0.0010046378, -0.060949158, 0.11756194, 0.991193)
+bones/9/position = Vector3(-0.0031166906, -0.002021523, -0.013751064)
+bones/9/rotation = Quaternion(0.05279045, -0.008400951, -0.17797072, 0.9825828)
+bones/11/rotation = Quaternion(0.14039743, -0.038381543, 0.123460636, 0.9816175)
+bones/13/rotation = Quaternion(-0.11173486, 0.042954788, -0.2538339, 0.95981175)
+bones/14/position = Vector3(0.0038139105, 0.009237128, -0.008118803)
+bones/14/rotation = Quaternion(0.29353788, -0.2689901, -0.054755285, 0.9156865)
+bones/15/position = Vector3(-0.007434771, 0.013848735, 0.009656164)
+bones/15/rotation = Quaternion(-0.24472153, -0.06787553, -0.35239348, 0.9007348)
+bones/16/position = Vector3(-0.0062948223, -0.0027530743, 0.0006305945)
+bones/16/rotation = Quaternion(-0.14356104, -0.15292105, -0.41128418, 0.88704604)
+bones/18/rotation = Quaternion(-0.21307287, 0.054762904, 0.18471162, 0.95785314)
+bones/19/rotation = Quaternion(-0.03370866, -0.010106113, 0.06959438, 0.99695456)
+bones/20/position = Vector3(0.010539565, -0.00018986611, -0.0014568323)
+bones/20/rotation = Quaternion(-0.06053187, -0.07733907, 0.45115542, 0.8870251)
+bones/21/position = Vector3(0.010765617, 0.01423364, -0.004748281)
+bones/21/rotation = Quaternion(0.14181545, -0.0002296108, 0.46962193, 0.8714032)
+
+[node name="SK_Farm_Apple_lvl1" parent="Anim_Farm_Apple_lvl1/Skeleton3D" index="0" unique_id=2039824614]
+surface_material_override/0 = SubResource("StandardMaterial3D_1vf5o")
+surface_material_override/1 = SubResource("StandardMaterial3D_jg536")
