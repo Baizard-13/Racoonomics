@@ -51,6 +51,6 @@ transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_sxy8e")
 
 [node name="Carrot_lvl1_work" parent="." index="1" unique_id=3326800 instance=ExtResource("3_j14mh")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, 0)
 
 [editable path="Carrot_lvl1_work"]

@@ -46,6 +46,6 @@ transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_2cvn4")
 
 [node name="Anim_Farm_Oreh_lvl1" parent="." index="1" unique_id=1460956550 instance=ExtResource("3_os46o")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.47433043, 0)
 
 [editable path="Anim_Farm_Oreh_lvl1"]

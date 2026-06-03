@@ -46,9 +46,9 @@ transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.61675644, -0.004
 mesh = SubResource("BoxMesh_2w66f")
 
 [node name="Anim_Farm_Apple_lvl1" parent="." index="1" unique_id=1558338815 instance=ExtResource("4_mddat")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, -2.281)
 
-[node name="Skeleton3D" parent="Anim_Farm_Apple_lvl1/Anim_Farm_Apple_lvl1" parent_id_path=PackedInt32Array(1558338815, 1906227927) index="0" unique_id=230927699]
+[node name="Skeleton3D" parent="Anim_Farm_Apple_lvl1/Anim_Farm_Apple_lvl1" parent_id_path=PackedInt32Array(1558338815, 1023285357) index="0" unique_id=2108832292]
 bones/4/position = Vector3(-0.034630124, 0.031297315, -0.015327711)
 bones/4/rotation = Quaternion(-0.0047758357, 0.025947198, 0.2810046, 0.95934373)
 bones/5/position = Vector3(-0.050453663, 0.03581971, -0.011802248)
