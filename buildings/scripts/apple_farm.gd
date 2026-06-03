@@ -1,5 +1,15 @@
 @tool
 extends Building
 
+var world_grid : WorldGrid
+
+func _extends_ready() -> void:
+	var parent_grid := get_parent() as WorldGrid
+	if parent_grid:
+		world_grid = parent_grid
+
+
 func tick_produce(tick: int) -> void:
-	pass
+	if tick % 3 == 0:
+		storage[&"apples_out"].put(Global.get_type("apples"), 10)
+		#print("запас яблок ", storage[&"apples_out"].stacks)

@@ -1,7 +1,6 @@
 @tool
 extends Building
 
-@export var any_filter : ItemFilter
 var world_grid : WorldGrid
 
 func _extends_ready() -> void:
@@ -11,7 +10,6 @@ func _extends_ready() -> void:
 
 
 func tick_produce(tick: int) -> void:
-	if tick % 16 == 0:
+	if tick % 3 == 0:
 		storage[&"carrots_out"].put(Global.get_type("carrots"), 10)
-		#print(storage[&"carrots_out"].take_filtered(any_filter, 1))
-		print("создано ", storage[&"carrots_out"].stacks)
+		#print("запас моркови ", storage[&"carrots_out"].stacks)

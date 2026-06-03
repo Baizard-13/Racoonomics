@@ -18,4 +18,11 @@ func _extends_ready() -> void:
 	
 
 func tick_consume(tick: int) -> void:
-	print(storage[&"food_input"].take_filtered(any_filter, 2))
+	var total_satiety := 0
+	for item_id in storage[&"food_input"].stacks:
+		var item_type : ItemType = Global.get_type(item_id)
+		total_satiety += item_type.satiety
+	storage[&"food_input"].stacks.clear()
+	Global.add_loyalty(total_satiety)
+	#print("Лояльность населения: ", Global.loyalty)
+	

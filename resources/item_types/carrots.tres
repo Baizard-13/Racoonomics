@@ -7,4 +7,5 @@ script = ExtResource("1_aiw3y")
 id = &"carrots"
 display_name = "Carrots"
 tags = Array[StringName]([&"produce", &"hares"])
+satiety = 1
 metadata/_custom_type_script = "uid://b2ef05y1cqw6k"
