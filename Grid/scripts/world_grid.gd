@@ -130,12 +130,11 @@ func _physics_process(_delta: float) -> void:
 		match process_tick_step:
 			0: building.tick_produce(total_steps)
 			1: building.tick_transport()
-			2:
-				building.tick_consume(total_steps)
-				total_steps += 1
+			2: building.tick_consume(total_steps)
 
 	for i in range(indices_to_remove.size() - 1, -1, -1):
 		var index = indices_to_remove[i]
 		buildings_cache.remove_at(index)
 
 	process_tick_step = (process_tick_step + 1) % 3
+	total_steps += 1
