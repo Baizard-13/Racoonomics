@@ -40,7 +40,7 @@ script = ExtResource("4_byspa")
 filter = SubResource("Resource_svwq6")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_bo1io"]
+[sub_resource type="BoxMesh" id="BoxMesh_xhws6"]
 resource_local_to_scene = true
 
 [node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_whalh")]
@@ -53,10 +53,11 @@ storage = Dictionary[StringName, ExtResource("4_byspa")]({
 &"food_input": SubResource("Resource_0f15d")
 })
 meshes = [NodePath("lavka_lvl2/Rig_Rabbit/Skeleton3D/Sm_Lavka_Lvl2")]
+definition_paths = "res://buildings/data/store.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_bo1io")
+mesh = SubResource("BoxMesh_xhws6")
 
 [node name="lavka_lvl2" parent="." index="2" unique_id=223115633 instance=ExtResource("4_7qmwc")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

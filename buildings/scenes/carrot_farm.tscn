@@ -32,7 +32,7 @@ script = ExtResource("4_sxy8e")
 filter = SubResource("Resource_ox42p")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_x3wo1"]
+[sub_resource type="BoxMesh" id="BoxMesh_sxy8e"]
 resource_local_to_scene = true
 
 [node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_n6xy6")]
@@ -44,10 +44,11 @@ storage = Dictionary[StringName, ExtResource("4_sxy8e")]({
 &"carrots_out": SubResource("Resource_n4nh0")
 })
 meshes = [NodePath("Carrot_lvl1_work/Anim_Farm_Carrot_lvl1/Skeleton3D/SK_Farm_Carrot_lvl1")]
+definition_paths = "res://buildings/data/carrot_farm.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_x3wo1")
+mesh = SubResource("BoxMesh_sxy8e")
 
 [node name="Carrot_lvl1_work" parent="." index="1" unique_id=3326800 instance=ExtResource("3_j14mh")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

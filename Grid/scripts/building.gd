@@ -20,8 +20,6 @@ const BUILDING_PORT_DECAL = preload("uid://uf7gdg37kqtl")
 @export var meshes : Array[MeshInstance3D]
 @export var definition_paths : String ##For loading definition info when you need it
 
-@export_tool_button("found definition paths") var found_definition_path: Callable = _get_definition_by_name
-
 @export_tool_button("Rebuild ports") var rebuild_ports_button = _rebuild_ports
 
 @export_category("Runtime state (don't edit)")
@@ -167,14 +165,3 @@ func set_show_port(port: BuildingPort, show_: bool) -> void:
 	var port_node := get_node(port.vis_node_path) as Node3D
 	if port_node:
 		port_node.visible = show_
-
-func _get_definition_by_name():
-	var current_path: String = self.get_script().resource_path
-	var base_name: String = current_path.get_file().get_basename()
-	
-	var full_tres_path: String = "res://buildings/data/".path_join(base_name + ".tres")
-	
-	if FileAccess.file_exists(full_tres_path):
-		definition_paths = full_tres_path
-	else:
-		push_error("Файл не найден по совпадающему названию скрипта")
