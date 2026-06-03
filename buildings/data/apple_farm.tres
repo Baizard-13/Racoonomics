@@ -4,8 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://cjcuu6q1fwew5" path="res://buildings/scenes/apple_farm.tscn" id="1_kgocx"]
 [ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_kgocx"]
 
+[sub_resource type="Resource" id="Resource_lhenu"]
+script = ExtResource("1_f5v16")
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"apples_out"
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
 [resource]
 script = ExtResource("2_kgocx")
+title = "Apple Farm"
 dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("1_f5v16")]([SubResource("Resource_lhenu")])
 building_scene = ExtResource("1_kgocx")
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"

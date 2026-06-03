@@ -4,8 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://dt1aj7j1p8t8w" path="res://buildings/scenes/store.tscn" id="1_pdpwp"]
 [ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_pdpwp"]
 
+[sub_resource type="Resource" id="Resource_m8gox"]
+script = ExtResource("1_kmmib")
+type = 1
+cell_offset = Vector2i(1, 2)
+facing = 2
+storage_id = &"food_input"
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
+metadata/_custom_type_script = "uid://c0gqfaohu8pat"
+
 [resource]
 script = ExtResource("2_pdpwp")
+title = "Store"
 dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("1_kmmib")]([SubResource("Resource_m8gox")])
 building_scene = ExtResource("1_pdpwp")
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"

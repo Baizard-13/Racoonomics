@@ -14,7 +14,7 @@ script = ExtResource("3_to3tu")
 cell_offset = Vector2i(1, 2)
 facing = 2
 storage_id = &"carrots_out"
-vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/CarrotFarmManual/Ports/Anchor")
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/CarrotFarmManual/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_tj4wi"]
@@ -50,15 +50,15 @@ mesh = SubResource("BoxMesh_iq5xd")
 [node name="Carrot_lvl1_work" parent="." index="2" unique_id=707614248 instance=ExtResource("3_5yl2n")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.4, 0)
 
-[node name="Skeleton3D" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1" parent_id_path=PackedInt32Array(707614248, 518461432) index="0" unique_id=1028082557]
+[node name="Skeleton3D" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1" parent_id_path=PackedInt32Array(707614248, 1494052243) index="0" unique_id=1601052670]
 bones/1/position = Vector3(0, 0.018328475, 1.4210853e-16)
 bones/4/position = Vector3(-0.02, 0.018328475, 1.4210853e-16)
 bones/7/position = Vector3(0.02, 0.018328475, 1.4210853e-16)
 
-[node name="SK_Farm_Carrot_lvl1" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1/Skeleton3D" index="0" unique_id=116747716]
+[node name="SK_Farm_Carrot_lvl1" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1/Skeleton3D" index="0" unique_id=509827692]
 transform = Transform3D(1.0000004, 0, 0, -7.1054274e-15, 1.0000004, -5.684342e-14, 0, 5.684342e-14, 1.0000004, 0, 0, 0)
 
-[node name="AnimationPlayer" parent="Carrot_lvl1_work" index="1" unique_id=1193654384]
+[node name="AnimationPlayer" parent="Carrot_lvl1_work" index="1" unique_id=663317617]
 autoplay = &"Anim_Farm_Carrot_lvl1|Anim_Farm_Carrot_lvl1|Anim_Farm_Carrot_lvl1"
 
 [editable path="Carrot_lvl1_work"]

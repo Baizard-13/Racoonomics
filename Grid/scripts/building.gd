@@ -18,6 +18,7 @@ const BUILDING_PORT_DECAL = preload("uid://uf7gdg37kqtl")
 @export var storage : Dictionary[StringName, ItemStorage]
 ## needed for material overrides, remember to NOT add MeshBoundsVisualizer to this list
 @export var meshes : Array[MeshInstance3D]
+@export var definition_paths : Array[String] = [] ##For loading definition info when you need it
 
 @export_tool_button("Rebuild ports") var rebuild_ports_button = _rebuild_ports
 
@@ -39,7 +40,6 @@ const BUILDING_PORT_DECAL = preload("uid://uf7gdg37kqtl")
 
 @onready var mesh_bounds_visualizer: MeshInstance3D = $MeshBoundsVisualizer
 
-@export var definition_paths : Array[String] = [] ##For loading definition info when you need it
 
 var ports_node: Node3D
 
@@ -111,13 +111,13 @@ func _extends_ready() -> void:
 	pass
 
 # wherever these will eventually be called, they must be called in this order specifically
-func tick_produce() -> void:
+func tick_produce(tick: int) -> void:
 	pass
 
 func tick_transport() -> void:
 	pass
 
-func tick_consume() -> void:
+func tick_consume(tick: int) -> void:
 	pass
 
 

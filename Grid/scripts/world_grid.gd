@@ -127,9 +127,9 @@ func _physics_process(_delta: float) -> void:
 			continue
 
 		match process_tick_step:
-			0: building.tick_produce()
+			0: building.tick_produce(process_tick_step)
 			1: building.tick_transport()
-			2: building.tick_consume()
+			2: building.tick_consume(process_tick_step - 2)
 
 	for i in range(indices_to_remove.size() - 1, -1, -1):
 		var index = indices_to_remove[i]

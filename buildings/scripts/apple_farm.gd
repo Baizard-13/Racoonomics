@@ -1,5 +1,5 @@
 @tool
 extends Building
 
-func tick_produce() -> void:
+func tick_produce(tick: int) -> void:
 	pass
