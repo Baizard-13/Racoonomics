@@ -54,7 +54,6 @@ storage = Dictionary[StringName, ExtResource("4_byspa")]({
 })
 meshes = [NodePath("lavka_lvl2/Rig_Rabbit/Skeleton3D/Sm_Lavka_Lvl2")]
 definition_paths = "res://buildings/data/store.tres"
-origin_cell = Array[Vector2i]([])
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)

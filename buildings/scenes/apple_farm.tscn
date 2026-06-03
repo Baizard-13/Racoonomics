@@ -48,4 +48,28 @@ mesh = SubResource("BoxMesh_2w66f")
 [node name="Anim_Farm_Apple_lvl1" parent="." index="1" unique_id=1558338815 instance=ExtResource("4_mddat")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 
+[node name="Skeleton3D" parent="Anim_Farm_Apple_lvl1/Anim_Farm_Apple_lvl1" parent_id_path=PackedInt32Array(1558338815, 1906227927) index="0" unique_id=230927699]
+bones/4/position = Vector3(-0.034630124, 0.031297315, -0.015327711)
+bones/4/rotation = Quaternion(-0.0047758357, 0.025947198, 0.2810046, 0.95934373)
+bones/5/position = Vector3(-0.050453663, 0.03581971, -0.011802248)
+bones/5/rotation = Quaternion(-0.06682816, 0.04342161, -0.16234288, 0.9835108)
+bones/6/position = Vector3(-0.049292877, 0.03061362, 0.01006347)
+bones/6/rotation = Quaternion(-0.05891117, -0.16435193, -0.24425194, 0.95386535)
+bones/7/position = Vector3(-0.040335678, 0.023860123, 0.0092597045)
+bones/7/rotation = Quaternion(-0.1292881, -0.09406736, 0.12512098, 0.9791735)
+bones/8/position = Vector3(-0.034037404, 0.03008839, 0.010060377)
+bones/8/rotation = Quaternion(-0.022629578, -0.10416104, 0.053836502, 0.9928444)
+bones/9/position = Vector3(-0.04618202, 0.02394058, -0.011787949)
+bones/9/rotation = Quaternion(-0.014006543, -0.03439311, -0.20784497, 0.9774566)
+bones/14/position = Vector3(-0.016333023, 0.047764093, -0.00929038)
+bones/14/rotation = Quaternion(0.18776438, -0.32250178, -0.038758837, 0.92694926)
+bones/15/position = Vector3(-0.023116628, 0.050441075, -0.00013439637)
+bones/15/rotation = Quaternion(-0.11110289, -0.049296774, -0.30279687, 0.94527245)
+bones/16/position = Vector3(-0.023651708, 0.040371515, -0.0073827817)
+bones/16/rotation = Quaternion(-0.11111496, -0.18523894, -0.2890471, 0.9326263)
+bones/20/position = Vector3(-0.04584875, -0.004016951, -0.0067459987)
+bones/20/rotation = Quaternion(-0.057761632, -0.013384516, 0.28818643, 0.955737)
+bones/21/position = Vector3(-0.042355083, 0.010087229, -0.008689399)
+bones/21/rotation = Quaternion(0.13946608, 0.04160002, 0.3685415, 0.91814804)
+
 [editable path="Anim_Farm_Apple_lvl1"]
