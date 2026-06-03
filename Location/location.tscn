@@ -25,6 +25,7 @@
 [ext_resource type="Resource" uid="uid://boudmf84aorir" path="res://buildings/data/wood_farm.tres" id="14_kjlir"]
 [ext_resource type="Resource" uid="uid://ci2arlumjjsof" path="res://buildings/data/small_kitchen.tres" id="15_rcvv6"]
 [ext_resource type="Resource" uid="uid://dmbwevjl6lkxv" path="res://buildings/data/store.tres" id="16_6xw6m"]
+[ext_resource type="PackedScene" uid="uid://cgrcv2tf58ywt" path="res://Game/zone_info_zone.tscn" id="23_kjlir"]
 [ext_resource type="Shader" uid="uid://xv14wc8baohk" path="res://shaders/water_test.gdshader" id="24_6tg3p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i1b54"]
@@ -451,6 +452,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -345, 0, 65)
 origin = Vector2i(-37, 4)
 size = Vector2i(5, 5)
 
+[node name="ZoneInfoZone" parent="WorldGrid" unique_id=151803156 instance=ExtResource("23_kjlir")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154.86504, 28.457739, -156.68433)
+
+[node name="ZoneInfoZone2" parent="WorldGrid" unique_id=1221514355 instance=ExtResource("23_kjlir")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 228.87407, 28.457739, -44.116)
+ID = 1
+
+[node name="ZoneInfoZone3" parent="WorldGrid" unique_id=548648270 instance=ExtResource("23_kjlir")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 233.22751, 34.75714, 97.06088)
+ID = 2
+
+[node name="ZoneInfoZone4" parent="WorldGrid" unique_id=1780727767 instance=ExtResource("23_kjlir")]
+transform = Transform3D(0.8715991, 0, -0.49021932, 0, 1, 0, 0.49021932, 0, 0.8715991, 79.34877, 34.848663, 169.28609)
+ID = 3
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=595020413]
 environment = SubResource("Environment_34a2q")
 
@@ -495,6 +511,7 @@ directional_shadow_max_distance = 700.0
 
 [node name="walls" type="StaticBody3D" parent="borders" unique_id=856842441]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -200.12842)
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls" unique_id=401334796]
 shape = SubResource("BoxShape3D_u6sc3")
@@ -502,6 +519,7 @@ debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
 
 [node name="walls2" type="StaticBody3D" parent="borders" unique_id=1017103905]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 192.5816)
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls2" unique_id=294652517]
 shape = SubResource("BoxShape3D_u6sc3")
@@ -509,6 +527,7 @@ debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
 
 [node name="walls3" type="StaticBody3D" parent="borders" unique_id=171861434]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22.512878, 0, -2.9671478)
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls3" unique_id=86392846]
 shape = SubResource("BoxShape3D_u6sc3")
@@ -516,6 +535,7 @@ debug_color = Color(0.9729523, 0, 0.44077253, 0.41960785)
 
 [node name="walls4" type="StaticBody3D" parent="borders" unique_id=630387140]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 236.05988, 0, -30.90267)
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="borders/walls4" unique_id=1993239243]
 shape = SubResource("BoxShape3D_u6sc3")

@@ -59,7 +59,7 @@ func _editor_update_visualization():
 
 	var cell_size : Vector2 = grid.cell_size
 	editor_visualizer.mesh.size = Vector3(size.x * cell_size.x, 2.0, size.y * cell_size.y)
-
+	
 	editor_visualizer.material_override.set_shader_parameter("cell_size", Vector2(cell_size.x, cell_size.y))
 	editor_visualizer.material_override.set_shader_parameter("world_offset", grid.global_position)
 	editor_visualizer.material_override.next_pass.set_shader_parameter("cell_size", Vector2(cell_size.x, cell_size.y)) # sorry
