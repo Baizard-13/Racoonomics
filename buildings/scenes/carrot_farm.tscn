@@ -9,12 +9,16 @@
 [ext_resource type="Resource" uid="uid://cjb8ype3a5ygw" path="res://resources/item_types/carrots.tres" id="6_qmcku"]
 [ext_resource type="Script" uid="uid://b3goh20b5qa4r" path="res://scripts/item_filter.gd" id="7_7ot8q"]
 
+[sub_resource type="Resource" id="Resource_sxy8e"]
+script = ExtResource("7_7ot8q")
+metadata/_custom_type_script = "uid://b3goh20b5qa4r"
+
 [sub_resource type="Resource" id="Resource_urg8m"]
 script = ExtResource("3_f5eet")
 cell_offset = Vector2i(1, 2)
 facing = 2
 storage_id = &"carrots_out"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
+vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_ox42p"]
@@ -28,11 +32,12 @@ script = ExtResource("4_sxy8e")
 filter = SubResource("Resource_ox42p")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_sxy8e"]
+[sub_resource type="BoxMesh" id="BoxMesh_x3wo1"]
 resource_local_to_scene = true
 
 [node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_n6xy6")]
 script = ExtResource("2_bwhfq")
+any_filter = SubResource("Resource_sxy8e")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_f5eet")]([SubResource("Resource_urg8m")])
 storage = Dictionary[StringName, ExtResource("4_sxy8e")]({
@@ -42,7 +47,7 @@ meshes = [NodePath("Carrot_lvl1_work/Anim_Farm_Carrot_lvl1/Skeleton3D/SK_Farm_Ca
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_sxy8e")
+mesh = SubResource("BoxMesh_x3wo1")
 
 [node name="Carrot_lvl1_work" parent="." index="1" unique_id=3326800 instance=ExtResource("3_j14mh")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

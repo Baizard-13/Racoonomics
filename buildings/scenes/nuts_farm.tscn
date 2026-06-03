@@ -14,7 +14,7 @@ script = ExtResource("3_wkw0h")
 cell_offset = Vector2i(1, 2)
 facing = 2
 storage_id = &"nuts_out"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
+vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_8bj7u"]
@@ -39,6 +39,7 @@ storage = Dictionary[StringName, ExtResource("4_2cvn4")]({
 &"nuts_out": SubResource("Resource_ibiub")
 })
 meshes = [NodePath("Anim_Farm_Oreh_lvl1/Anim_Farm_Oreh_lvl1/Skeleton3D/Sk_Farm_Oreh_lvl1_001")]
+definition_paths = "res://buildings/data/nuts_farm.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
