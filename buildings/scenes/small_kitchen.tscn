@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://08yj5tpsvy8r" path="res://resources/item_types/food_carrot_soup.tres" id="12_mvotc"]
 [ext_resource type="Resource" uid="uid://d3ungd38obpld" path="res://resources/item_types/food_fried_bark.tres" id="13_0487e"]
 [ext_resource type="Resource" uid="uid://b0kokabntul2y" path="res://resources/item_types/food_nut_snack.tres" id="14_mcbj1"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="15_0487e"]
 [ext_resource type="Texture2D" uid="uid://dg46n72xr6xpe" path="res://Textures/Buildings/Kitchen.png" id="15_mvotc"]
 [ext_resource type="Texture2D" uid="uid://pbpjguqmjvxk" path="res://Textures/Buildings/Rabbit.png" id="16_0487e"]
 
@@ -22,7 +23,7 @@ script = ExtResource("3_2qinq")
 cell_offset = Vector2i(1, 2)
 facing = 2
 storage_id = &"cook_out"
-vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/Building/Ports/Anchor")
+vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/Building/@Node3D@433958/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_xptis"]
@@ -30,7 +31,7 @@ script = ExtResource("3_2qinq")
 type = 1
 cell_offset = Vector2i(1, 0)
 storage_id = &"cook_in"
-vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/Building/Ports/@Node3D@40169")
+vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/Building/@Node3D@433958/@Node3D@433959")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_aq4oj"]
@@ -53,7 +54,13 @@ script = ExtResource("4_1tq31")
 filter = SubResource("Resource_5y8qf")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_mcbj1"]
+[sub_resource type="Resource" id="Resource_mcbj1"]
+script = ExtResource("15_0487e")
+title = "Small Kitchen"
+dimensions = Vector2i(3, 3)
+ports = Array[ExtResource("3_2qinq")]([SubResource("Resource_lrp6f"), SubResource("Resource_xptis")])
+
+[sub_resource type="BoxMesh" id="BoxMesh_mvotc"]
 resource_local_to_scene = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cjiqo"]
@@ -454,6 +461,7 @@ tracks/18/keys = PackedFloat32Array(0, 1, -0.48838282, -0.06287283, -0.09857526,
 [sub_resource type="Animation" id="Animation_a8liy"]
 resource_name = "Rig_Rabbit_001|Kithen_Lvl2_Work"
 length = 3.0
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -597,6 +605,7 @@ _data = {
 
 [node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_hto0e")]
 script = ExtResource("2_jwha4")
+title = "Small Kitchen"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_2qinq")]([SubResource("Resource_lrp6f"), SubResource("Resource_xptis")])
 storage = Dictionary[StringName, ExtResource("4_1tq31")]({
@@ -605,13 +614,13 @@ storage = Dictionary[StringName, ExtResource("4_1tq31")]({
 })
 meshes = [NodePath("Rig_Rabbit_001/Skeleton3D/Cube_001")]
 definition_paths = "res://buildings/data/small_kitchen.tres"
-origin_cell = Array[Vector2i]([])
+definition_CLEAR_ME = SubResource("Resource_mcbj1")
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_mcbj1")
+mesh = SubResource("BoxMesh_mvotc")
 
-[node name="Rig_Rabbit_001" type="Node3D" parent="." index="3" unique_id=820575791]
+[node name="Rig_Rabbit_001" type="Node3D" parent="." index="2" unique_id=820575791]
 transform = Transform3D(400, 0, 0, 0, -1.7484555e-05, 400, 0, -400, -1.7484555e-05, 0, -0.50095224, 2.6296165e-09)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Rig_Rabbit_001" index="0" unique_id=343928102]
@@ -725,7 +734,7 @@ bones/15/parent = 14
 bones/15/rest = Transform3D(1, 7.1054274e-15, 2.3841855e-07, -2.3296778e-07, -0.21260738, 0.9771377, 5.0689536e-08, -0.97713774, -0.21260737, 0, 0.0025138087, -1.7347235e-18)
 bones/15/enabled = true
 bones/15/position = Vector3(-1.2852251e-09, 0.0025138087, 1.3085082e-09)
-bones/15/rotation = Quaternion(-0.7786551, 7.475412e-08, -9.2224894e-08, 0.6274522)
+bones/15/rotation = Quaternion(-0.7786551, 7.475412e-08, -9.222489e-08, 0.6274522)
 bones/15/scale = Vector3(1.0000001, 1.0000001, 1)
 bones/16/name = "Andrusha_Bone.014"
 bones/16/parent = 2
@@ -763,5 +772,6 @@ skeleton = NodePath("..")
 surface_material_override/0 = SubResource("StandardMaterial3D_488x5")
 surface_material_override/1 = SubResource("StandardMaterial3D_s1boj")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4" unique_id=1734271239]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Rig_Rabbit_001" index="1" unique_id=1734271239]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_onmcc")

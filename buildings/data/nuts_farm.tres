@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d2nsjbayoy264" path="res://buildings/scenes/nuts_farm.tscn" id="1_dw67u"]
 [ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_n4uu4"]
 [ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_dw67u"]
+[ext_resource type="Texture2D" uid="uid://djeacxrghrdbl" path="res://Images/image (3).png" id="4_m00l5"]
 
 [sub_resource type="Resource" id="Resource_lm0on"]
 script = ExtResource("1_n4uu4")
@@ -15,6 +16,7 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 [resource]
 script = ExtResource("2_dw67u")
 title = "Nut Farm"
+shop_icon = ExtResource("4_m00l5")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_n4uu4")]([SubResource("Resource_lm0on")])
 building_scene = ExtResource("1_dw67u")

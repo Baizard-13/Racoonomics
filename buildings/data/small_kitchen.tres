@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ccap60uk73e6b" path="res://buildings/scenes/small_kitchen.tscn" id="1_6njp5"]
 [ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_7s6v8"]
 [ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_6njp5"]
+[ext_resource type="Texture2D" uid="uid://bngcp1dpgok36" path="res://Images/image (5).png" id="4_ei3sg"]
 
 [sub_resource type="Resource" id="Resource_lrp6f"]
 script = ExtResource("1_7s6v8")
@@ -23,6 +24,7 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 [resource]
 script = ExtResource("2_6njp5")
 title = "Small Kitchen"
+shop_icon = ExtResource("4_ei3sg")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_7s6v8")]([SubResource("Resource_lrp6f"), SubResource("Resource_xptis")])
 building_scene = ExtResource("1_6njp5")

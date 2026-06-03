@@ -1,13 +1,20 @@
 @tool
 extends Building
 
+var animation_speed: float = 1.0
 
 var world_grid : WorldGrid
+
+@onready var animation_player: AnimationPlayer = $Anim_Farm_Oreh_lvl1/AnimationPlayer
 
 func _extends_ready() -> void:
 	var parent_grid := get_parent() as WorldGrid
 	if parent_grid:
 		world_grid = parent_grid
+	
+	if !is_ghost:
+		animation_player.play(&"Anim_Farm_Oreh_lvl1|Take", -1, animation_speed)
+
 
 
 func tick_produce(tick: int) -> void:
