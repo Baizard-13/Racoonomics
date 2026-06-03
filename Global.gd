@@ -1,6 +1,7 @@
 extends Node
 
 @export var type_lookup : Dictionary[StringName, ItemType]
+var loyalty : int
 
 func _ready() -> void:
 	var types_dir := DirAccess.open("res://resources/item_types")
@@ -21,3 +22,9 @@ func _ready() -> void:
 
 func get_type(id: StringName) -> ItemType:
 	return type_lookup.get(id, null)
+	
+
+func add_loyalty(loyalty_: int) -> void:
+	loyalty += loyalty_
+	await get_tree().create_timer(30.0).timeout
+	loyalty -= loyalty_
