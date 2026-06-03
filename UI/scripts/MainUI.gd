@@ -1,6 +1,8 @@
 extends Control
 
 var info_current_building: Building
+var info_current_building_definition: BuildingDefinition
+
 
 @export var start_build_definition: BuildingDefinition
 var buy_build_definition: BuildingDefinition
@@ -15,6 +17,8 @@ var buttons_list: Array[PurchaseOption] = []
 
 @onready var bar_loyalty: Control = $BarLoyalty
 @onready var tab_hotbar: Control = $TabHotbar
+@onready var money_manager: Node = $"../../MoneyManager"
+
 
 @onready var open_hotbar: Button = $TabHotbar/OpenHotbar
 
@@ -71,6 +75,7 @@ func TabHotbarUpdatePosition(change: int):
 	UpdatePurchases()
 
 func openDescription(build_def: BuildingDefinition):
+	info_current_building_definition = build_def
 	build_name.text = build_def.title
 	building_icon.texture = build_def.shop_icon
 	description.text = build_def.description
@@ -85,10 +90,14 @@ func _on_bt_close_pressed() -> void:
 func _on_bt_sell_pressed() -> void:
 	if !info_current_building:
 		return
+	##Пока что возвращает только ценник ПОКУПКИ, ценник улучшений(upgrade_cost) пока что не возвращает
+	money_manager.money += info_current_building_definition.purchase_cost 
 	world_grid.buildings_cache.erase(info_current_building)
 	var rect = Rect2i(info_current_building.origin_cell.x, info_current_building.origin_cell.y, info_current_building.dimensions.x, info_current_building.dimensions.y)
 	world_grid._free_rect(rect)
 	info_current_building.queue_free()
+	info_current_building = null
+	info_current_building_definition = null
 	closeDescription()
 
 func PurchaseTabOpen(build_definition: BuildingDefinition):
