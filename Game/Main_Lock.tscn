@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dg0lfujh4bylx" path="res://Location/Location_Meshes/sm_home_eji_1.tscn" id="4_8x6re"]
 [ext_resource type="PackedScene" uid="uid://broxl3yab5quk" path="res://Location/Location_Meshes/sm_home_eji_2.tscn" id="5_omyc5"]
 [ext_resource type="PackedScene" uid="uid://dcviadsh6482j" path="res://Location/Location_Meshes/sm_home_eji_3.tscn" id="6_pf4fl"]
+[ext_resource type="PackedScene" uid="uid://cvbllvxg8gppv" path="res://Location/Location_Meshes/kill.tscn" id="7_bqh1e"]
 [ext_resource type="PackedScene" uid="uid://r4o1vbddvg45" path="res://Location/Location_Meshes/sm_home_bober_1.tscn" id="12_y46d2"]
 [ext_resource type="PackedScene" uid="uid://ci301glgp4pqe" path="res://Location/Location_Meshes/sm_home_bober_2.tscn" id="13_bqh1e"]
 [ext_resource type="PackedScene" uid="uid://5wup54kgky0g" path="res://Location/Location_Meshes/sm_tree_tree_1.tscn" id="13_flrqr"]
@@ -32,6 +33,9 @@
 [node name="SM_Home_rabbit_1" parent="." unique_id=1659452929 instance=ExtResource("13_olaql")]
 
 [node name="SM_Home_rabbit_2" parent="." unique_id=765147963 instance=ExtResource("14_sc27h")]
+
+[node name="Kill" parent="." unique_id=1650143207 instance=ExtResource("7_bqh1e")]
+transform = Transform3D(-4.4935305e-07, 0, 10.28, 0, 10.28, 0, -10.28, 0, -4.4935305e-07, -121.32763, 0.8238907, 0)
 
 [node name="SM_Home_rabbit_3" parent="." unique_id=792850665 instance=ExtResource("15_k5gex")]
 

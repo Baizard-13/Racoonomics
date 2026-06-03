@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cvbllvxg8gppv"]
+
+[ext_resource type="PackedScene" uid="uid://cyus66scc2ni7" path="res://models/Kill.fbx" id="1_c6xiu"]
+[ext_resource type="Texture2D" uid="uid://cfknn6uv2852n" path="res://Textures/Location/kill.png" id="2_htriu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rtpyx"]
+albedo_texture = ExtResource("2_htriu")
+
+[node name="Kill" unique_id=1650143207 instance=ExtResource("1_c6xiu")]
+
+[node name="Cylinder" parent="." index="0" unique_id=1639665920]
+surface_material_override/0 = SubResource("StandardMaterial3D_rtpyx")
