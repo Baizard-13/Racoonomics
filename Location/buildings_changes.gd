@@ -8,7 +8,7 @@ var selected_build: Building
 @onready var build_mode_controller: Node = $"../BuildModeController"
 @onready var main_ui: Control = %Main_UI
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("Info") and !build_mode_controller.current_ghost:
 		var cell = _hovered_cell()
 		var building = world_grid.get_building_at_cell(cell)
@@ -16,9 +16,9 @@ func _input(event: InputEvent) -> void:
 			build_desc_open(building)
 
 func build_desc_open(build: Building):
-	selected_build = build
-	var definition = load(selected_build.definition_paths[0])
-	main_ui.current_building = build
+	selected_build = build as Building
+	var definition = load(selected_build.definition_paths)
+	main_ui.info_current_building = build as Building
 	main_ui.openDescription(definition)
 
 
