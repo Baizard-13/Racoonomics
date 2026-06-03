@@ -486,7 +486,7 @@ light_specular = 0.0
 shadow_enabled = true
 shadow_bias = 0.01
 directional_shadow_mode = 0
-directional_shadow_max_distance = 600.0
+directional_shadow_max_distance = 700.0
 
 [node name="borders" type="Node3D" parent="." unique_id=1220244462]
 

@@ -13,6 +13,7 @@ var valid_cells : Dictionary[Vector2i, bool]
 var occupied_cells : Dictionary[Vector2i, Node]
 var buildings_cache : Array[Building]
 var process_tick_step := 0
+var total_steps := 0
 
 func world_to_cell(world_pos: Vector3) -> Vector2i:
 	var relative_pos : Vector3 = world_pos - global_position
@@ -127,9 +128,11 @@ func _physics_process(_delta: float) -> void:
 			continue
 
 		match process_tick_step:
-			0: building.tick_produce(process_tick_step)
+			0: building.tick_produce(total_steps)
 			1: building.tick_transport()
-			2: building.tick_consume(process_tick_step - 2)
+			2:
+				building.tick_consume(total_steps)
+				total_steps += 1
 
 	for i in range(indices_to_remove.size() - 1, -1, -1):
 		var index = indices_to_remove[i]

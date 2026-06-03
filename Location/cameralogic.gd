@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var speed := 50.0 ## Скорость
 
 #@export var mi_max_scale: Vector2 = Vector2(2, 30) ## Мин/макс высота камеры
-@export var distance_bounds := Vector2(100, 400)
+@export var distance_bounds := Vector2(100, 500)
 @export var zoom_step: float = 25 # Сделал еще больше, чтобы зум чувствовался
 @export var pan_speed : float = 0.04
 
