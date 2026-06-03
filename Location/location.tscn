@@ -25,6 +25,7 @@
 [ext_resource type="Resource" uid="uid://boudmf84aorir" path="res://buildings/data/wood_farm.tres" id="14_kjlir"]
 [ext_resource type="Resource" uid="uid://ci2arlumjjsof" path="res://buildings/data/small_kitchen.tres" id="15_rcvv6"]
 [ext_resource type="Resource" uid="uid://dmbwevjl6lkxv" path="res://buildings/data/store.tres" id="16_6xw6m"]
+[ext_resource type="Shader" uid="uid://xv14wc8baohk" path="res://shaders/water_test.gdshader" id="24_6tg3p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i1b54"]
 shader = ExtResource("13_iwrfv")
@@ -84,6 +85,25 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../WaterTest:material_overlay")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6tg3p"]
+shading_mode = 0
+albedo_color = Color(0.62, 0.62, 0.62, 1)
+texture_filter = 0
+texture_repeat = false
+disable_receive_shadows = true
 
 [sub_resource type="Animation" id="Animation_202do"]
 resource_name = "enter"
@@ -125,6 +145,18 @@ tracks/2/keys = {
 "args": [true],
 "method": &"set_draw_grid"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../WaterTest:material_overlay")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [null, SubResource("StandardMaterial3D_6tg3p")]
 }
 
 [sub_resource type="Animation" id="Animation_iwrfv"]
@@ -180,6 +212,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../WaterTest:material_overlay")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("StandardMaterial3D_6tg3p"), null]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iwrfv"]
 _data = {
@@ -201,7 +245,7 @@ colors = PackedColorArray(0.007500002, 0.009875036, 0.15, 1, 0.03720002, 0.14136
 gradient = SubResource("Gradient_yx7wv")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eoaun"]
-render_priority = 0
+render_priority = 1
 shader = ExtResource("5_yx7wv")
 shader_parameter/color_palette_gradient = SubResource("GradientTexture1D_eoaun")
 shader_parameter/transition_threshold = 0.0
@@ -234,6 +278,43 @@ volumetric_fog_emission = Color(1, 1, 1, 1)
 volumetric_fog_emission_energy = 0.0
 volumetric_fog_length = 640.0
 volumetric_fog_ambient_inject = 0.2
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kjlir"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6tg3p"]
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_kjlir")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6tg3p"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kjlir"]
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_6tg3p")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kjlir"]
+render_priority = 0
+shader = ExtResource("24_6tg3p")
+shader_parameter/surfaceNoise = SubResource("NoiseTexture2D_kjlir")
+shader_parameter/distortNoise = SubResource("NoiseTexture2D_6tg3p")
+shader_parameter/beer_factor = 0.085
+shader_parameter/foam_distance = 0.01
+shader_parameter/foam_max_distance = 0.4
+shader_parameter/foam_min_distance = 0.04
+shader_parameter/foam_color = Color(1, 1, 1, 1)
+shader_parameter/surface_noise_tiling = Vector2(4, 8)
+shader_parameter/surface_noise_scroll = Vector3(0.03, 0.03, 0)
+shader_parameter/surface_noise_cutoff = 0.777
+shader_parameter/surface_distortion_amount = 0.2790000132525
+shader_parameter/_DepthGradientShallow = Color(0.21779999, 0.66, 0.60841006, 0.83137256)
+shader_parameter/_DepthGradientDeep = Color(0.08480001, 0.33707994, 0.53, 1)
+shader_parameter/_DepthMaxDistance = 1.0
+shader_parameter/_DepthFactor = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rcvv6"]
+material = SubResource("ShaderMaterial_kjlir")
+size = Vector2(1300, 1200)
+subdivide_width = 13
+subdivide_depth = 12
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vju3g"]
 radius = 3.288
@@ -372,6 +453,13 @@ size = Vector2i(5, 5)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=595020413]
 environment = SubResource("Environment_34a2q")
+
+[node name="WaterTest" type="MeshInstance3D" parent="." unique_id=937071263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.076797, -10.110676, 9.0164795)
+cast_shadow = 0
+extra_cull_margin = 1300.0
+gi_mode = 0
+mesh = SubResource("PlaneMesh_rcvv6")
 
 [node name="Environment" parent="." unique_id=1531277812 instance=ExtResource("1_vju3g")]
 
