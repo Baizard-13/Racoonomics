@@ -16,13 +16,18 @@
 [ext_resource type="Resource" uid="uid://6jrtnhoruj1x" path="res://resources/item_types/nuts.tres" id="12_4fvl8"]
 [ext_resource type="Resource" uid="uid://bnweg3woogiok" path="res://resources/item_types/wood.tres" id="13_ay71j"]
 
+[sub_resource type="Resource" id="Resource_xhws6"]
+script = ExtResource("6_4vqv3")
+required_tag = &"food"
+metadata/_custom_type_script = "uid://b3goh20b5qa4r"
+
 [sub_resource type="Resource" id="Resource_m8gox"]
 script = ExtResource("3_7qmwc")
 type = 1
 cell_offset = Vector2i(1, 2)
 facing = 2
 storage_id = &"food_input"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
+vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_svwq6"]
@@ -35,11 +40,12 @@ script = ExtResource("4_byspa")
 filter = SubResource("Resource_svwq6")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_xhws6"]
+[sub_resource type="BoxMesh" id="BoxMesh_bo1io"]
 resource_local_to_scene = true
 
 [node name="Building" unique_id=155364411 node_paths=PackedStringArray("meshes") instance=ExtResource("1_whalh")]
 script = ExtResource("2_mmsfx")
+any_filter = SubResource("Resource_xhws6")
 title = "Shop"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_7qmwc")]([SubResource("Resource_m8gox")])
@@ -50,7 +56,7 @@ meshes = [NodePath("lavka_lvl2/Rig_Rabbit/Skeleton3D/Sm_Lavka_Lvl2")]
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_xhws6")
+mesh = SubResource("BoxMesh_bo1io")
 
 [node name="lavka_lvl2" parent="." index="2" unique_id=223115633 instance=ExtResource("4_7qmwc")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
