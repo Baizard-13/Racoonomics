@@ -463,6 +463,9 @@ mesh = SubResource("PlaneMesh_rcvv6")
 
 [node name="Environment" parent="." unique_id=1531277812 instance=ExtResource("1_vju3g")]
 
+[node name="Kill" parent="Environment" index="6" unique_id=1650143207]
+transform = Transform3D(-1.4996169, 0, 4.7698164, 0, 5, 0, -4.7698164, 0, -1.4996169, -149.19986, 7.15831, 70.19984)
+
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1858140852]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 113.10631, -0.5235214, 22.76151)
 script = ExtResource("2_u6sc3")
