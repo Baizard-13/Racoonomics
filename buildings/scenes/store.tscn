@@ -27,7 +27,7 @@ type = 1
 cell_offset = Vector2i(0, 1)
 facing = 3
 storage_id = &"food_input"
-vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/Building2/@Node3D@32779/Anchor")
+vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/Building2/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_svwq6"]
@@ -398,17 +398,7 @@ mesh = SubResource("BoxMesh_xhws6")
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 
 [node name="Skeleton3D" parent="lavka_lvl2/Rig_Rabbit" parent_id_path=PackedInt32Array(223115633, 1049561479) index="0" unique_id=58663501]
-bones/1/position = Vector3(-0.007283265, 0.008037358, 0.0057043936)
-bones/3/rotation = Quaternion(0, 0, 0.13040937, 0.9914602)
-bones/3/scale = Vector3(1.0721008, 1.0721008, 1.0721008)
-bones/4/rotation = Quaternion(0.83940667, 0.27310225, -0.14538346, -0.44685054)
-bones/5/rotation = Quaternion(-0.2313945, -0.37092665, -0.37047708, 0.8195224)
-bones/6/rotation = Quaternion(0.8394067, 0.27310213, 0.14538327, 0.44685057)
-bones/7/rotation = Quaternion(0.20663884, 0.10213996, -0.09558014, 0.96836585)
-bones/14/rotation = Quaternion(-0.83527684, 0, 0, 0.5498296)
-bones/15/rotation = Quaternion(-0.5814636, 4.7111342e-08, -1.0950517e-07, 0.8135725)
-bones/16/rotation = Quaternion(7.086357e-08, 0.53217643, 0.84663355, 1.1273607e-07)
-bones/17/rotation = Quaternion(-0.5519399, -6.568972e-08, 2.8711796e-07, 0.8338838)
+bones/7/rotation = Quaternion(0.2072424, -0.024628097, 0.035473578, 0.97733605)
 
 [node name="AnimationPlayer" parent="lavka_lvl2" index="1" unique_id=865094901]
 libraries/ = SubResource("AnimationLibrary_f6yqp")

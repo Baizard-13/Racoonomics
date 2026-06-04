@@ -21,7 +21,6 @@
 [ext_resource type="Resource" uid="uid://b6m3onvwjex0s" path="res://buildings/data/nuts_farm.tres" id="12_hibyy"]
 [ext_resource type="Resource" uid="uid://bm68ehewitxe1" path="res://buildings/data/apple_farm.tres" id="13_6tg3p"]
 [ext_resource type="Shader" uid="uid://ciw1jyllj5ihm" path="res://shaders/screen_pixelization.gdshader" id="13_iwrfv"]
-[ext_resource type="Resource" uid="uid://c8lmno2gm42xg" path="res://buildings/data/2x2_test_building.tres" id="14_hibyy"]
 [ext_resource type="Resource" uid="uid://boudmf84aorir" path="res://buildings/data/wood_farm.tres" id="14_kjlir"]
 [ext_resource type="Resource" uid="uid://ci2arlumjjsof" path="res://buildings/data/small_kitchen.tres" id="15_rcvv6"]
 [ext_resource type="Resource" uid="uid://dmbwevjl6lkxv" path="res://buildings/data/store.tres" id="16_6xw6m"]
@@ -335,7 +334,7 @@ camera = NodePath("../CharacterBody3D/Camera3D")
 [node name="Main_UI" parent="Main_UI" unique_id=1036147662 instance=ExtResource("2_pgsfy")]
 unique_name_in_owner = true
 start_build_definition = ExtResource("5_202do")
-tab_hotbar_purchase_options = Array[ExtResource("2_uiog4")]([ExtResource("5_202do"), ExtResource("11_svvya"), ExtResource("16_6xw6m"), ExtResource("12_hibyy"), ExtResource("14_kjlir"), ExtResource("13_6tg3p"), ExtResource("7_ydnx3"), ExtResource("8_qwiua"), ExtResource("7_qwiua"), ExtResource("14_hibyy")])
+tab_hotbar_purchase_options = Array[ExtResource("2_uiog4")]([ExtResource("11_svvya"), ExtResource("12_hibyy"), ExtResource("13_6tg3p"), ExtResource("14_kjlir"), ExtResource("7_ydnx3"), ExtResource("7_qwiua"), ExtResource("8_qwiua"), ExtResource("15_rcvv6"), ExtResource("16_6xw6m")])
 
 [node name="PostProcess" type="CanvasLayer" parent="." unique_id=1184871636]
 layer = -99

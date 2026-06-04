@@ -28,4 +28,4 @@ func tick_consume(tick: int) -> void:
 		total_satiety += item_type.satiety
 	storage[&"food_input"].stacks.clear()
 	Global.add_loyalty(total_satiety)
-	
+	print(name)

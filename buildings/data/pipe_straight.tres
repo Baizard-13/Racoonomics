@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://pxqqpr5c6sro" path="res://buildings/scenes/pipe_straight.tscn" id="1_bsmtb"]
 [ext_resource type="Script" uid="uid://c0gqfaohu8pat" path="res://scripts/building_port.gd" id="1_cx38g"]
 [ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_bsmtb"]
+[ext_resource type="Texture2D" uid="uid://bcqnnufiwdi3n" path="res://Images/image (9).png" id="4_s73k3"]
 
 [sub_resource type="Resource" id="Resource_b2kaw"]
 script = ExtResource("1_cx38g")
@@ -21,6 +22,7 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 [resource]
 script = ExtResource("2_bsmtb")
 title = "Труба"
+shop_icon = ExtResource("4_s73k3")
 clearance = 0
 ports = Array[ExtResource("1_cx38g")]([SubResource("Resource_b2kaw"), SubResource("Resource_7wqp3")])
 building_scene = ExtResource("1_bsmtb")

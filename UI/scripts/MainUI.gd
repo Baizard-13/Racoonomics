@@ -90,7 +90,7 @@ func openDescription(build_def: BuildingDefinition):
 	build_name.text = build_def.title
 	building_icon.texture = build_def.shop_icon
 	description.text = build_def.description
-	sell_price.text = "[C]  Продать + " + str(build_def.purchase_cost) + "M"
+	sell_price.text = "[Space]  Продать + " + str(build_def.purchase_cost) + "M"
 	description_popup.show()
 
 func closeDescription():
