@@ -28,6 +28,6 @@ func get_type(id: StringName) -> ItemType:
 
 func add_loyalty(loyalty_: int) -> void:
 	loyalty += loyalty_
-	await get_tree().create_timer(30.0).timeout
+	await get_tree().create_timer(5.0).timeout
 	loyalty -= loyalty_
 	update_bar.emit(loyalty)

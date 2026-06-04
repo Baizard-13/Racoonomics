@@ -186,6 +186,23 @@ mesh = SubResource("BoxMesh_sxy8e")
 [node name="Carrot_lvl1_work" parent="." index="1" unique_id=3326800 instance=ExtResource("3_j14mh")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, 0)
 
+[node name="Skeleton3D" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1" parent_id_path=PackedInt32Array(3326800, 1031954589) index="0" unique_id=1303697944]
+bones/1/position = Vector3(-0.013267934, 0.030461663, 0.0001811857)
+bones/1/rotation = Quaternion(0.003910131, -0.037498113, 0.06742941, 0.99701154)
+bones/2/position = Vector3(-0.015630806, 0.027635083, -0.0130789485)
+bones/3/position = Vector3(-0.015919346, 0.029192409, 0.0131110735)
+bones/3/rotation = Quaternion(0.008504595, 0.021146033, -0.1105243, 0.99361205)
+bones/4/position = Vector3(-0.027247488, 0.030043658, -0.0007386791)
+bones/4/rotation = Quaternion(-0.023888595, 0.0027889449, 0.052450877, 0.9983339)
+bones/5/position = Vector3(-0.026878469, 0.03155736, -0.013280667)
+bones/5/rotation = Quaternion(0.043283045, -0.11819203, 0.090778634, 0.9878849)
+bones/6/position = Vector3(-0.028800525, 0.03186289, 0.014131623)
+bones/6/rotation = Quaternion(0.048496746, -0.04971818, -0.043927263, 0.9966177)
+bones/7/position = Vector3(-0.0015084874, 0.03132678, -7.871293e-05)
+bones/8/position = Vector3(-0.0021042004, 0.031499, -0.013904152)
+bones/9/position = Vector3(-0.0016678683, 0.032809425, 0.013542157)
+bones/9/rotation = Quaternion(0.07446734, 0.18252124, -0.030337535, 0.97990835)
+
 [node name="AnimationPlayer" parent="Carrot_lvl1_work" index="1" unique_id=33613130]
 libraries/ = SubResource("AnimationLibrary_qmcku")
 

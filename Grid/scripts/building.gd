@@ -20,6 +20,8 @@ const BUILDING_PORT_DECAL = preload("uid://uf7gdg37kqtl")
 @export var meshes : Array[MeshInstance3D]
 @export var definition_paths : String ##For loading definition info when you need it
 
+@export var small_recipes : Dictionary[ItemType, ItemType]
+
 @export_tool_button("Rebuild ports") var rebuild_ports_button = _rebuild_ports
 
 @export_category("Runtime state (don't edit)")

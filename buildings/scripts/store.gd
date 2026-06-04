@@ -6,14 +6,12 @@ extends Building
 var world_grid : WorldGrid
 
 var import : BuildingPort
-var selled := 0
 
 func _extends_ready() -> void:
 	var parent_grid := get_parent() as WorldGrid
 	if parent_grid:
 		world_grid = parent_grid
 
-	
 	import = ports[0]
 	
 
@@ -24,5 +22,4 @@ func tick_consume(tick: int) -> void:
 		total_satiety += item_type.satiety
 	storage[&"food_input"].stacks.clear()
 	Global.add_loyalty(total_satiety)
-	#print("Лояльность населения: ", Global.loyalty)
 	
