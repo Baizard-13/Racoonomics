@@ -386,6 +386,7 @@ mesh = SubResource("QuadMesh_yx7wv")
 
 [node name="MoneyManager" type="Node" parent="." unique_id=937004170]
 script = ExtResource("7_202do")
+money = 20
 
 [node name="Money_count" type="CanvasLayer" parent="MoneyManager" unique_id=254028323]
 layer = 2

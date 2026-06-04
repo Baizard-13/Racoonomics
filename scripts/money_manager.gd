@@ -8,13 +8,15 @@ extends Node
 	set(value):
 		max_money = value
 		#max_money_changed.emit(value)
-		update_vizual()
+		if is_node_ready():
+			update_vizual()
 
 @export var money: int = 0: ##Current money count. In Inspector(right here) you set start money count
 	set(value):
 		money = clamp(value, 0, max_money)
 		#money_value_changed.emit(money)
-		update_vizual()
+		if is_node_ready():
+			update_vizual()
 
 @onready var money_label: Label = $Money_count/MoneyLabel
 
