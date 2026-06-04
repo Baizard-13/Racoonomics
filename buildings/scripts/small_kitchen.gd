@@ -14,7 +14,7 @@ func _extends_ready() -> void:
 		world_grid = parent_grid
 
 	if !is_ghost:
-		animation_player.play(&"Rig_Rabbit_001|Kithen_Lvl2_Work")
+		animation_player.play(&"Rig_Rabbit_001|Rig_Rabbit_001|Kithen_Lvl2_Work")
 
 
 

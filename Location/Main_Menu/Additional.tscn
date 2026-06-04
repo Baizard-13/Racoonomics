@@ -1,3 +1,60 @@
 [gd_scene format=3 uid="uid://bvxt1xpkwpnhu"]
 
-[node name="Node3D" type="Node3D" unique_id=153778137]
+[ext_resource type="Texture2D" uid="uid://by3p4xgtwlxk1" path="res://Textures/Main_menu/Background.png" id="1_motb6"]
+[ext_resource type="Script" uid="uid://c63aqpjqx445q" path="res://Location/Main_Menu/additional.gd" id="1_vvcki"]
+[ext_resource type="Texture2D" uid="uid://dol42ios56dgm" path="res://Textures/Main_menu/M_Background_1.png" id="2_vvcki"]
+[ext_resource type="Texture2D" uid="uid://bvrsa7jkfwrol" path="res://Textures/Main_menu/Exit.png" id="4_7k65e"]
+[ext_resource type="Texture2D" uid="uid://c5p63tjlqh1x7" path="res://Textures/Main_menu/Menu2 (1).png" id="4_vvcki"]
+[ext_resource type="Script" uid="uid://wtpd73re5xj7" path="res://scripts/JuiceComponent.gd" id="5_14vty"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1c62c"]
+texture = ExtResource("4_7k65e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3lse6"]
+texture = ExtResource("4_7k65e")
+modulate_color = Color(0.6542321, 0.6542321, 0.654232, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6a3ru"]
+texture = ExtResource("4_7k65e")
+modulate_color = Color(0.89059, 0.89059, 0.8905901, 1)
+
+[node name="Node2D" type="Node2D" unique_id=1810160957]
+script = ExtResource("1_vvcki")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1815855958]
+position = Vector2(960.0001, 540.50006)
+scale = Vector2(0.7515626, 0.7520834)
+texture = ExtResource("1_motb6")
+
+[node name="MBackground2" type="Sprite2D" parent="." unique_id=262479444]
+visible = false
+position = Vector2(1381, 541.5)
+scale = Vector2(1, 1.0046296)
+texture = ExtResource("2_vvcki")
+
+[node name="MBackground1" type="Sprite2D" parent="." unique_id=650975499]
+position = Vector2(1414, 538)
+scale = Vector2(1, 1.0046296)
+texture = ExtResource("4_vvcki")
+
+[node name="Exit" type="Button" parent="." unique_id=517342558]
+custom_minimum_size = Vector2(340.67, 80)
+offset_left = 1297.0
+offset_top = 942.0
+offset_right = 1668.675
+offset_bottom = 1027.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_1c62c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3lse6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6a3ru")
+
+[node name="CompJuice" type="Node" parent="Exit" unique_id=579587935]
+script = ExtResource("5_14vty")
+trans = 6
+time = 0.5
+scale_value = Vector2(1.05, 1.05)
+metadata/_custom_type_script = "uid://wtpd73re5xj7"
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

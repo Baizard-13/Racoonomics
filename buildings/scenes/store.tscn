@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://b0kokabntul2y" path="res://resources/item_types/food_nut_snack.tres" id="11_whliw"]
 [ext_resource type="Resource" uid="uid://6jrtnhoruj1x" path="res://resources/item_types/nuts.tres" id="12_4fvl8"]
 [ext_resource type="Resource" uid="uid://bnweg3woogiok" path="res://resources/item_types/wood.tres" id="13_ay71j"]
+[ext_resource type="PackedScene" uid="uid://5jf6umr0hhsq" path="res://models/place.tscn" id="16_bo1io"]
 
 [sub_resource type="Resource" id="Resource_xhws6"]
 script = ExtResource("6_4vqv3")
@@ -27,7 +28,7 @@ type = 1
 cell_offset = Vector2i(0, 1)
 facing = 3
 storage_id = &"food_input"
-vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building2/Ports/Anchor")
+vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/Building2/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_svwq6"]
@@ -35,13 +36,13 @@ script = ExtResource("6_4vqv3")
 allowed_types = Array[ExtResource("5_m4pvk")]([ExtResource("6_xhws6"), ExtResource("7_bo1io"), ExtResource("12_4fvl8"), ExtResource("13_ay71j"), ExtResource("8_rl7fm"), ExtResource("9_wo362"), ExtResource("10_f6yqp"), ExtResource("11_whliw")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
-[sub_resource type="Resource" id="Resource_0f15d"]
+[sub_resource type="Resource" id="Resource_rl7fm"]
 resource_local_to_scene = true
 script = ExtResource("4_byspa")
 filter = SubResource("Resource_svwq6")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
 
-[sub_resource type="BoxMesh" id="BoxMesh_xhws6"]
+[sub_resource type="BoxMesh" id="BoxMesh_wo362"]
 resource_local_to_scene = true
 
 [sub_resource type="Animation" id="Animation_bo1io"]
@@ -386,32 +387,25 @@ title = "Shop"
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("3_7qmwc")]([SubResource("Resource_m8gox")])
 storage = Dictionary[StringName, ExtResource("4_byspa")]({
-&"food_input": SubResource("Resource_0f15d")
+&"food_input": SubResource("Resource_rl7fm")
 })
 meshes = [NodePath("lavka_lvl2/Rig_Rabbit/Skeleton3D/Sm_Lavka_Lvl2")]
 definition_paths = "res://buildings/data/store.tres"
 
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 transform = Transform3D(30.01, 0, 0, 0, 1, 0, 0, 0, 30.01, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_xhws6")
+mesh = SubResource("BoxMesh_wo362")
 
 [node name="lavka_lvl2" parent="." index="2" unique_id=223115633 instance=ExtResource("4_7qmwc")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 
 [node name="Skeleton3D" parent="lavka_lvl2/Rig_Rabbit" parent_id_path=PackedInt32Array(223115633, 1049561479) index="0" unique_id=58663501]
-bones/1/position = Vector3(-0.0071309046, 0.008174704, 0.0057043936)
-bones/3/rotation = Quaternion(0, 0, 0.13021232, 0.9914862)
-bones/3/scale = Vector3(1.0721008, 1.0721008, 1.0721008)
-bones/4/rotation = Quaternion(0.83043677, 0.29927114, -0.15931429, -0.44207546)
-bones/5/rotation = Quaternion(-0.22774154, -0.3899889, -0.39300415, 0.8009934)
-bones/6/rotation = Quaternion(0.83043677, 0.29927102, 0.15931408, 0.44207555)
-bones/7/rotation = Quaternion(0.19714008, 0.24648547, -0.24523157, 0.9166473)
-bones/14/rotation = Quaternion(-0.84618676, 0, 0, 0.53288645)
-bones/15/rotation = Quaternion(-0.55911314, 4.4114543e-08, -1.10746406e-07, 0.82909137)
-bones/16/rotation = Quaternion(6.830713e-08, 0.51297784, 0.8584019, 1.1430312e-07)
-bones/17/rotation = Quaternion(-0.5260906, -5.684801e-08, 2.8899862e-07, 0.8504286)
+bones/7/rotation = Quaternion(0.2072424, -0.024628097, 0.035473578, 0.97733605)
 
 [node name="AnimationPlayer" parent="lavka_lvl2" index="1" unique_id=865094901]
 libraries/ = SubResource("AnimationLibrary_f6yqp")
+
+[node name="place" parent="." index="4" unique_id=1496812274 instance=ExtResource("16_bo1io")]
+transform = Transform3D(-2.491549e-07, 0, 5.7, 0, 5.7, 0, -5.7, 0, -2.491549e-07, 0, 0, 0)
 
 [editable path="lavka_lvl2"]

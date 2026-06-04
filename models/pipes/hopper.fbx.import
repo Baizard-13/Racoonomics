@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bbd2r18qp4flb"
-path="res://.godot/imported/TUBE UP LEFT.fbx-64cfc2f5a9238ccda0c77a254d34bca2.scn"
+uid="uid://cu8yb4cto0hib"
+path="res://.godot/imported/hopper.fbx-c4abe40e867649a1162391b324c0ad42.scn"
 
 [deps]
 
-source_file="res://models/pipes/TUBE UP LEFT.fbx"
-dest_files=["res://.godot/imported/TUBE UP LEFT.fbx-64cfc2f5a9238ccda0c77a254d34bca2.scn"]
+source_file="res://models/pipes/hopper.fbx"
+dest_files=["res://.godot/imported/hopper.fbx-c4abe40e867649a1162391b324c0ad42.scn"]
 
 [params]
 

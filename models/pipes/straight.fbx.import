@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dqhquls1fwffy"
-path="res://.godot/imported/kitchen_lvl2.fbx-f9ebe4f7b65339620acbf9150fd2aa6e.scn"
+uid="uid://wr0er0jcbtpj"
+path="res://.godot/imported/straight.fbx-7d4f546d8085e36268b78683d75c274a.scn"
 
 [deps]
 
-source_file="res://models/kitchen/kitchen_lvl2.fbx"
-dest_files=["res://.godot/imported/kitchen_lvl2.fbx-f9ebe4f7b65339620acbf9150fd2aa6e.scn"]
+source_file="res://models/pipes/straight.fbx"
+dest_files=["res://.godot/imported/straight.fbx-7d4f546d8085e36268b78683d75c274a.scn"]
 
 [params]
 

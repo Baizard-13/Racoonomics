@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://5jf6umr0hhsq"]
+
+[ext_resource type="PackedScene" uid="uid://rjywm1tuobn3" path="res://models/kitchen/place.fbx" id="1_ed25y"]
+[ext_resource type="Texture2D" uid="uid://xnrkhhac72d4" path="res://Textures/Buildings/Base_Base_color.png" id="2_phes6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jk3v"]
+albedo_texture = ExtResource("2_phes6")
+
+[node name="place" unique_id=1496812274 instance=ExtResource("1_ed25y")]
+
+[node name="Cube" parent="." index="0" unique_id=512270646]
+surface_material_override/0 = SubResource("StandardMaterial3D_0jk3v")

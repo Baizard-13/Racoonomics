@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bfq4ig1kyl1m3"]
+
+[ext_resource type="PackedScene" uid="uid://cu8yb4cto0hib" path="res://models/pipes/hopper.fbx" id="1_m5yum"]
+[ext_resource type="Texture2D" uid="uid://doosljw6eqlgt" path="res://Textures/Buildings/Left_Base_color.png" id="2_8l2a3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2djn"]
+albedo_texture = ExtResource("2_8l2a3")
+
+[node name="hopper" unique_id=1216752199 instance=ExtResource("1_m5yum")]
+
+[node name="TUBE UP LEFT_001" parent="Voronka/Skeleton3D" parent_id_path=PackedInt32Array(1927195744) index="0" unique_id=405586776]
+surface_material_override/0 = SubResource("StandardMaterial3D_x2djn")

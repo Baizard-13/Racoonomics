@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://eeqp6fx73wwi"]
 
-[ext_resource type="PackedScene" uid="uid://bbd2r18qp4flb" path="res://models/pipes/TUBE UP LEFT.fbx" id="1_82064"]
-[ext_resource type="Texture2D" uid="uid://doosljw6eqlgt" path="res://Textures/Buildings/Left_Base_color.png" id="2_uq56i"]
+[ext_resource type="PackedScene" uid="uid://dg5hrtdv5cgqs" path="res://models/pipes/povorot.fbx" id="1_wgrnp"]
+[ext_resource type="Texture2D" uid="uid://doosljw6eqlgt" path="res://Textures/Buildings/Left_Base_color.png" id="2_g8dmr"]
+[ext_resource type="Material" uid="uid://cs7n1v7rgg5id" path="res://Textures/Out.tres" id="3_1tlio"]
+[ext_resource type="Material" uid="uid://drqb3iyhfg2nm" path="res://Textures/In.tres" id="4_ugucg"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgrnp"]
-albedo_texture = ExtResource("2_uq56i")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a438a"]
+albedo_texture = ExtResource("2_g8dmr")
 
-[node name="TUBE UP LEFT" unique_id=657106152 instance=ExtResource("1_82064")]
+[node name="povorot" unique_id=1366940563 instance=ExtResource("1_wgrnp")]
 
-[node name="TUBE UP LEFT" parent="." index="0" unique_id=2120029889]
-surface_material_override/0 = SubResource("StandardMaterial3D_wgrnp")
+[node name="TUBE UP LEFT" parent="Turn/Skeleton3D" parent_id_path=PackedInt32Array(220672531) index="0" unique_id=7904441]
+surface_material_override/0 = SubResource("StandardMaterial3D_a438a")
+surface_material_override/1 = ExtResource("3_1tlio")
+surface_material_override/2 = ExtResource("4_ugucg")

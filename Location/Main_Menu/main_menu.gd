@@ -18,9 +18,8 @@ func _on_play_pressed() -> void:
 func _on_authors_pressed() -> void:
 	get_tree().change_scene_to_file("res://Location/Main_Menu/authors.tscn")
 
-#Верните функцию, когда будет создана сцена для доп контента. Сейчас эта сцена серого экрана, из нее не выйти
-#func _on_additional_pressed() -> void:
-#	get_tree().change_scene_to_file("res://Location/Main_Menu/Additional.tscn")
+func _on_additional_pressed() -> void:
+	get_tree().change_scene_to_file("res://Location/Main_Menu/Additional.tscn")
 
 
 func _on_exit_pressed() -> void:

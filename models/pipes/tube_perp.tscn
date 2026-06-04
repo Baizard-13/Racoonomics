@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://ct7b3ih0oybue"]
 
-[ext_resource type="PackedScene" uid="uid://byhjbe4rg881o" path="res://models/pipes/TUBE PERP.fbx" id="1_tsb32"]
-[ext_resource type="Texture2D" uid="uid://bsc3rng3wgpk5" path="res://Textures/Buildings/Frnt_Base_color.png" id="2_3ga8l"]
+[ext_resource type="PackedScene" uid="uid://wr0er0jcbtpj" path="res://models/pipes/straight.fbx" id="1_ir06e"]
+[ext_resource type="Texture2D" uid="uid://bsc3rng3wgpk5" path="res://Textures/Buildings/Frnt_Base_color.png" id="2_5kt45"]
+[ext_resource type="Material" uid="uid://drqb3iyhfg2nm" path="res://Textures/In.tres" id="3_mqp5x"]
+[ext_resource type="Material" uid="uid://cs7n1v7rgg5id" path="res://Textures/Out.tres" id="4_34guc"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ir06e"]
-albedo_texture = ExtResource("2_3ga8l")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2f2m"]
+albedo_texture = ExtResource("2_5kt45")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kt45"]
+[node name="straight" unique_id=1576817922 instance=ExtResource("1_ir06e")]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqp5x"]
+[node name="Skeleton3D" parent="Strait" parent_id_path=PackedInt32Array(1108642950) index="0" unique_id=1217525079]
+bones/1/scale = Vector3(1, 1.0000005, 0.99999994)
 
-[node name="TUBE PERP" unique_id=1255411247 instance=ExtResource("1_tsb32")]
-
-[node name="TUBE PERP" parent="." index="0" unique_id=803733358]
-surface_material_override/0 = SubResource("StandardMaterial3D_ir06e")
-surface_material_override/1 = SubResource("StandardMaterial3D_5kt45")
-surface_material_override/2 = SubResource("StandardMaterial3D_mqp5x")
+[node name="TUBE PERP" parent="Strait/Skeleton3D" index="0" unique_id=475624623]
+surface_material_override/0 = SubResource("StandardMaterial3D_p2f2m")
+surface_material_override/1 = ExtResource("3_mqp5x")
+surface_material_override/2 = ExtResource("4_34guc")
