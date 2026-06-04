@@ -21,12 +21,12 @@ func _extends_ready() -> void:
 func tick_produce(tick: int) -> void:
 	if cooked_item:
 		storage[&"cook_out"].put(cooked_item, 1)
-	print("произведено: ", storage[&"cook_out"].stacks)
+		cooked_item = null
 	
 func tick_consume(tick: int) -> void:
 	for item_id in storage[&"cook_in"].stacks:
 		cooked_item = get_recipe(Global.get_type(item_id))
-	storage[&"cook_in"].stacks.clear()
+		storage[&"cook_in"].stacks.erase(item_id)
 
 func get_recipe(produce_food: ItemType) -> ItemType:
 		return small_recipes.get(produce_food, ItemType)

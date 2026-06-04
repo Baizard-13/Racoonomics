@@ -61,10 +61,14 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("bm_enter"):
 		TabToggle()
+	
 	if event.is_action_pressed("bm_exit"):
 		TabHotbarClose()
 		closeDescription()
 		PurchaseTabClose()
+	
+	if event.is_action_pressed("quick_sell"):
+		sell_building()
 	
 
 func UpdatePurchases():
@@ -94,8 +98,13 @@ func closeDescription():
 
 func _on_bt_close_pressed() -> void:
 	closeDescription()
+	
 
 func _on_bt_sell_pressed() -> void:
+	sell_building()
+
+
+func sell_building() -> void:
 	if !info_current_building:
 		return
 	##Пока что возвращает только ценник ПОКУПКИ, ценник улучшений(upgrade_cost) пока что не возвращает
@@ -107,6 +116,7 @@ func _on_bt_sell_pressed() -> void:
 	info_current_building = null
 	info_current_building_definition = null
 	closeDescription()
+
 
 func PurchaseTabOpen(build_definition: BuildingDefinition):
 	tab_purchase.show()

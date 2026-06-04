@@ -2,10 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://bpwgac6fl046b" path="res://UI/scenes/tab_description.tscn" id="1_i5lw3"]
 [ext_resource type="Script" uid="uid://mhftiya6ghd0" path="res://UI/scripts/MainUI.gd" id="1_ssore"]
+[ext_resource type="Script" uid="uid://daiac4wtjs0vv" path="res://scripts/building_definition.gd" id="2_cope4"]
 [ext_resource type="PackedScene" uid="uid://cbsy65gckd1xe" path="res://UI/scenes/bar_loyalty.tscn" id="2_ssore"]
+[ext_resource type="Resource" uid="uid://bm68ehewitxe1" path="res://buildings/data/apple_farm.tres" id="3_86rwt"]
 [ext_resource type="PackedScene" uid="uid://ddocjn85juvtr" path="res://UI/scenes/tab_hotbar.tscn" id="3_xytjo"]
+[ext_resource type="Resource" uid="uid://dofl178hni36b" path="res://buildings/data/carrot_farm.tres" id="4_2lxry"]
+[ext_resource type="Resource" uid="uid://b6m3onvwjex0s" path="res://buildings/data/nuts_farm.tres" id="5_53rjt"]
 [ext_resource type="PackedScene" uid="uid://v58qa5fr26n1" path="res://UI/scenes/tab_purchase.tscn" id="5_xytjo"]
 [ext_resource type="PackedScene" uid="uid://ddi33134y6f7f" path="res://UI/scenes/money_label.tscn" id="6_kv86j"]
+[ext_resource type="Resource" uid="uid://boudmf84aorir" path="res://buildings/data/wood_farm.tres" id="6_mxd4g"]
+[ext_resource type="Resource" uid="uid://behwpwgqjkaqt" path="res://buildings/data/pipe_straight.tres" id="7_82pyk"]
+[ext_resource type="Resource" uid="uid://b314wq1n1hgrl" path="res://buildings/data/pipe_left_turn.tres" id="8_lfkum"]
+[ext_resource type="Resource" uid="uid://c5v6tpeuqjm41" path="res://buildings/data/pipe_right_turn.tres" id="9_qqa8m"]
+[ext_resource type="Resource" uid="uid://ci2arlumjjsof" path="res://buildings/data/small_kitchen.tres" id="10_ngqxv"]
+[ext_resource type="Resource" uid="uid://dmbwevjl6lkxv" path="res://buildings/data/store.tres" id="11_gb2q2"]
 
 [node name="Main_UI" type="Control" unique_id=1036147662]
 layout_mode = 3
@@ -16,6 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_ssore")
+tab_hotbar_purchase_options = Array[ExtResource("2_cope4")]([ExtResource("3_86rwt"), ExtResource("4_2lxry"), ExtResource("5_53rjt"), ExtResource("6_mxd4g"), ExtResource("7_82pyk"), ExtResource("8_lfkum"), ExtResource("9_qqa8m"), ExtResource("10_ngqxv"), ExtResource("11_gb2q2")])
 
 [node name="BarLoyalty" parent="." unique_id=1630970414 instance=ExtResource("2_ssore")]
 layout_mode = 1
