@@ -15,6 +15,7 @@ extends Resource
 
 @export var purchase_cost: int = 0
 @export var upgrade_cost: int = 0
+@export var is_for_small_region: bool = false
 
 func get_building_instance(rotation: int = 0) -> Building:
 	var building = building_scene.instantiate() as Building

@@ -20,6 +20,7 @@ storage_id = &"cook_in"
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("2_6njp5")
 title = "Малая кухня"
 shop_icon = ExtResource("4_ei3sg")

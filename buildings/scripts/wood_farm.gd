@@ -19,5 +19,5 @@ func _extends_ready() -> void:
 
 func tick_produce(tick: int) -> void:
 	if tick % 3 == 0:
-		storage[&"wood_out"].put(Global.get_type("wood"), 10)
+		storage[&"wood_out"].put(Global.get_type("wood"), 5)
 		#print("запас дерева ", storage[&"wood_out"].stacks)

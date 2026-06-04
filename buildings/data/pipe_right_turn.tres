@@ -20,6 +20,7 @@ vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/Do
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("3_vmgpb")
 title = "Труба (вправо)"
 shop_icon = ExtResource("4_0pega")

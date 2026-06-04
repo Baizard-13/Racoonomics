@@ -19,4 +19,4 @@ func _extends_ready() -> void:
 
 func tick_produce(tick: int) -> void:
 	if tick % 3 == 0:
-		storage[&"carrots_out"].put(Global.get_type("carrots"), 10)
+		storage[&"carrots_out"].put(Global.get_type("carrots"), 5)
