@@ -14,7 +14,7 @@ script = ExtResource("3_f5eet")
 cell_offset = Vector2i(1, 2)
 facing = 2
 storage_id = &"carrots_out"
-vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/Building/Ports/Anchor")
+vis_node_path = NodePath("/root/@EditorNode@18094/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9318/@VSplitContainer@9101/@HSplitContainer@9103/@HSplitContainer@9105/@Control@9106/@SubViewportContainer@9107/@SubViewport@9108/Building/Ports/Anchor")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_ox42p"]
@@ -24,6 +24,7 @@ allowed_types = Array[ExtResource("5_x3wo1")]([ExtResource("6_qmcku")])
 metadata/_custom_type_script = "uid://b3goh20b5qa4r"
 
 [sub_resource type="Resource" id="Resource_n4nh0"]
+resource_local_to_scene = true
 script = ExtResource("4_sxy8e")
 filter = SubResource("Resource_ox42p")
 metadata/_custom_type_script = "uid://fufmogn6slbf"
@@ -186,24 +187,24 @@ mesh = SubResource("BoxMesh_sxy8e")
 [node name="Carrot_lvl1_work" parent="." index="1" unique_id=3326800 instance=ExtResource("3_j14mh")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.474, 0)
 
-[node name="Skeleton3D" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1" parent_id_path=PackedInt32Array(3326800, 1031954589) index="0" unique_id=1303697944]
-bones/1/position = Vector3(-0.013267934, 0.030461663, 0.0001811857)
-bones/1/rotation = Quaternion(0.003910131, -0.037498113, 0.06742941, 0.99701154)
-bones/2/position = Vector3(-0.015630806, 0.027635083, -0.0130789485)
-bones/3/position = Vector3(-0.015919346, 0.029192409, 0.0131110735)
-bones/3/rotation = Quaternion(0.008504595, 0.021146033, -0.1105243, 0.99361205)
-bones/4/position = Vector3(-0.027247488, 0.030043658, -0.0007386791)
-bones/4/rotation = Quaternion(-0.023888595, 0.0027889449, 0.052450877, 0.9983339)
-bones/5/position = Vector3(-0.026878469, 0.03155736, -0.013280667)
-bones/5/rotation = Quaternion(0.043283045, -0.11819203, 0.090778634, 0.9878849)
-bones/6/position = Vector3(-0.028800525, 0.03186289, 0.014131623)
-bones/6/rotation = Quaternion(0.048496746, -0.04971818, -0.043927263, 0.9966177)
-bones/7/position = Vector3(-0.0015084874, 0.03132678, -7.871293e-05)
-bones/8/position = Vector3(-0.0021042004, 0.031499, -0.013904152)
-bones/9/position = Vector3(-0.0016678683, 0.032809425, 0.013542157)
-bones/9/rotation = Quaternion(0.07446734, 0.18252124, -0.030337535, 0.97990835)
+[node name="Skeleton3D" parent="Carrot_lvl1_work/Anim_Farm_Carrot_lvl1" parent_id_path=PackedInt32Array(3326800, 1969027031) index="0" unique_id=175401646]
+bones/1/position = Vector3(-0.052037865, 0.03859929, -0.0014671357)
+bones/1/rotation = Quaternion(0.009696987, -0.09299406, 0.1672227, 0.9814758)
+bones/2/position = Vector3(-0.03601889, 0.0319787, -0.004905196)
+bones/3/position = Vector3(-0.036829334, 0.03425725, 0.0050498517)
+bones/3/rotation = Quaternion(0.0210756, 0.052402925, -0.27389506, 0.9600996)
+bones/4/position = Vector3(-0.054534685, 0.037634816, -0.0046402314)
+bones/4/rotation = Quaternion(-0.059259474, 0.006918426, 0.13011283, 0.9897026)
+bones/5/position = Vector3(-0.053140253, 0.041154705, -0.008415377)
+bones/5/rotation = Quaternion(0.10712234, -0.2925163, 0.22467029, 0.92329973)
+bones/6/position = Vector3(-0.04179326, 0.032437097, 0.0065775756)
+bones/6/rotation = Quaternion(0.12026023, -0.123289116, -0.10892905, 0.9790158)
+bones/7/position = Vector3(-0.03319055, 0.032005165, -0.00012479715)
+bones/8/position = Vector3(-0.034871712, 0.032413587, -0.006269006)
+bones/9/position = Vector3(-0.033073876, 0.034247294, 0.005271516)
+bones/9/rotation = Quaternion(0.18394184, 0.4508459, -0.07493676, 0.8702229)
 
-[node name="AnimationPlayer" parent="Carrot_lvl1_work" index="1" unique_id=33613130]
+[node name="AnimationPlayer" parent="Carrot_lvl1_work" index="1" unique_id=1584434592]
 libraries/ = SubResource("AnimationLibrary_qmcku")
 
 [editable path="Carrot_lvl1_work"]

@@ -12,17 +12,17 @@ func _extends_ready() -> void:
 	var parent_grid := get_parent() as WorldGrid
 	if parent_grid:
 		world_grid = parent_grid
-	
+
 	if !is_ghost:
 		animation_player.play(&"Rig_Rabbit_001|Kithen_Lvl2_Work")
-	
+
 
 
 func tick_produce(tick: int) -> void:
 	if cooked_item:
 		storage[&"cook_out"].put(cooked_item, 1)
 		cooked_item = null
-	
+
 func tick_consume(tick: int) -> void:
 	for item_id in storage[&"cook_in"].stacks:
 		cooked_item = get_recipe(Global.get_type(item_id))

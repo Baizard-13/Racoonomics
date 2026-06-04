@@ -25,7 +25,7 @@ func _ready() -> void:
 
 func get_type(id: StringName) -> ItemType:
 	return type_lookup.get(id, null)
-	
+
 
 func add_loyalty(loyalty_: int) -> void:
 	loyalty += loyalty_

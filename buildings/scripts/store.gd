@@ -17,7 +17,7 @@ func _extends_ready() -> void:
 		world_grid = parent_grid
 
 	import = ports[0]
-	
+
 	if !is_ghost:
 		animation_player.play(&"Rig_Rabbit|Work", -1, animation_speed)
 
@@ -28,4 +28,3 @@ func tick_consume(tick: int) -> void:
 		total_satiety += item_type.satiety
 	storage[&"food_input"].stacks.clear()
 	Global.add_loyalty(total_satiety)
-	
