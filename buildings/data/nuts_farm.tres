@@ -17,6 +17,9 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 resource_local_to_scene = true
 script = ExtResource("2_dw67u")
 title = "Орешник"
+description = "Это постройка производит Орехи. Улучшения ускорят и автоматизируют производство. 
+1 порт для труб.
+"
 shop_icon = ExtResource("4_m00l5")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_n4uu4")]([SubResource("Resource_lm0on")])

@@ -17,6 +17,9 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 resource_local_to_scene = true
 script = ExtResource("2_nikss")
 title = "Грядка"
+description = "Эта постройка производит Морковь. Улучшения ускорят и автоматизируют производство. 
+1 порт для труб.
+"
 shop_icon = ExtResource("4_btmdn")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_f134t")]([SubResource("Resource_urg8m")])

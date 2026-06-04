@@ -23,6 +23,7 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 resource_local_to_scene = true
 script = ExtResource("3_vmgpb")
 title = "Труба (вправо)"
+description = "Труба перемещает Еду между Фермами, Кухнями и Лавками. Изогнутый вправо вариант трубы. "
 shop_icon = ExtResource("4_0pega")
 clearance = 0
 ports = Array[ExtResource("2_0pega")]([SubResource("Resource_r1tx4"), SubResource("Resource_5qhtt")])

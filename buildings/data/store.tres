@@ -18,6 +18,8 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 resource_local_to_scene = true
 script = ExtResource("2_pdpwp")
 title = "Лавка"
+description = "Универсальная постройка, из которой жители получают еду. 
+входной порт для труб. "
 shop_icon = ExtResource("4_uf32f")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_kmmib")]([SubResource("Resource_m8gox")])

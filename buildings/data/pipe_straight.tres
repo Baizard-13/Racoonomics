@@ -23,6 +23,7 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 resource_local_to_scene = true
 script = ExtResource("2_bsmtb")
 title = "Труба"
+description = "Труба перемещает Еду между Фермами, Кухнями и Лавками. "
 shop_icon = ExtResource("4_s73k3")
 clearance = 0
 ports = Array[ExtResource("1_cx38g")]([SubResource("Resource_b2kaw"), SubResource("Resource_7wqp3")])

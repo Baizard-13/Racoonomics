@@ -17,6 +17,8 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 resource_local_to_scene = true
 script = ExtResource("2_kgocx")
 title = "Яблоня"
+description = "Эта постройка производит Яблоки. Улучшения ускорят и автоматизируют производство. 
+1 порт для труб."
 shop_icon = ExtResource("4_dbbyl")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_f5v16")]([SubResource("Resource_lhenu")])

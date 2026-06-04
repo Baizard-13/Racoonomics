@@ -17,6 +17,8 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 resource_local_to_scene = true
 script = ExtResource("2_shhg5")
 title = "Подлесок"
+description = "Эта постройка производит Дерево. Улучшения ускорят и автоматизируют производство. 
+1 порт для труб."
 shop_icon = ExtResource("4_xn4tg")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_hcgba")]([SubResource("Resource_22cl1")])

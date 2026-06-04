@@ -23,6 +23,8 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 resource_local_to_scene = true
 script = ExtResource("2_6njp5")
 title = "Малая кухня"
+description = "Принимает один вид Еды с Ферм, готовит более сытные Простые Блюда. Улучшения ускорят и автоматизируют производство. 
+Входной и Выходной порт для труб."
 shop_icon = ExtResource("4_ei3sg")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_7s6v8")]([SubResource("Resource_lrp6f"), SubResource("Resource_xptis")])
