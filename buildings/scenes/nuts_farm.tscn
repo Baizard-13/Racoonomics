@@ -330,6 +330,23 @@ mesh = SubResource("BoxMesh_2cvn4")
 [node name="Anim_Farm_Oreh_lvl1" parent="." index="1" unique_id=1460956550 instance=ExtResource("3_os46o")]
 transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0.47433043, 0)
 
+[node name="Skeleton3D" parent="Anim_Farm_Oreh_lvl1/Anim_Farm_Oreh_lvl1" parent_id_path=PackedInt32Array(1460956550, 542116113) index="0" unique_id=516037215]
+bones/3/position = Vector3(-0.04115449, 0.0035036495, 0.0030283062)
+bones/3/rotation = Quaternion(0.041798186, -0.046568867, -0.2538525, 0.96521664)
+bones/4/position = Vector3(-0.042007405, 0.0023838105, 0.007861654)
+bones/4/rotation = Quaternion(0.22135963, 0.030700589, -0.19070973, 0.95587)
+bones/6/position = Vector3(-0.031127693, 0.04388521, -0.0037434492)
+bones/6/rotation = Quaternion(-0.21328679, 0.09449664, -0.36254048, 0.90229905)
+bones/7/position = Vector3(-0.030064667, 0.046887726, 0.0008025733)
+bones/7/rotation = Quaternion(-0.10361981, 0.11949203, -0.15823898, 0.97465134)
+bones/8/position = Vector3(-0.030808007, 0.04714071, -0.001217884)
+bones/8/rotation = Quaternion(0.08017623, 0.14263862, -0.28490886, 0.94448555)
+bones/10/position = Vector3(-0.023549883, -0.04631722, -0.003965377)
+bones/11/position = Vector3(-0.014470368, -0.0415024, 0.0030865602)
+bones/11/rotation = Quaternion(-0.07732571, 0.087216504, 0.37716672, 0.9187814)
+bones/12/position = Vector3(-0.01553797, -0.04018236, 0.0025672233)
+bones/12/rotation = Quaternion(0.10576017, 0.27203342, 0.3988515, 0.8693274)
+
 [node name="AnimationPlayer" parent="Anim_Farm_Oreh_lvl1" index="1" unique_id=2162884]
 libraries/ = SubResource("AnimationLibrary_6301r")
 

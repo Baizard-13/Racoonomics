@@ -3,6 +3,10 @@ extends Building
 
 @export var any_filter : ItemFilter
 
+@onready var animation_player: AnimationPlayer = $lavka_lvl2/AnimationPlayer
+
+var animation_speed: float = 1.0
+
 var world_grid : WorldGrid
 
 var import : BuildingPort
@@ -14,6 +18,8 @@ func _extends_ready() -> void:
 
 	import = ports[0]
 	
+	if !is_ghost:
+		animation_player.play(&"Rig_Rabbit|Work", -1, animation_speed)
 
 func tick_consume(tick: int) -> void:
 	var total_satiety := 0

@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bs8a67m2mu1ga" path="res://UI/textures/Tab_Description/T_G_TabDescription_Bt_Sell_1.png" id="5_j1ai2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5qrx0"]
-font_color = Color(0, 0, 0, 1)
+font_color = Color(0.24840266, 0.18701145, 0.14789438, 1)
 outline_size = 1
 outline_color = Color(0, 0, 0, 1)
 
@@ -63,6 +63,11 @@ modulate_color = Color(0.50534403, 0.5053441, 0.50534403, 1)
 texture = ExtResource("5_j1ai2")
 modulate_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_yrvrn"]
+font_size = 30
+font_color = Color(0.38039216, 0.29411766, 0.23921569, 1)
+outline_color = Color(0, 0, 0, 1)
+
 [node name="DescriptionPopup" type="Control" unique_id=596222301]
 top_level = true
 layout_mode = 3
@@ -88,6 +93,7 @@ offset_left = 82.0
 offset_top = 83.0
 offset_right = -82.0
 offset_bottom = 350.0
+grow_horizontal = 2
 texture = ExtResource("3_j1ai2")
 expand_mode = 1
 stretch_mode = 5
@@ -100,6 +106,8 @@ offset_left = 109.0
 offset_top = 43.0
 offset_right = -110.0
 offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.38039216, 0.29411766, 0.23921569, 1)
 text = "Building Name Long Very Longw"
 label_settings = SubResource("LabelSettings_5qrx0")
 horizontal_alignment = 1
@@ -113,6 +121,7 @@ offset_left = 44.0
 offset_top = 384.0
 offset_right = -47.0
 offset_bottom = 488.0
+grow_horizontal = 2
 text = "IDK "
 label_settings = SubResource("LabelSettings_5qrx0")
 horizontal_alignment = 1
@@ -154,6 +163,8 @@ offset_left = -162.0
 offset_top = -263.0
 offset_right = -62.0
 offset_bottom = -163.0
+grow_horizontal = 0
+grow_vertical = 0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_styles/normal = SubResource("StyleBoxTexture_mo0ym")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_kdspt")
@@ -174,6 +185,8 @@ offset_left = -275.0
 offset_top = -263.0
 offset_right = -175.0
 offset_bottom = -163.0
+grow_horizontal = 0
+grow_vertical = 0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_styles/normal = SubResource("StyleBoxTexture_5qrx0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5stso")
@@ -204,3 +217,42 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_0imv4")
 script = ExtResource("2_5qrx0")
 scale_value = Vector2(1.05, 1.05)
 metadata/_custom_type_script = "uid://wtpd73re5xj7"
+
+[node name="Sell_price" type="Label" parent="BtSell" unique_id=443592317]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.5
+offset_top = -21.0
+offset_right = 141.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0.38039216, 0.29411766, 0.23921569, 1)
+text = "Продать + 20M"
+label_settings = SubResource("LabelSettings_yrvrn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InteractionHint" type="Label" parent="BtSell" unique_id=763709619]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.5
+offset_top = -20.0
+offset_right = -177.5
+offset_bottom = 22.0
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0.38039216, 0.29411766, 0.23921569, 1)
+text = "[G]"
+label_settings = SubResource("LabelSettings_yrvrn")
+horizontal_alignment = 1
+vertical_alignment = 1

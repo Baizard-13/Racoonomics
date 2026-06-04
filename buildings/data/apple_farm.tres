@@ -15,7 +15,7 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [resource]
 script = ExtResource("2_kgocx")
-title = "Apple Farm"
+title = "Яблоня"
 shop_icon = ExtResource("4_dbbyl")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_f5v16")]([SubResource("Resource_lhenu")])

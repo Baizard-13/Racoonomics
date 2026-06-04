@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ddi33134y6f7f"]
+
+[ext_resource type="Texture2D" uid="uid://cjbi06scpuxkp" path="res://UI/textures/MoneyPanel/T_G_MoneyPanel_Background.png" id="1_m5fue"]
+[ext_resource type="Script" uid="uid://bn4ksk1u475xv" path="res://UI/scripts/money_label.gd" id="2_fwuw4"]
+[ext_resource type="Texture2D" uid="uid://cuhsenra1ckfy" path="res://UI/textures/TabHotbar/Icon_Money.png" id="3_w2jcu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ovvo"]
+font_size = 32
+font_color = Color(0.47515917, 0.3729438, 0.30800107, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MoneyPanel" type="Control" unique_id=644828608]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="PanelBackground" type="TextureRect" parent="." unique_id=12205826]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 0
+texture = ExtResource("1_m5fue")
+
+[node name="Control" type="Control" parent="." unique_id=1441556129]
+anchors_preset = 0
+offset_left = 59.0
+offset_top = 51.0
+offset_right = 281.0
+offset_bottom = 107.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=685308729]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="MoneyIcon" type="TextureRect" parent="Control/HBoxContainer" unique_id=1753376848]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_w2jcu")
+
+[node name="MoneyLabel" type="Label" parent="Control/HBoxContainer" unique_id=1191866045]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0/200 M"
+label_settings = SubResource("LabelSettings_4ovvo")
+vertical_alignment = 1
+script = ExtResource("2_fwuw4")

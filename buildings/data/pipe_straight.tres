@@ -20,7 +20,7 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [resource]
 script = ExtResource("2_bsmtb")
-title = "Pipe"
+title = "Труба"
 clearance = 0
 ports = Array[ExtResource("1_cx38g")]([SubResource("Resource_b2kaw"), SubResource("Resource_7wqp3")])
 building_scene = ExtResource("1_bsmtb")

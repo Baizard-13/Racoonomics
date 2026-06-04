@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cbsy65gckd1xe" path="res://UI/scenes/bar_loyalty.tscn" id="2_ssore"]
 [ext_resource type="PackedScene" uid="uid://ddocjn85juvtr" path="res://UI/scenes/tab_hotbar.tscn" id="3_xytjo"]
 [ext_resource type="PackedScene" uid="uid://v58qa5fr26n1" path="res://UI/scenes/tab_purchase.tscn" id="5_xytjo"]
+[ext_resource type="PackedScene" uid="uid://ddi33134y6f7f" path="res://UI/scenes/money_label.tscn" id="6_kv86j"]
 
 [node name="Main_UI" type="Control" unique_id=1036147662]
 layout_mode = 3
@@ -18,6 +19,17 @@ script = ExtResource("1_ssore")
 
 [node name="BarLoyalty" parent="." unique_id=1630970414 instance=ExtResource("2_ssore")]
 layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -285.0
+offset_right = -39.0
+offset_bottom = 435.0
+grow_horizontal = 0
+grow_vertical = 2
 mouse_filter = 2
 
 [node name="TabHotbar" parent="." unique_id=1796104784 instance=ExtResource("3_xytjo")]
@@ -32,50 +44,65 @@ offset_bottom = -24.0
 grow_vertical = 0
 mouse_filter = 2
 
-[node name="DescriptionPopup" parent="." unique_id=596222301 instance=ExtResource("1_i5lw3")]
+[node name="TabPurchase" parent="." unique_id=2039677113 instance=ExtResource("5_xytjo")]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -800.0
-offset_top = 38.0
-offset_right = -221.0
-offset_bottom = 856.0
+offset_left = -857.0
+offset_top = 50.0
+offset_right = -857.0
+offset_bottom = 50.0
 grow_horizontal = 0
-mouse_filter = 2
 
-[node name="Building_icon" parent="DescriptionPopup" index="1" unique_id=30581243]
-grow_horizontal = 2
+[node name="BG" parent="TabPurchase" index="0" unique_id=217068393]
+offset_left = -1.0
+offset_right = 574.0
+offset_bottom = 715.0
 
-[node name="Name" parent="DescriptionPopup" index="2" unique_id=1560093602]
-grow_horizontal = 2
-
-[node name="Description" parent="DescriptionPopup" index="3" unique_id=2096860074]
-grow_horizontal = 2
-
-[node name="BtDowngrade" parent="DescriptionPopup" index="5" unique_id=180608791]
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="BtUpgrade" parent="DescriptionPopup" index="6" unique_id=1693452720]
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="TabPurchase" parent="." unique_id=2039677113 instance=ExtResource("5_xytjo")]
+[node name="DescriptionPopup" parent="." unique_id=596222301 instance=ExtResource("1_i5lw3")]
 z_index = 1
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -798.0
-offset_top = 43.0
-offset_right = -798.0
-offset_bottom = 43.0
+offset_left = -856.0
+offset_top = 46.0
+offset_right = -277.0
+offset_bottom = 864.0
 grow_horizontal = 0
+mouse_filter = 2
+
+[node name="MoneyPanel" parent="." unique_id=644828608 instance=ExtResource("6_kv86j")]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_right = 0.0
+grow_horizontal = 0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="PanelBackground" parent="MoneyPanel" index="0" unique_id=12205826]
+anchor_left = -0.067
+anchor_right = -0.067
+offset_left = 0.10000038
+offset_right = 320.1
+
+[node name="Control" parent="MoneyPanel" index="1" unique_id=1441556129]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.067
+anchor_right = -0.067
+offset_left = 61.1
+offset_right = 280.1
 
 [connection signal="pressed" from="DescriptionPopup/BtClose" to="." method="_on_bt_close_pressed"]
 [connection signal="pressed" from="DescriptionPopup/BtSell" to="." method="_on_bt_sell_pressed"]
 
 [editable path="TabHotbar"]
-[editable path="DescriptionPopup"]
 [editable path="TabPurchase"]
+[editable path="DescriptionPopup"]
+[editable path="MoneyPanel"]

@@ -13,12 +13,11 @@ var is_tab_open: bool = false
 @export var tab_hotbar_purchase_options: Array[BuildingDefinition] = []
 var first_visible_option_position: int = 0
 
-var buttons_list: Array[PurchaseOption] = []
+var buttons_list: Array[PurchaseOption]
 
 @onready var bar_loyalty: Control = $BarLoyalty
 @onready var tab_hotbar: Control = $TabHotbar
 @onready var money_manager: Node = $"../../MoneyManager"
-
 
 @onready var open_hotbar: Button = $TabHotbar/OpenHotbar
 
@@ -27,6 +26,9 @@ var buttons_list: Array[PurchaseOption] = []
 @onready var building_icon: TextureRect = $DescriptionPopup/Building_icon
 @onready var build_name: Label = $DescriptionPopup/Name
 @onready var description: Label = $DescriptionPopup/Description
+@onready var sell_price: Label = $DescriptionPopup/BtSell/Sell_price
+
+
 @onready var world_grid: WorldGrid = $"../../WorldGrid"
 @onready var build_mode_controller: Node = $"../../BuildModeController"
 
@@ -59,6 +61,11 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("bm_enter"):
 		TabToggle()
+	if event.is_action_pressed("bm_exit"):
+		TabHotbarClose()
+		closeDescription()
+		PurchaseTabClose()
+	
 
 func UpdatePurchases():
 	var index = 0
@@ -79,6 +86,7 @@ func openDescription(build_def: BuildingDefinition):
 	build_name.text = build_def.title
 	building_icon.texture = build_def.shop_icon
 	description.text = build_def.description
+	sell_price.text = "[C]  Продать + " + str(build_def.purchase_cost) + "M"
 	description_popup.show()
 
 func closeDescription():
@@ -105,7 +113,7 @@ func PurchaseTabOpen(build_definition: BuildingDefinition):
 	buy_build_definition = build_definition
 	TabPurchasetitle.text = build_definition.title
 	TabPurchasedescription.text = build_definition.description
-	TabPurchaseCostTitle.text = str(build_definition.purchase_cost) + "М"
+	TabPurchaseCostTitle.text = str(build_definition.purchase_cost) + "M"
 
 func PurchaseTabClose():
 	tab_purchase.hide()

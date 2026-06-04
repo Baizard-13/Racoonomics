@@ -6,28 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://ia7t252johp" path="res://UI/textures/Bar_Loyalty/T_G_Bar_Loyalty_Icon.svg" id="3_uhx4h"]
 
 [node name="BarLoyalty" type="Control" unique_id=1630970414]
+custom_minimum_size = Vector2(155, 720)
 layout_mode = 3
-anchor_left = 1.0
-anchor_top = 0.46
-anchor_right = 1.0
-anchor_bottom = 0.46
-offset_left = -206.0
-offset_top = -361.80002
-offset_right = -50.0
-offset_bottom = 362.19998
+offset_right = 156.0
+offset_bottom = 724.0
 script = ExtResource("1_s85qq")
 
 [node name="BarLoyalty_Progress" type="TextureProgressBar" parent="." unique_id=1608154782]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.43
-anchor_right = 1.0
-anchor_bottom = 0.43
-offset_left = -109.00012
-offset_top = -298.32
-offset_right = -65.00012
-offset_bottom = 99.67999
+offset_left = 46.999878
+offset_top = 13.0
+offset_right = 90.99988
+offset_bottom = 411.0
 grow_horizontal = 0
 scale = Vector2(1.5, 1.5)
 size_flags_horizontal = 4
@@ -38,11 +29,14 @@ texture_progress = ExtResource("2_s85qq")
 texture_progress_offset = Vector2(10.545, 10.81)
 
 [node name="BarLoyalty_Icon" type="TextureRect" parent="." unique_id=1098309355]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 offset_left = 13.0
 offset_top = 573.0
 offset_right = 103.0
 offset_bottom = 663.0
+grow_horizontal = 0
+grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 size_flags_vertical = 4
 texture = ExtResource("3_uhx4h")

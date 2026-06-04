@@ -15,7 +15,7 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [resource]
 script = ExtResource("2_dw67u")
-title = "Nut Farm"
+title = "Орешник"
 shop_icon = ExtResource("4_m00l5")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_n4uu4")]([SubResource("Resource_lm0on")])

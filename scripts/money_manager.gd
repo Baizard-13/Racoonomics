@@ -1,7 +1,7 @@
 extends Node
 
-#signal money_value_changed(new_value)
-#signal max_money_changed(new_value)
+
+#signal max_money_changed(new_value:int)
 
 @export var update_money_add: int = 15 ##How many money player will reseave at the level_updrage
 @export var max_money: int = 20: ##How maximum money count player can have at the start
@@ -35,6 +35,7 @@ func check_cost(cost: int) -> bool:
 
 func update_vizual():
 	money_label.text = "%d/%d" % [money, max_money]
+	Global.money_value_changed.emit(money, max_money)
 
 # DEBUG, need to delete after adding money reseave logic
 func _input(event: InputEvent) -> void:

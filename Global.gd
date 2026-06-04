@@ -4,6 +4,7 @@ extends Node
 var loyalty : int
 
 signal update_bar(int)
+signal money_value_changed(new_value:int)
 
 func _ready() -> void:
 	var types_dir := DirAccess.open("res://resources/item_types")
