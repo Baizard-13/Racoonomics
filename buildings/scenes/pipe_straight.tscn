@@ -29,7 +29,7 @@ metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 script = ExtResource("2_7wqp3")
 type = 1
 storage_id = &"pipe_temp"
-vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/PipeStraight/Ports/@Node3D@75275")
+vis_node_path = NodePath("/root/@EditorNode@18069/@Panel@14/@VBoxContainer@15/DockHSplitMain/@VBoxContainer@28/DockVSplitCenter/@VSplitContainer@70/@VBoxContainer@71/@EditorMainScreen@125/MainScreen/@CanvasItemEditor@9322/@VSplitContainer@9105/@HSplitContainer@9107/@HSplitContainer@9109/@Control@9110/@SubViewportContainer@9111/@SubViewport@9112/PipeStraight/Ports/@Node3D@23085")
 metadata/_custom_type_script = "uid://c0gqfaohu8pat"
 
 [sub_resource type="Resource" id="Resource_l7gxa"]
@@ -140,7 +140,7 @@ albedo_texture = ExtResource("7_l7gxa")
 
 [sub_resource type="Animation" id="Animation_vp2gd"]
 resource_name = "Strait|ArmatureAction"
-loop_mode = 1
+loop_mode = 2
 tracks/0/type = "scale_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -179,7 +179,7 @@ definition_paths = "res://buildings/data/pipe_straight.tres"
 [node name="MeshBoundsVisualizer" parent="." index="0" unique_id=1486330635]
 mesh = SubResource("BoxMesh_50o8n")
 
-[node name="Strait" type="Node3D" parent="." index="3" unique_id=293805970]
+[node name="Strait" type="Node3D" parent="." index="2" unique_id=293805970]
 transform = Transform3D(-191.61, 1.6751079e-05, 7.322129e-13, 0, -8.375539e-06, 191.61, 1.6751079e-05, 191.61, 8.375539e-06, 0, 3.661, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Strait" index="0" unique_id=673738633]
