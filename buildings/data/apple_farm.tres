@@ -23,4 +23,5 @@ shop_icon = ExtResource("4_dbbyl")
 dimensions = Vector2i(3, 3)
 ports = Array[ExtResource("1_f5v16")]([SubResource("Resource_lhenu")])
 building_scene = ExtResource("1_kgocx")
+purchase_cost = 3
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"

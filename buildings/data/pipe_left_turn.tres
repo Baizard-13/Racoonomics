@@ -28,3 +28,4 @@ shop_icon = ExtResource("4_7syla")
 clearance = 0
 ports = Array[ExtResource("2_7syla")]([SubResource("Resource_r1tx4"), SubResource("Resource_5qhtt")])
 building_scene = ExtResource("1_qa3mh")
+purchase_cost = 1

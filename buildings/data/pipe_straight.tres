@@ -28,4 +28,5 @@ shop_icon = ExtResource("4_s73k3")
 clearance = 0
 ports = Array[ExtResource("1_cx38g")]([SubResource("Resource_b2kaw"), SubResource("Resource_7wqp3")])
 building_scene = ExtResource("1_bsmtb")
+purchase_cost = 1
 metadata/_custom_type_script = "uid://daiac4wtjs0vv"
