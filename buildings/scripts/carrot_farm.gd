@@ -1,6 +1,6 @@
 @tool
 extends Building
-
+var click_queue := 0
 var animation_speed: float = 1.0
 
 var world_grid : WorldGrid
@@ -14,9 +14,21 @@ func _extends_ready() -> void:
 		world_grid = parent_grid
 
 	if !is_ghost:
+		pass
+		#animation_player.play(&"Anim_Farm_Carrot_lvl1|Anim_Farm_Carrot_lvl1|Anim_Farm_Carrot_lvl1", -1, animation_speed)
+
+func on_click_CarrotFarm():
+	click_queue += 1
+	if not animation_player.is_playing():
+		_process_queue()
+
+
+func _process_queue() -> void:
+	while click_queue > 0:
 		animation_player.play(&"Anim_Farm_Carrot_lvl1|Anim_Farm_Carrot_lvl1|Anim_Farm_Carrot_lvl1", -1, animation_speed)
-
-
-func tick_produce(tick: int) -> void:
-	if tick % 3 == 0:
-		storage[&"carrots_out"].put(Global.get_type("carrots"), 5)
+		await animation_player.animation_finished
+		storage[&"carrots_out"].put(Global.get_type("carrots"), 9)
+		click_queue -= 1
+#func tick_produce(tick: int) -> void:
+#	if tick % 3 == 0:
+#		storage[&"carrots_out"].put(Global.get_type("carrots"), 5)

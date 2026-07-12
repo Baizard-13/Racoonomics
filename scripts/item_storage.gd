@@ -24,11 +24,16 @@ func is_full() -> bool:
 	return get_filled_capacity() >= capacity
 
 func get_type_count(type: ItemType) -> int:
+	if not type:
+		return 0
 	return stacks.get(type.id, 0)
 
 func put(type: ItemType, quantity: int) -> int:
 	if !filter.accepts(type):
-		return quantity
+		if not type:
+			return quantity
+		if !filter.accepts(type):
+			return quantity
 
 	var can_store := mini(capacity - get_filled_capacity(), quantity)
 	stacks[type.id] = get_type_count(type) + can_store
