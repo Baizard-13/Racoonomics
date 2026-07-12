@@ -19,12 +19,15 @@ func _extends_ready() -> void:
 	import = ports[0]
 
 	if !is_ghost:
-		animation_player.play(&"Rig_Rabbit|Work", -1, animation_speed)
+		pass
+		#animation_player.play(&"Rig_Rabbit|Work", -1, animation_speed)
 
 func tick_consume(tick: int) -> void:
 	var total_satiety := 0
 	for item_id in storage[&"food_input"].stacks:
 		var item_type : ItemType = Global.get_type(item_id)
-		total_satiety += item_type.satiety
+		var item_count : int = storage[&"food_input"].stacks[item_id]
+		total_satiety += item_type.satiety #* item_count
+		animation_player.play(&"Rig_Rabbit|Work", -1, animation_speed)
 	storage[&"food_input"].stacks.clear()
 	Global.add_loyalty(total_satiety)
